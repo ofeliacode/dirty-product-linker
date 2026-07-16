@@ -8,6 +8,7 @@ release selection can be inspected independently.
 ```bash
 PYTHONPATH=src .venv/bin/python scripts/import_shopify_catalog.py \
   --limit 50000 \
+  --checkpoint-every 1000 \
   --taxonomy configs/data/taxonomy.yaml
 ```
 
@@ -15,10 +16,21 @@ The taxonomy configuration uses exact paths for devices and explicitly approved
 subtrees for appliances. Broad substring rules are forbidden: phone cases, laptop
 bags, and TV mounts must not be classified as devices.
 
-The current importer writes the output after the bounded stream completes. A full
-unauthenticated scan can be slow and currently has no progress checkpoint. Until a
-full scan completes, a small smoke-test catalog must not be described as `catalog-v1`
-evaluation data.
+The importer atomically saves cumulative state to
+`reports/data/shopify_import_checkpoint.json`. If the network or process stops,
+continue without discarding confirmed rows:
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/import_shopify_catalog.py \
+  --limit 50000 \
+  --checkpoint-every 1000 \
+  --resume
+```
+
+The checkpoint includes the pinned dataset identity, processed-row count, accepted
+products, and rejection counters. A checkpoint from another revision or split is
+rejected. Until a full scan completes, a small smoke-test catalog must not be
+described as `catalog-v1` evaluation data.
 
 ## 2. Build a deterministic release
 
@@ -41,8 +53,7 @@ model text. The same source, configuration, and seed produce a byte-identical ca
 
 ## Current status
 
-The release code has been verified against local fixtures and a four-product live
-smoke sample. A full Shopify train scan was attempted but manually stopped after the
-unauthenticated stream remained slow without progress visibility. No full-catalog
-quality or category-coverage claim is made yet.
-
+The release and resumable import code are verified against local fixtures. Earlier
+full Shopify attempts exposed slow remote Parquet blocks, which motivated atomic
+checkpointing. No full-catalog quality or category-coverage claim is made until the
+checkpoint reaches the end of the pinned train split.

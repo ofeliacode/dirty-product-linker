@@ -63,10 +63,22 @@ def test_stream_selects_text_columns_before_image_decoding(
 
     class FakeDataset:
         selected_columns: list[str] | None = None
+        skipped = 0
 
-        def select_columns(self, columns: list[str]) -> list[dict[str, object]]:
+        def select_columns(self, columns: list[str]) -> "FakeDataset":
             self.selected_columns = columns
-            return [{column: source_row[column] for column in columns}]
+            return self
+
+        def skip(self, count: int) -> "FakeDataset":
+            self.skipped = count
+            return self
+
+        def __iter__(self):  # type: ignore[no-untyped-def]
+            rows = [
+                {column: source_row[column] for column in self.selected_columns or []}
+                for _ in range(5)
+            ]
+            return iter(rows[self.skipped :])
 
     fake_dataset = FakeDataset()
     load_arguments: dict[str, object] = {}
@@ -80,9 +92,11 @@ def test_stream_selects_text_columns_before_image_decoding(
         lambda _: SimpleNamespace(load_dataset=fake_load_dataset),
     )
 
-    rows = list(stream_shopify_rows(limit=1))
+    rows = list(stream_shopify_rows(limit=3, skip=2))
 
     assert "product_image" not in rows[0]
+    assert len(rows) == 1
+    assert fake_dataset.skipped == 2
     assert fake_dataset.selected_columns == [
         "product_title",
         "product_description",

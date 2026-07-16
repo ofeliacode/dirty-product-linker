@@ -24,11 +24,20 @@ SOURCE_COLUMNS = [
 ]
 
 
-def stream_shopify_rows(*, limit: int, split: str = "train") -> Iterator[Mapping[str, object]]:
+def stream_shopify_rows(
+    *,
+    limit: int,
+    split: str = "train",
+    skip: int = 0,
+) -> Iterator[Mapping[str, object]]:
     """Stream a pinned public dataset revision without downloading it in full."""
 
     if limit < 1:
         raise ValueError("limit must be at least 1")
+    if skip < 0 or skip > limit:
+        raise ValueError("skip must be between zero and limit")
+    if skip == limit:
+        return
 
     try:
         datasets_module = import_module("datasets")
@@ -47,8 +56,9 @@ def stream_shopify_rows(*, limit: int, split: str = "train") -> Iterator[Mapping
     )
     # Selecting before iteration prevents decoding the unused image column.
     # Reference: https://huggingface.co/docs/datasets/package_reference/main_classes#datasets.IterableDataset.select_columns
-    selected_dataset: Iterable[Mapping[str, object]] = dataset.select_columns(SOURCE_COLUMNS)
-    yield from islice(selected_dataset, limit)
+    selected_dataset: Any = dataset.select_columns(SOURCE_COLUMNS)
+    remaining_dataset: Iterable[Mapping[str, object]] = selected_dataset.skip(skip)
+    yield from islice(remaining_dataset, limit - skip)
 
 
 def write_shopify_import(
@@ -68,9 +78,20 @@ def write_shopify_import(
         progress_every=progress_every,
         on_progress=on_progress,
     )
+    write_shopify_result(result, catalog_path=catalog_path, report_path=report_path)
+    return result
+
+
+def write_shopify_result(
+    result: ShopifyImportResult,
+    *,
+    catalog_path: Path,
+    report_path: Path,
+) -> None:
+    """Serialize an already processed cumulative import result."""
+
     catalog_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
-
     with catalog_path.open("w", encoding="utf-8") as output:
         for product in result.products:
             output.write(product.model_dump_json() + "\n")
@@ -88,4 +109,3 @@ def write_shopify_import(
         json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
-    return result
