@@ -1,12 +1,13 @@
 import { FormEvent, useState } from "react";
-import { analyzeProduct } from "./api";
-import type { Analysis, Candidate } from "./types";
+import { analyzeProduct, extractProducts } from "./api";
+import type { Analysis, Candidate, Extraction } from "./types";
 
 const EXAMPLES = [
   "ищу 15pm на 256",
   "нужен самсунь s24 ultra",
   "сони наушники xm5",
   "айфон эир",
+  "нужен айфон 15 про макс и наушники sony xm5",
   "какой-нибудь хороший телефон",
 ];
 
@@ -51,7 +52,9 @@ function CandidateRow({ candidate, rank }: { candidate: Candidate; rank: number 
 
 export function App() {
   const [text, setText] = useState(EXAMPLES[0]);
+  const [mode, setMode] = useState<"single" | "multiple">("single");
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
+  const [extraction, setExtraction] = useState<Extraction | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -61,7 +64,13 @@ export function App() {
     setLoading(true);
     setError(null);
     try {
-      setAnalysis(await analyzeProduct(text.trim()));
+      if (mode === "multiple") {
+        setExtraction(await extractProducts(text.trim()));
+        setAnalysis(null);
+      } else {
+        setAnalysis(await analyzeProduct(text.trim()));
+        setExtraction(null);
+      }
     } catch (reason) {
       setError(reason instanceof Error ? reason.message : "Unexpected error.");
     } finally {
@@ -71,7 +80,16 @@ export function App() {
 
   function chooseExample(example: string) {
     setText(example);
+    setMode(example.includes(" и ") ? "multiple" : "single");
     setAnalysis(null);
+    setExtraction(null);
+    setError(null);
+  }
+
+  function chooseMode(nextMode: "single" | "multiple") {
+    setMode(nextMode);
+    setAnalysis(null);
+    setExtraction(null);
     setError(null);
   }
 
@@ -103,6 +121,10 @@ export function App() {
                 <p>Russian, English, or mixed text</p>
               </div>
             </div>
+            <div className="mode-switch" aria-label="Resolution mode">
+              <button className={mode === "single" ? "is-active" : ""} type="button" onClick={() => chooseMode("single")}>Single mention</button>
+              <button className={mode === "multiple" ? "is-active" : ""} type="button" onClick={() => chooseMode("multiple")}>Multiple mentions</button>
+            </div>
             <label htmlFor="product-query">Product mention</label>
             <textarea
               id="product-query"
@@ -117,7 +139,7 @@ export function App() {
               <span>No data is stored</span>
             </div>
             <button className="primary" type="submit" disabled={!text.trim() || loading}>
-              {loading ? "Resolving…" : "Resolve product"}
+              {loading ? "Resolving…" : mode === "multiple" ? "Extract and resolve" : "Resolve product"}
               <span aria-hidden="true">→</span>
             </button>
             {error && <p className="error" role="alert">{error}</p>}
@@ -143,7 +165,7 @@ export function App() {
               </div>
             </div>
 
-            {!analysis && !loading && (
+            {!analysis && !extraction && !loading && (
               <div className="empty-state">
                 <span>↳</span>
                 <p>Submit a message to inspect the selected catalog record and its nearest candidates.</p>
@@ -190,6 +212,30 @@ export function App() {
                   <span>Model <strong>{analysis.model_version}</strong></span>
                   <span>Catalog <strong>{analysis.catalog_version}</strong></span>
                 </div>
+              </div>
+            )}
+
+            {extraction && !loading && (
+              <div className="mention-results">
+                <div className="mention-results__heading">
+                  <span>EXTRACTED MENTIONS</span>
+                  <strong>{extraction.mentions.length}</strong>
+                </div>
+                {extraction.mentions.length === 0 ? (
+                  <div className="decision decision--unknown"><h3>No explicit catalog mentions</h3></div>
+                ) : extraction.mentions.map((mention) => (
+                  <article className="mention-card" key={`${mention.start}-${mention.end}`}>
+                    <div className="mention-card__source">
+                      <span>“{mention.text}”</span>
+                      <code>{mention.start}:{mention.end}</code>
+                    </div>
+                    <h3>{mention.result.selected_product?.brand} {mention.result.selected_product?.model}</h3>
+                    <div className="facts">
+                      <span>{percent(mention.result.confidence)} confidence</span>
+                      <code>{mention.result.product_id}</code>
+                    </div>
+                  </article>
+                ))}
               </div>
             )}
           </section>

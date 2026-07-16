@@ -40,6 +40,10 @@ h1 { margin: 0; font-size: clamp(48px, 5.4vw, 78px); line-height: .94; letter-sp
 .step { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; border: 1px solid var(--line); color: var(--muted); font: 600 10px/1 ui-monospace, monospace; }
 .panel-heading h2 { margin: 0 0 5px; font-size: 16px; letter-spacing: -.02em; }
 .panel-heading p { margin: 0; font-size: 13px; color: var(--muted); }
+.mode-switch { display: grid; grid-template-columns: 1fr 1fr; margin: -12px 0 27px; border: 1px solid #89a696; background: white; }
+.mode-switch button { padding: 10px 12px; border: 0; background: transparent; color: var(--muted); font-size: 11px; font-weight: 650; cursor: pointer; }
+.mode-switch button + button { border-left: 1px solid #89a696; }
+.mode-switch button.is-active { background: var(--accent); color: white; }
 label { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 680; }
 textarea { display: block; width: 100%; resize: vertical; min-height: 170px; padding: 20px; border: 1px solid #89a696; border-radius: 0; background: white; color: var(--ink); font-size: 20px; line-height: 1.5; transition: border-color 160ms ease, box-shadow 160ms ease; }
 textarea:hover { border-color: var(--accent); }
@@ -88,6 +92,14 @@ textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(22, 107
 .telemetry { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
 .telemetry span { color: #8b928d; font: 500 9px/1.4 ui-monospace, monospace; text-transform: uppercase; }
 .telemetry strong { display: block; margin-top: 3px; color: #465049; font-size: 9px; overflow-wrap: anywhere; }
+.mention-results { display: grid; gap: 12px; }
+.mention-results__heading, .mention-card__source { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.mention-results__heading { margin-bottom: 4px; color: var(--accent); font: 700 10px/1.2 ui-monospace, monospace; letter-spacing: .07em; }
+.mention-results__heading strong { font-size: 20px; }
+.mention-card { padding: 22px; border: 1px solid #a9c4b4; background: var(--accent-light); }
+.mention-card__source { color: var(--accent); font: 650 11px/1.4 ui-monospace, monospace; }
+.mention-card__source code { color: var(--muted); }
+.mention-card h3 { margin: 20px 0; font-size: clamp(22px, 2vw, 30px); line-height: 1.05; letter-spacing: -.035em; }
 
 footer { display: flex; justify-content: space-between; align-items: center; min-height: 82px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
 footer a { color: var(--ink); font-weight: 650; text-decoration: none; }

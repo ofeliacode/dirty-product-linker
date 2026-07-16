@@ -26,3 +26,15 @@ export type Analysis = {
   selected_product: ProductSummary | null;
   candidates: Candidate[];
 };
+
+export type LinkedMention = {
+  text: string;
+  start: number;
+  end: number;
+  result: Analysis;
+};
+
+export type Extraction = {
+  text: string;
+  mentions: LinkedMention[];
+};
