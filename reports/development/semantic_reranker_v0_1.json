@@ -1,0 +1,2812 @@
+{
+  "catalog_sha256": "9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526",
+  "dataset_role": "synthetic_development",
+  "dataset_sha256": "fb4e95e9527dd636f233d69d0435992ae5d51fd272ed470af505454d9d217ffc",
+  "decision_source_counts": {
+    "abstain_low_score": 2,
+    "abstain_no_identity": 5,
+    "feature_reranker": 18
+  },
+  "evaluation_id": "semantic-reranker-v0.1",
+  "metrics": {
+    "by_slice": {
+      "answerable": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.9,
+        "answerable_count": 20,
+        "coverage": 0.9,
+        "end_to_end_accuracy": 0.9,
+        "example_count": 20,
+        "negative_accuracy": 0.0,
+        "negative_count": 0,
+        "recall_at_5": 1.0
+      },
+      "negative": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 0,
+        "coverage": 0.0,
+        "end_to_end_accuracy": 1.0,
+        "example_count": 5,
+        "negative_accuracy": 1.0,
+        "negative_count": 5,
+        "recall_at_5": 0.0
+      }
+    },
+    "overall": {
+      "accepted_precision": 1.0,
+      "accuracy_at_1": 0.9,
+      "answerable_count": 20,
+      "coverage": 0.72,
+      "end_to_end_accuracy": 0.92,
+      "example_count": 25,
+      "negative_accuracy": 1.0,
+      "negative_count": 5,
+      "recall_at_5": 1.0
+    }
+  },
+  "model": {
+    "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "performance": {
+    "model_load_ms": 6402.644917019643,
+    "query_latency_ms": {
+      "count": 25,
+      "mean": 21.40111835906282,
+      "p50": 21.60608401754871,
+      "p95": 23.142140998970717
+    }
+  },
+  "policy": {
+    "candidate_top_k": 5,
+    "min_margin": 0.08,
+    "min_score": 0.4,
+    "output_top_k": 5,
+    "weights": {
+      "attributes": 0.1,
+      "brand": 0.3,
+      "category": 0.15,
+      "dense": 0.2,
+      "lexical": 0.1,
+      "model": 0.15
+    }
+  },
+  "predictions": [
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.486693
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.319327
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.314677
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.142181
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.126424
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.319327,
+          "dense_score": 0.0,
+          "lexical_score": 0.193275,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.486693,
+          "dense_score": 0.360082,
+          "lexical_score": 0.146769,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.314677,
+          "dense_score": 0.0,
+          "lexical_score": 0.146769,
+          "model_token_overlap": 0.0
+        },
+        "asus-rog-zephyrus-g14-2024": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.07359,
+          "dense_score": 0.36795,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-galaxy-s24-ultra-256-gray": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.142181,
+          "dense_score": 0.460904,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.078569,
+          "dense_score": 0.392847,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.126424,
+          "dense_score": 0.382118,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.167366,
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "semantic-0001",
+      "score": 0.486693,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "самый большой флагман эпл на 256 черный"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.372005
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.366864
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.323353
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.058238
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.055932
+        }
+      ],
+      "decision_source": "abstain_low_score",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bose-quietcomfort-ultra-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.055932,
+          "dense_score": 0.279662,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.039778,
+          "dense_score": 0.198892,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002,
+          "dense_score": 0.0,
+          "lexical_score": 0.02,
+          "model_token_overlap": 0.0
+        },
+        "samsung-galaxy-s24-ultra-256-gray": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.372005,
+          "dense_score": 0.0,
+          "lexical_score": 0.220048,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.366864,
+          "dense_score": 0.213245,
+          "lexical_score": 0.242151,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.323353,
+          "dense_score": 0.0,
+          "lexical_score": 0.233529,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.058238,
+          "dense_score": 0.291192,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.053562,
+          "dense_score": 0.267811,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.005141,
+      "product_id": null,
+      "query_id": "semantic-0002",
+      "score": 0.372005,
+      "status": "unknown",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "флагман самсунг со стилусом серого цвета"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "google-pixel-8-pro-128-black",
+          "score": 0.548453
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.230419
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.224698
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.15
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.080902
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.15,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "google-pixel-8-pro-128-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.548453,
+          "dense_score": 0.429448,
+          "lexical_score": 0.125629,
+          "model_token_overlap": 0.0
+        },
+        "oneplus-12-256-green": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.224698,
+          "dense_score": 0.373491,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.001765,
+          "dense_score": 0.0,
+          "lexical_score": 0.017647,
+          "model_token_overlap": 0.0
+        },
+        "samsung-galaxy-s24-ultra-256-gray": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.230419,
+          "dense_score": 0.402093,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.073617,
+          "dense_score": 0.368084,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.080902,
+          "dense_score": 0.404509,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.318034,
+      "product_id": "google-pixel-8-pro-128-black",
+      "query_id": "semantic-0003",
+      "score": 0.548453,
+      "status": "linked",
+      "target_product_ids": [
+        "google-pixel-8-pro-128-black"
+      ],
+      "text": "телефон гугл с чистым андроидом и хорошей камерой"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.521063
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.141506
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.081261
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.076739
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.073078
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.05,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.076739,
+          "dense_score": 0.383697,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lenovo-thinkpad-x1-carbon-gen-12": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002195,
+          "dense_score": 0.0,
+          "lexical_score": 0.021951,
+          "model_token_overlap": 0.0
+        },
+        "oneplus-12-256-green": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.521063,
+          "dense_score": 0.477353,
+          "lexical_score": 0.255921,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.073078,
+          "dense_score": 0.365388,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-galaxy-s24-ultra-256-gray": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.141506,
+          "dense_score": 0.45753,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.081261,
+          "dense_score": 0.406307,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.379557,
+      "product_id": "oneplus-12-256-green",
+      "query_id": "semantic-0004",
+      "score": 0.521063,
+      "status": "linked",
+      "target_product_ids": [
+        "oneplus-12-256-green"
+      ],
+      "text": "зеленый быстрый флагман ванплас на 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.693843
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.416899
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.31926
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.264431
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.085066
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.31926,
+          "dense_score": 0.0,
+          "lexical_score": 0.192602,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.416899,
+          "dense_score": 0.511995,
+          "lexical_score": 0.145,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.693843,
+          "dense_score": 0.659215,
+          "lexical_score": 0.245,
+          "model_token_overlap": 0.25
+        },
+        "dell-xps-13-9340": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.264431,
+          "dense_score": 0.572153,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "dyson-v15-detect": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.001525,
+          "dense_score": 0.0,
+          "lexical_score": 0.015254,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.085066,
+          "dense_score": 0.410577,
+          "lexical_score": 0.029508,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.084731,
+          "dense_score": 0.423657,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.276944,
+      "product_id": "apple-macbook-pro-14-m3-512",
+      "query_id": "semantic-0005",
+      "score": 0.693843,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "компактный профессиональный ноутбук apple 14 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.594227
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.265691
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.245215
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.096121
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.095118
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.265691,
+          "dense_score": 0.57042,
+          "lexical_score": 0.016071,
+          "model_token_overlap": 0.0
+        },
+        "dell-xps-13-9340": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.594227,
+          "dense_score": 0.650063,
+          "lexical_score": 0.142143,
+          "model_token_overlap": 0.0
+        },
+        "lenovo-thinkpad-x1-carbon-gen-12": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.245215,
+          "dense_score": 0.467895,
+          "lexical_score": 0.016364,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.095118,
+          "dense_score": 0.461303,
+          "lexical_score": 0.028571,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.096121,
+          "dense_score": 0.480604,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.328536,
+      "product_id": "dell-xps-13-9340",
+      "query_id": "semantic-0006",
+      "score": 0.594227,
+      "status": "linked",
+      "target_product_ids": [
+        "dell-xps-13-9340"
+      ],
+      "text": "маленький премиальный ноутбук dell тринадцать дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.533517
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0985
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.070047
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.069339
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.067961
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0985,
+          "dense_score": 0.0,
+          "lexical_score": 0.11,
+          "model_token_overlap": 0.25
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.069339,
+          "dense_score": 0.346696,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "dell-xps-13-9340": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.066277,
+          "dense_score": 0.318887,
+          "lexical_score": 0.025,
+          "model_token_overlap": 0.0
+        },
+        "dyson-v15-detect": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002,
+          "dense_score": 0.0,
+          "lexical_score": 0.02,
+          "model_token_overlap": 0.0
+        },
+        "lenovo-thinkpad-x1-carbon-gen-12": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.533517,
+          "dense_score": 0.514164,
+          "lexical_score": 0.306838,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.070047,
+          "dense_score": 0.350233,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.001915,
+          "dense_score": 0.0,
+          "lexical_score": 0.019149,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.067961,
+          "dense_score": 0.339803,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.435017,
+      "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+      "query_id": "semantic-0007",
+      "score": 0.533517,
+      "status": "linked",
+      "target_product_ids": [
+        "lenovo-thinkpad-x1-carbon-gen-12"
+      ],
+      "text": "деловой леново из карбона с экраном 14"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "score": 0.529282
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.10225
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0985
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "tcl-c855-55",
+          "score": 0.081471
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.072076
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0985,
+          "dense_score": 0.0,
+          "lexical_score": 0.11,
+          "model_token_overlap": 0.25
+        },
+        "asus-rog-zephyrus-g14-2024": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.529282,
+          "dense_score": 0.380225,
+          "lexical_score": 0.157368,
+          "model_token_overlap": 0.25
+        },
+        "dyson-v15-detect": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.003913,
+          "dense_score": 0.0,
+          "lexical_score": 0.03913,
+          "model_token_overlap": 0.0
+        },
+        "lenovo-thinkpad-x1-carbon-gen-12": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.10225,
+          "dense_score": 0.0,
+          "lexical_score": 0.0225,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.070966,
+          "dense_score": 0.354831,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "oneplus-12-256-green": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.070437,
+          "dense_score": 0.352186,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.00375,
+          "dense_score": 0.0,
+          "lexical_score": 0.0375,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.072076,
+          "dense_score": 0.360381,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "tcl-c855-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.081471,
+          "dense_score": 0.407356,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.427032,
+      "product_id": "asus-rog-zephyrus-g14-2024",
+      "query_id": "semantic-0008",
+      "score": 0.529282,
+      "status": "linked",
+      "target_product_ids": [
+        "asus-rog-zephyrus-g14-2024"
+      ],
+      "text": "игровой асус на 14 дюймов выпуска 2024"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.594552
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.314273
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.300833
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.285403
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.209742
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.209742,
+          "dense_score": 0.290221,
+          "lexical_score": 0.016981,
+          "model_token_overlap": 0.0
+        },
+        "bose-quietcomfort-ultra-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.300833,
+          "dense_score": 0.504164,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lenovo-thinkpad-x1-carbon-gen-12": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.001667,
+          "dense_score": 0.0,
+          "lexical_score": 0.016667,
+          "model_token_overlap": 0.0
+        },
+        "oneplus-12-256-green": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.001698,
+          "dense_score": 0.0,
+          "lexical_score": 0.016981,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.055131,
+          "dense_score": 0.275655,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.285403,
+          "dense_score": 0.427015,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.314273,
+          "dense_score": 0.0,
+          "lexical_score": 0.142727,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.594552,
+          "dense_score": 0.38564,
+          "lexical_score": 0.174235,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.280279,
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "semantic-0009",
+      "score": 0.594552,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "полноразмерные sony с сильным шумоподавлением черные"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.612389
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.38846
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.378188
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.198883
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.16151
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.612389,
+          "dense_score": 0.44876,
+          "lexical_score": 0.226374,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.38846,
+          "dense_score": 0.360298,
+          "lexical_score": 0.164,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.378188,
+          "dense_score": 0.308939,
+          "lexical_score": 0.164,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.16151,
+          "dense_score": 0.289902,
+          "lexical_score": 0.035294,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.151765,
+          "dense_score": 0.0,
+          "lexical_score": 0.017647,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.198883,
+          "dense_score": 0.244414,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.223929,
+      "product_id": "apple-airpods-pro-2-white",
+      "query_id": "semantic-0010",
+      "score": 0.612389,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-airpods-pro-2-white"
+      ],
+      "text": "белые внутриканальные apple с шумодавом"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.598716
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.265051
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.247481
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.151731
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "google-pixel-8-pro-128-black",
+          "score": 0.101032
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.151731,
+          "dense_score": 0.0,
+          "lexical_score": 0.017308,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.05,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.001956,
+          "dense_score": 0.0,
+          "lexical_score": 0.019565,
+          "model_token_overlap": 0.0
+        },
+        "bose-quietcomfort-ultra-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.598716,
+          "dense_score": 0.405681,
+          "lexical_score": 0.175798,
+          "model_token_overlap": 0.0
+        },
+        "google-pixel-8-pro-128-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.101032,
+          "dense_score": 0.25516,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.247481,
+          "dense_score": 0.229371,
+          "lexical_score": 0.016071,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.06292,
+          "dense_score": 0.314601,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.265051,
+          "dense_score": 0.325253,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.333665,
+      "product_id": "bose-quietcomfort-ultra-black",
+      "query_id": "semantic-0011",
+      "score": 0.598716,
+      "status": "linked",
+      "target_product_ids": [
+        "bose-quietcomfort-ultra-black"
+      ],
+      "text": "флагманские полноразмерные bose черного цвета"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.394013
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.071651
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.070192
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.063863
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.060732
+        }
+      ],
+      "decision_source": "abstain_low_score",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "asus-rog-zephyrus-g14-2024": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.063863,
+          "dense_score": 0.319315,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.071651,
+          "dense_score": 0.358253,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.394013,
+          "dense_score": 0.34333,
+          "lexical_score": 0.253472,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.060732,
+          "dense_score": 0.30366,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.070192,
+          "dense_score": 0.350962,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.322362,
+      "product_id": null,
+      "query_id": "semantic-0012",
+      "score": 0.394013,
+      "status": "unknown",
+      "target_product_ids": [
+        "sennheiser-momentum-4-black"
+      ],
+      "text": "сенхайзер с долгой батареей для поездок"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.748254
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.421342
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "tcl-c855-55",
+          "score": 0.334722
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.306131
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.03425
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.748254,
+          "dense_score": 0.392026,
+          "lexical_score": 0.448485,
+          "model_token_overlap": 0.5
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.03425,
+          "dense_score": 0.171249,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.306131,
+          "dense_score": 0.211904,
+          "lexical_score": 0.1375,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.421342,
+          "dense_score": 0.36223,
+          "lexical_score": 0.238961,
+          "model_token_overlap": 0.5
+        },
+        "tcl-c855-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.334722,
+          "dense_score": 0.354858,
+          "lexical_score": 0.1375,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.326912,
+      "product_id": "lg-oled-c3-55",
+      "query_id": "semantic-0013",
+      "score": 0.748254,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "oled телевизор lg на 55 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.695649
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.428013
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.422354
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.35034
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.340949
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "lg-oled-c3-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.35034,
+          "dense_score": 0.440591,
+          "lexical_score": 0.122222,
+          "model_token_overlap": 0.0
+        },
+        "samsung-galaxy-s24-ultra-256-gray": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.428013,
+          "dense_score": 0.525383,
+          "lexical_score": 0.229365,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.695649,
+          "dense_score": 0.551144,
+          "lexical_score": 0.354201,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.422354,
+          "dense_score": 0.493021,
+          "lexical_score": 0.2375,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.340949,
+          "dense_score": 0.454745,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "tcl-c855-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.262222,
+          "dense_score": 0.0,
+          "lexical_score": 0.122222,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.267636,
+      "product_id": "samsung-qn90d-55",
+      "query_id": "semantic-0014",
+      "score": 0.695649,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-qn90d-55"
+      ],
+      "text": "яркий телевизор samsung 55 для светлой комнаты"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.563801
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.360818
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.264679
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "tcl-c855-55",
+          "score": 0.158006
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.114869
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "bose-quietcomfort-ultra-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.033803,
+          "dense_score": 0.169016,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.264679,
+          "dense_score": 0.308396,
+          "lexical_score": 0.28,
+          "model_token_overlap": 0.5
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.114869,
+          "dense_score": 0.0,
+          "lexical_score": 0.148693,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.563801,
+          "dense_score": 0.282578,
+          "lexical_score": 0.322857,
+          "model_token_overlap": 0.5
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.360818,
+          "dense_score": 0.202008,
+          "lexical_score": 0.204167,
+          "model_token_overlap": 0.0
+        },
+        "tcl-c855-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.158006,
+          "dense_score": 0.228917,
+          "lexical_score": 0.122222,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.202983,
+      "product_id": "sony-bravia-8-oled-55",
+      "query_id": "semantic-0015",
+      "score": 0.563801,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-bravia-8-oled-55"
+      ],
+      "text": "sony oled 55 для кино вечером"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "tcl-c855-55",
+          "score": 0.674841
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.353198
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.349003
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.341982
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.071856
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.353198,
+          "dense_score": 0.452756,
+          "lexical_score": 0.126471,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.349003,
+          "dense_score": 0.440015,
+          "lexical_score": 0.11,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.341982,
+          "dense_score": 0.409908,
+          "lexical_score": 0.1,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.071856,
+          "dense_score": 0.359278,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "tcl-c855-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.674841,
+          "dense_score": 0.548578,
+          "lexical_score": 0.151254,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.321643,
+      "product_id": "tcl-c855-55",
+      "query_id": "semantic-0016",
+      "score": 0.674841,
+      "status": "linked",
+      "target_product_ids": [
+        "tcl-c855-55"
+      ],
+      "text": "mini led телевизор tcl 55 с высокой яркостью"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.647119
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.213318
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.206607
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.060537
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.055221
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.055221,
+          "dense_score": 0.276104,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.647119,
+          "dense_score": 0.34893,
+          "lexical_score": 0.273333,
+          "model_token_overlap": 0.0
+        },
+        "bose-quietcomfort-ultra-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002903,
+          "dense_score": 0.0,
+          "lexical_score": 0.029032,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.206607,
+          "dense_score": 0.283037,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.213318,
+          "dense_score": 0.316588,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.060537,
+          "dense_score": 0.302686,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.433801,
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "semantic-0017",
+      "score": 0.647119,
+      "status": "linked",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "серебристый холодильник bosch для кухни"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.726106
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.398951
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.393142
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.218811
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.071825
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.5,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.05,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.071825,
+          "dense_score": 0.359124,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.218811,
+          "dense_score": 0.344055,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-galaxy-s24-ultra-256-gray": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.398951,
+          "dense_score": 0.399576,
+          "lexical_score": 0.190357,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.393142,
+          "dense_score": 0.362147,
+          "lexical_score": 0.207128,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.726106,
+          "dense_score": 0.684627,
+          "lexical_score": 0.391803,
+          "model_token_overlap": 0.0
+        },
+        "tcl-c855-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.001667,
+          "dense_score": 0.0,
+          "lexical_score": 0.016667,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.327155,
+      "product_id": "samsung-ww90t554daw-white",
+      "query_id": "semantic-0018",
+      "score": 0.726106,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-ww90t554daw-white"
+      ],
+      "text": "белая стиральная машина samsung на девять килограмм"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "dyson-v15-detect",
+          "score": 0.482078
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.267014
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.225762
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.089613
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.06489
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "dyson-v15-detect": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.482078,
+          "dense_score": 0.0,
+          "lexical_score": 0.320779,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.064482,
+          "dense_score": 0.322412,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.267014,
+          "dense_score": 0.472201,
+          "lexical_score": 0.225735,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.225762,
+          "dense_score": 0.363021,
+          "lexical_score": 0.031579,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.089613,
+          "dense_score": 0.384909,
+          "lexical_score": 0.126316,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.06489,
+          "dense_score": 0.324448,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002046,
+          "dense_score": 0.0,
+          "lexical_score": 0.020455,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.215064,
+      "product_id": "dyson-v15-detect",
+      "query_id": "semantic-0019",
+      "score": 0.482078,
+      "status": "linked",
+      "target_product_ids": [
+        "dyson-v15-detect"
+      ],
+      "text": "мощный беспроводной вертикальный пылесос dyson"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.580261
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.196422
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.178693
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.03367
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.02651
+        }
+      ],
+      "decision_source": "feature_reranker",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.02651,
+          "dense_score": 0.13255,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "asus-rog-zephyrus-g14-2024": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.178693,
+          "dense_score": 0.143464,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 1.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.580261,
+          "dense_score": 0.439081,
+          "lexical_score": 0.424444,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.196422,
+          "dense_score": 0.23211,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.03367,
+          "dense_score": 0.168349,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.383839,
+      "product_id": "roborock-s8-maxv-ultra",
+      "query_id": "semantic-0020",
+      "score": 0.580261,
+      "status": "linked",
+      "target_product_ids": [
+        "roborock-s8-maxv-ultra"
+      ],
+      "text": "робот пылесос roborock со станцией самоочистки"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.228635
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.222124
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "google-pixel-8-pro-128-black",
+          "score": 0.219966
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.219732
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.071447
+        }
+      ],
+      "decision_source": "abstain_no_identity",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.228635,
+          "dense_score": 0.393173,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "dyson-v15-detect": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002308,
+          "dense_score": 0.0,
+          "lexical_score": 0.023077,
+          "model_token_overlap": 0.0
+        },
+        "google-pixel-8-pro-128-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.219966,
+          "dense_score": 0.349831,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "oneplus-12-256-green": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.222124,
+          "dense_score": 0.360621,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002647,
+          "dense_score": 0.0,
+          "lexical_score": 0.026471,
+          "model_token_overlap": 0.0
+        },
+        "samsung-galaxy-s24-ultra-256-gray": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.219732,
+          "dense_score": 0.348658,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.071447,
+          "dense_score": 0.357235,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002195,
+          "dense_score": 0.0,
+          "lexical_score": 0.021951,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.006511,
+      "product_id": null,
+      "query_id": "semantic-0021",
+      "score": 0.228635,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "нужен просто хороший телефон"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.242733
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.231968
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.152571
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.075082
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.073024
+        }
+      ],
+      "decision_source": "abstain_no_identity",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.231968,
+          "dense_score": 0.397342,
+          "lexical_score": 0.025,
+          "model_token_overlap": 0.0
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.073024,
+          "dense_score": 0.36512,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "dell-xps-13-9340": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.242733,
+          "dense_score": 0.463663,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lenovo-thinkpad-x1-carbon-gen-12": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.152571,
+          "dense_score": 0.0,
+          "lexical_score": 0.025714,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.002432,
+          "dense_score": 0.0,
+          "lexical_score": 0.024324,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.07301,
+          "dense_score": 0.36505,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.075082,
+          "dense_score": 0.375412,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.010765,
+      "product_id": null,
+      "query_id": "semantic-0022",
+      "score": 0.242733,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "посоветуйте ноутбук для работы"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.355033
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "tcl-c855-55",
+          "score": 0.35344
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.350304
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.333316
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.051496
+        }
+      ],
+      "decision_source": "abstain_no_identity",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "lg-oled-c3-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.350304,
+          "dense_score": 0.409853,
+          "lexical_score": 0.183333,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.333316,
+          "dense_score": 0.324915,
+          "lexical_score": 0.183333,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.355033,
+          "dense_score": 0.446595,
+          "lexical_score": 0.157143,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.051496,
+          "dense_score": 0.257478,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "tcl-c855-55": {
+          "attribute_agreement": 1.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.35344,
+          "dense_score": 0.425532,
+          "lexical_score": 0.183333,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.001593,
+      "product_id": null,
+      "query_id": "semantic-0023",
+      "score": 0.355033,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "хочу телевизор 55 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.302293
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.259513
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.249335
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.242671
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.079802
+        }
+      ],
+      "decision_source": "abstain_no_identity",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.249335,
+          "dense_score": 0.496674,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bose-quietcomfort-ultra-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.242671,
+          "dense_score": 0.463353,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "dyson-v15-detect": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.023226,
+          "dense_score": 0.0,
+          "lexical_score": 0.232258,
+          "model_token_overlap": 0.0
+        },
+        "lenovo-thinkpad-x1-carbon-gen-12": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0036,
+          "dense_score": 0.0,
+          "lexical_score": 0.036,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.079802,
+          "dense_score": 0.399008,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "sennheiser-momentum-4-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.302293,
+          "dense_score": 0.487601,
+          "lexical_score": 0.547727,
+          "model_token_overlap": 0.0
+        },
+        "sony-wh-1000xm5-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.259513,
+          "dense_score": 0.547567,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.04278,
+      "product_id": null,
+      "query_id": "semantic-0024",
+      "score": 0.302293,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "нужны беспроводные наушники"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.253159
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.225225
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.198791
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.058595
+        },
+        {
+          "matched_surface": "feature_reranker",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.045079
+        }
+      ],
+      "decision_source": "abstain_no_identity",
+      "features_by_product": {
+        "apple-airpods-pro-2-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-iphone-15-pro-max-256-black": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "apple-macbook-pro-14-m3-512": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.0,
+          "dense_score": 0.0,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "bosch-kgn39vl25r-silver": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.198791,
+          "dense_score": 0.243953,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "roborock-s8-maxv-ultra": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.253159,
+          "dense_score": 0.36904,
+          "lexical_score": 0.293506,
+          "model_token_overlap": 0.0
+        },
+        "samsung-qn90d-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.045079,
+          "dense_score": 0.225394,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        },
+        "samsung-ww90t554daw-white": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 1.0,
+          "combined_score": 0.225225,
+          "dense_score": 0.364285,
+          "lexical_score": 0.023684,
+          "model_token_overlap": 0.0
+        },
+        "sony-bravia-8-oled-55": {
+          "attribute_agreement": 0.0,
+          "brand_evidence": 0.0,
+          "category_compatibility": 0.0,
+          "combined_score": 0.058595,
+          "dense_score": 0.292975,
+          "lexical_score": 0.0,
+          "model_token_overlap": 0.0
+        }
+      },
+      "margin": 0.027934,
+      "product_id": null,
+      "query_id": "semantic-0025",
+      "score": 0.253159,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "нужен пылесос для квартиры"
+    }
+  ],
+  "schema_version": "1.0"
+}

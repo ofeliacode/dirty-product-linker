@@ -1,0 +1,14 @@
+schema_version: "1.0"
+evaluation_id: semantic-reranker-v0.1
+dataset_path: data/development/semantic_dev_v0_1.jsonl
+expected_dataset_sha256: fb4e95e9527dd636f233d69d0435992ae5d51fd272ed470af505454d9d217ffc
+catalog_path: data/catalog/demo_catalog_v0_2.jsonl
+expected_catalog_sha256: 9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526
+model_id: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+model_revision: e8f8c211226b894fcb81acc59f3b34ba3efd5f42
+device: cpu
+candidate_top_k: 5
+output_top_k: 5
+min_score: 0.40
+min_margin: 0.08
+output_path: reports/development/semantic_reranker_v0_1.json

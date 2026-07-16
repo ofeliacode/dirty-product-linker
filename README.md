@@ -140,3 +140,12 @@ only `0.611`. The fixed guarded hybrid reached `0.280` with precision `0.750` an
 recovered only one dense fallback. See
 [docs/semantic-retrieval.md](docs/semantic-retrieval.md) for the complete experiment
 and why a feature-aware reranker is the next justified component.
+
+## Feature-aware reranking
+
+The explainable reranker combines the lexical and dense top-5 lists with explicit
+brand, category, model-token, and attribute evidence. On semantic development data
+it reached Accuracy@1 `0.900`, negative accuracy `1.000`, end-to-end `0.920`, and
+accepted precision `1.000` at coverage `0.720`. The two remaining errors were safe
+abstentions. See [docs/feature-reranker.md](docs/feature-reranker.md) for weights,
+per-candidate explanations, limitations, and next steps.
