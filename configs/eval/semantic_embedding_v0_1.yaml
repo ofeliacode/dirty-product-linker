@@ -1,0 +1,29 @@
+schema_version: "1.0"
+evaluation_id: semantic-embedding-v0.1
+dataset_path: data/development/semantic_dev_v0_1.jsonl
+expected_dataset_sha256: fb4e95e9527dd636f233d69d0435992ae5d51fd272ed470af505454d9d217ffc
+catalog_path: data/catalog/demo_catalog_v0_2.jsonl
+expected_catalog_sha256: 9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526
+model_id: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+model_revision: e8f8c211226b894fcb81acc59f3b34ba3efd5f42
+model_license: apache-2.0
+embedding_dimensions: 384
+primary_weight_bytes: 470641600
+device: cpu
+top_k: 5
+warmup_queries: 3
+thresholds:
+  - 0.20
+  - 0.25
+  - 0.30
+  - 0.35
+  - 0.40
+  - 0.45
+  - 0.50
+  - 0.55
+  - 0.60
+  - 0.65
+  - 0.70
+  - 0.75
+  - 0.80
+output_path: reports/development/semantic_embedding_v0_1.json

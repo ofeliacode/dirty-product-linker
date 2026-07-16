@@ -36,6 +36,7 @@ class EmbeddingDevelopmentConfig(BaseModel):
     dataset_path: Path
     expected_dataset_sha256: str
     catalog_path: Path
+    expected_catalog_sha256: str | None = None
     model_id: str
     model_revision: str
     model_license: str
@@ -89,8 +90,18 @@ def main() -> None:
         for line in dataset_bytes.decode().splitlines()
         if line
     ]
-    with config.catalog_path.open(encoding="utf-8") as source:
-        products = [Product.model_validate_json(line) for line in source if line.strip()]
+    catalog_bytes = config.catalog_path.read_bytes()
+    catalog_sha256 = hashlib.sha256(catalog_bytes).hexdigest()
+    if (
+        config.expected_catalog_sha256 is not None
+        and catalog_sha256 != config.expected_catalog_sha256
+    ):
+        raise ValueError("catalog checksum mismatch")
+    products = [
+        Product.model_validate_json(line)
+        for line in catalog_bytes.decode().splitlines()
+        if line
+    ]
     examples = [
         BenchmarkExample(
             slice_name="answerable" if query.answerable else "negative",
@@ -158,6 +169,7 @@ def main() -> None:
         "evaluation_id": config.evaluation_id,
         "dataset_role": "synthetic_development",
         "dataset_sha256": dataset_sha256,
+        "catalog_sha256": catalog_sha256,
         "model": {
             "id": config.model_id,
             "revision": config.model_revision,

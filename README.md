@@ -130,3 +130,13 @@ recovered zero additional queries. Its p50 stayed near lexical at `0.17 ms`, whi
 p95 rose to `17.63 ms`. Dense fallback therefore remains disabled by default. See
 [docs/hybrid-linker.md](docs/hybrid-linker.md) for the policy and architectural
 decision.
+
+## Harder catalog and semantic queries
+
+Catalog v0.2 expands the demo matrix from 6 to 20 products, balanced across five
+categories. On a new 25-query semantic development slice, dense retrieval finally
+outperformed lexical end-to-end (`0.520` versus `0.240`), but accepted precision was
+only `0.611`. The fixed guarded hybrid reached `0.280` with precision `0.750` and
+recovered only one dense fallback. See
+[docs/semantic-retrieval.md](docs/semantic-retrieval.md) for the complete experiment
+and why a feature-aware reranker is the next justified component.

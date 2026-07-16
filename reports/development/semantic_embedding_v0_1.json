@@ -1,0 +1,1180 @@
+{
+  "catalog_sha256": "9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526",
+  "dataset_role": "synthetic_development",
+  "dataset_sha256": "fb4e95e9527dd636f233d69d0435992ae5d51fd272ed470af505454d9d217ffc",
+  "evaluation_id": "semantic-embedding-v0.1",
+  "lexical_comparison": {
+    "metrics": {
+      "by_slice": {
+        "answerable": {
+          "accepted_precision": 1.0,
+          "accuracy_at_1": 0.1,
+          "answerable_count": 20,
+          "coverage": 0.1,
+          "end_to_end_accuracy": 0.1,
+          "example_count": 20,
+          "negative_accuracy": 0.0,
+          "negative_count": 0,
+          "recall_at_5": 1.0
+        },
+        "negative": {
+          "accepted_precision": 0.0,
+          "accuracy_at_1": 0.0,
+          "answerable_count": 0,
+          "coverage": 0.2,
+          "end_to_end_accuracy": 0.8,
+          "example_count": 5,
+          "negative_accuracy": 0.8,
+          "negative_count": 5,
+          "recall_at_5": 0.0
+        }
+      },
+      "overall": {
+        "accepted_precision": 0.6666666666666666,
+        "accuracy_at_1": 0.1,
+        "answerable_count": 20,
+        "coverage": 0.12,
+        "end_to_end_accuracy": 0.24,
+        "example_count": 25,
+        "negative_accuracy": 0.8,
+        "negative_count": 5,
+        "recall_at_5": 1.0
+      }
+    },
+    "query_latency_ms": {
+      "count": 25,
+      "mean": 1.0408031637780368,
+      "p50": 1.029832987114787,
+      "p95": 1.4156917924992736
+    },
+    "settings": {
+      "min_score": 0.42,
+      "top_k": 5
+    }
+  },
+  "metrics": {
+    "by_slice": {
+      "answerable": {
+        "accepted_precision": 0.7333333333333333,
+        "accuracy_at_1": 0.55,
+        "answerable_count": 20,
+        "coverage": 0.75,
+        "end_to_end_accuracy": 0.55,
+        "example_count": 20,
+        "negative_accuracy": 0.0,
+        "negative_count": 0,
+        "recall_at_5": 0.9
+      },
+      "negative": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 0,
+        "coverage": 0.6,
+        "end_to_end_accuracy": 0.4,
+        "example_count": 5,
+        "negative_accuracy": 0.4,
+        "negative_count": 5,
+        "recall_at_5": 0.0
+      }
+    },
+    "overall": {
+      "accepted_precision": 0.6111111111111112,
+      "accuracy_at_1": 0.55,
+      "answerable_count": 20,
+      "coverage": 0.72,
+      "end_to_end_accuracy": 0.52,
+      "example_count": 25,
+      "negative_accuracy": 0.4,
+      "negative_count": 5,
+      "recall_at_5": 0.9
+    }
+  },
+  "model": {
+    "device": "cpu",
+    "embedding_dimensions": 384,
+    "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "license": "apache-2.0",
+    "primary_weight_bytes": 470641600,
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "performance": {
+    "catalog_index_ms": 426.2031669495627,
+    "model_load_ms": 6185.0726249977015,
+    "peak_rss_bytes": 1164148736,
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python": "3.12.1",
+    "query_latency_ms": {
+      "count": 25,
+      "mean": 33.38601163588464,
+      "p50": 20.14845801750198,
+      "p95": 141.43188300076832
+    }
+  },
+  "predictions": [
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.460904
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.392847
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.382118
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.36795
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.360082
+        }
+      ],
+      "product_id": "samsung-galaxy-s24-ultra-256-gray",
+      "query_id": "semantic-0001",
+      "score": 0.460904,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "самый большой флагман эпл на 256 черный"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.291192
+        },
+        {
+          "matched_surface": "Bose; QuietComfort; QuietComfort Ultra; headphones; боуз qc ultra; bose qc ultra; кьюси ультра; black; True",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.279662
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.267811
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.213245
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.198892
+        }
+      ],
+      "product_id": null,
+      "query_id": "semantic-0002",
+      "score": 0.291192,
+      "status": "unknown",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "флагман самсунг со стилусом серого цвета"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Google; Pixel; Pixel 8 Pro; smartphone; гугл пиксель 8 про; pixel8pro; пиксель восемь про; black; 128",
+          "product_id": "google-pixel-8-pro-128-black",
+          "score": 0.429448
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.404509
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.402093
+        },
+        {
+          "matched_surface": "OnePlus; OnePlus; OnePlus 12; smartphone; ванплас 12; one plus twelve; 1+12; green; 256",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.373491
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.368084
+        }
+      ],
+      "product_id": "google-pixel-8-pro-128-black",
+      "query_id": "semantic-0003",
+      "score": 0.429448,
+      "status": "linked",
+      "target_product_ids": [
+        "google-pixel-8-pro-128-black"
+      ],
+      "text": "телефон гугл с чистым андроидом и хорошей камерой"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "OnePlus; OnePlus; OnePlus 12; smartphone; ванплас 12; one plus twelve; 1+12; green; 256",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.477353
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.45753
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.406307
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.383697
+        },
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.365388
+        }
+      ],
+      "product_id": "oneplus-12-256-green",
+      "query_id": "semantic-0004",
+      "score": 0.477353,
+      "status": "linked",
+      "target_product_ids": [
+        "oneplus-12-256-green"
+      ],
+      "text": "зеленый быстрый флагман ванплас на 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.659215
+        },
+        {
+          "matched_surface": "Dell; XPS; XPS 13 9340; laptop; делл xps 13; xps9340; икспиэс 13; 13.4",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.572153
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.511995
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.423657
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.410577
+        }
+      ],
+      "product_id": "apple-macbook-pro-14-m3-512",
+      "query_id": "semantic-0005",
+      "score": 0.659215,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "компактный профессиональный ноутбук apple 14 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Dell; XPS; XPS 13 9340; laptop; делл xps 13; xps9340; икспиэс 13; 13.4",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.650063
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.57042
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.480604
+        },
+        {
+          "matched_surface": "Lenovo; ThinkPad X1 Carbon; ThinkPad X1 Carbon Gen 12; laptop; тинкпад x1 карбон 12; x1 carbon gen12; леново карбон; 14",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.467895
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.461303
+        }
+      ],
+      "product_id": "dell-xps-13-9340",
+      "query_id": "semantic-0006",
+      "score": 0.650063,
+      "status": "linked",
+      "target_product_ids": [
+        "dell-xps-13-9340"
+      ],
+      "text": "маленький премиальный ноутбук dell тринадцать дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Lenovo; ThinkPad X1 Carbon; ThinkPad X1 Carbon Gen 12; laptop; тинкпад x1 карбон 12; x1 carbon gen12; леново карбон; 14",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.514164
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.350233
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.346696
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.339803
+        },
+        {
+          "matched_surface": "Dell; XPS; XPS 13 9340; laptop; делл xps 13; xps9340; икспиэс 13; 13.4",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.318887
+        }
+      ],
+      "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+      "query_id": "semantic-0007",
+      "score": 0.514164,
+      "status": "linked",
+      "target_product_ids": [
+        "lenovo-thinkpad-x1-carbon-gen-12"
+      ],
+      "text": "деловой леново из карбона с экраном 14"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "TCL; C Series; C855; television; тсл c855 55; tcl c 855; си восемь пять пять; 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.407356
+        },
+        {
+          "matched_surface": "ASUS; ROG Zephyrus; ROG Zephyrus G14 2024; laptop; асус зефирус g14; rog g14 2024; зефирка g14; 14",
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "score": 0.380225
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.360381
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.354831
+        },
+        {
+          "matched_surface": "OnePlus; OnePlus; OnePlus 12; smartphone; ванплас 12; one plus twelve; 1+12; green; 256",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.352186
+        }
+      ],
+      "product_id": "tcl-c855-55",
+      "query_id": "semantic-0008",
+      "score": 0.407356,
+      "status": "linked",
+      "target_product_ids": [
+        "asus-rog-zephyrus-g14-2024"
+      ],
+      "text": "игровой асус на 14 дюймов выпуска 2024"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bose; QuietComfort; QuietComfort Ultra; headphones; боуз qc ultra; bose qc ultra; кьюси ультра; black; True",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.504164
+        },
+        {
+          "matched_surface": "Sennheiser; Momentum; Momentum 4 Wireless; headphones; сенхайзер моментум 4; momentum four; моментум беспроводные; black; True",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.427015
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.38564
+        },
+        {
+          "matched_surface": "Apple; AirPods Pro; AirPods Pro 2; headphones; аирподс про 2; air pods pro second; эпл про наушники; white; True",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.290221
+        },
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.275655
+        }
+      ],
+      "product_id": "bose-quietcomfort-ultra-black",
+      "query_id": "semantic-0009",
+      "score": 0.504164,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "полноразмерные sony с сильным шумоподавлением черные"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; AirPods Pro; AirPods Pro 2; headphones; аирподс про 2; air pods pro second; эпл про наушники; white; True",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.44876
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.360298
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.308939
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.289902
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.244414
+        }
+      ],
+      "product_id": "apple-airpods-pro-2-white",
+      "query_id": "semantic-0010",
+      "score": 0.44876,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-airpods-pro-2-white"
+      ],
+      "text": "белые внутриканальные apple с шумодавом"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bose; QuietComfort; QuietComfort Ultra; headphones; боуз qc ultra; bose qc ultra; кьюси ультра; black; True",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.405681
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.325253
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.314601
+        },
+        {
+          "matched_surface": "Google; Pixel; Pixel 8 Pro; smartphone; гугл пиксель 8 про; pixel8pro; пиксель восемь про; black; 128",
+          "product_id": "google-pixel-8-pro-128-black",
+          "score": 0.25516
+        },
+        {
+          "matched_surface": "Sennheiser; Momentum; Momentum 4 Wireless; headphones; сенхайзер моментум 4; momentum four; моментум беспроводные; black; True",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.229371
+        }
+      ],
+      "product_id": "bose-quietcomfort-ultra-black",
+      "query_id": "semantic-0011",
+      "score": 0.405681,
+      "status": "linked",
+      "target_product_ids": [
+        "bose-quietcomfort-ultra-black"
+      ],
+      "text": "флагманские полноразмерные bose черного цвета"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.358253
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.350962
+        },
+        {
+          "matched_surface": "Sennheiser; Momentum; Momentum 4 Wireless; headphones; сенхайзер моментум 4; momentum four; моментум беспроводные; black; True",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.34333
+        },
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.319315
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.30366
+        }
+      ],
+      "product_id": null,
+      "query_id": "semantic-0012",
+      "score": 0.358253,
+      "status": "unknown",
+      "target_product_ids": [
+        "sennheiser-momentum-4-black"
+      ],
+      "text": "сенхайзер с долгой батареей для поездок"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.392026
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.36223
+        },
+        {
+          "matched_surface": "TCL; C Series; C855; television; тсл c855 55; tcl c 855; си восемь пять пять; 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.354858
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.211904
+        },
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.171249
+        }
+      ],
+      "product_id": null,
+      "query_id": "semantic-0013",
+      "score": 0.392026,
+      "status": "unknown",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "oled телевизор lg на 55 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.551144
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.525383
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.493021
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.454745
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.440591
+        }
+      ],
+      "product_id": "samsung-qn90d-55",
+      "query_id": "semantic-0014",
+      "score": 0.551144,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-qn90d-55"
+      ],
+      "text": "яркий телевизор samsung 55 для светлой комнаты"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.308396
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.282578
+        },
+        {
+          "matched_surface": "TCL; C Series; C855; television; тсл c855 55; tcl c 855; си восемь пять пять; 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.228917
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.202008
+        },
+        {
+          "matched_surface": "Bose; QuietComfort; QuietComfort Ultra; headphones; боуз qc ultra; bose qc ultra; кьюси ультра; black; True",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.169016
+        }
+      ],
+      "product_id": null,
+      "query_id": "semantic-0015",
+      "score": 0.308396,
+      "status": "unknown",
+      "target_product_ids": [
+        "sony-bravia-8-oled-55"
+      ],
+      "text": "sony oled 55 для кино вечером"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "TCL; C Series; C855; television; тсл c855 55; tcl c 855; си восемь пять пять; 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.548578
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.452756
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.440015
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.409908
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.359278
+        }
+      ],
+      "product_id": "tcl-c855-55",
+      "query_id": "semantic-0016",
+      "score": 0.548578,
+      "status": "linked",
+      "target_product_ids": [
+        "tcl-c855-55"
+      ],
+      "text": "mini led телевизор tcl 55 с высокой яркостью"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.34893
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.316588
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.302686
+        },
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.283037
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.276104
+        }
+      ],
+      "product_id": null,
+      "query_id": "semantic-0017",
+      "score": 0.34893,
+      "status": "unknown",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "серебристый холодильник bosch для кухни"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.684627
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.399576
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.362147
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.359124
+        },
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.344055
+        }
+      ],
+      "product_id": "samsung-ww90t554daw-white",
+      "query_id": "semantic-0018",
+      "score": 0.684627,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-ww90t554daw-white"
+      ],
+      "text": "белая стиральная машина samsung на девять килограмм"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.472201
+        },
+        {
+          "matched_surface": "Sennheiser; Momentum; Momentum 4 Wireless; headphones; сенхайзер моментум 4; momentum four; моментум беспроводные; black; True",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.384909
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.363021
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.324448
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.322412
+        }
+      ],
+      "product_id": "roborock-s8-maxv-ultra",
+      "query_id": "semantic-0019",
+      "score": 0.472201,
+      "status": "linked",
+      "target_product_ids": [
+        "dyson-v15-detect"
+      ],
+      "text": "мощный беспроводной вертикальный пылесос dyson"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.439081
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.23211
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.168349
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.143464
+        },
+        {
+          "matched_surface": "Apple; AirPods Pro; AirPods Pro 2; headphones; аирподс про 2; air pods pro second; эпл про наушники; white; True",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.13255
+        }
+      ],
+      "product_id": "roborock-s8-maxv-ultra",
+      "query_id": "semantic-0020",
+      "score": 0.439081,
+      "status": "linked",
+      "target_product_ids": [
+        "roborock-s8-maxv-ultra"
+      ],
+      "text": "робот пылесос roborock со станцией самоочистки"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.393173
+        },
+        {
+          "matched_surface": "OnePlus; OnePlus; OnePlus 12; smartphone; ванплас 12; one plus twelve; 1+12; green; 256",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.360621
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.357235
+        },
+        {
+          "matched_surface": "Google; Pixel; Pixel 8 Pro; smartphone; гугл пиксель 8 про; pixel8pro; пиксель восемь про; black; 128",
+          "product_id": "google-pixel-8-pro-128-black",
+          "score": 0.349831
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.348658
+        }
+      ],
+      "product_id": null,
+      "query_id": "semantic-0021",
+      "score": 0.393173,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "нужен просто хороший телефон"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Dell; XPS; XPS 13 9340; laptop; делл xps 13; xps9340; икспиэс 13; 13.4",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.463663
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.397342
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.375412
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.36512
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.36505
+        }
+      ],
+      "product_id": "dell-xps-13-9340",
+      "query_id": "semantic-0022",
+      "score": 0.463663,
+      "status": "linked",
+      "target_product_ids": [],
+      "text": "посоветуйте ноутбук для работы"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.446595
+        },
+        {
+          "matched_surface": "TCL; C Series; C855; television; тсл c855 55; tcl c 855; си восемь пять пять; 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.425532
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.409853
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.324915
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.257478
+        }
+      ],
+      "product_id": "sony-bravia-8-oled-55",
+      "query_id": "semantic-0023",
+      "score": 0.446595,
+      "status": "linked",
+      "target_product_ids": [],
+      "text": "хочу телевизор 55 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.547567
+        },
+        {
+          "matched_surface": "Apple; AirPods Pro; AirPods Pro 2; headphones; аирподс про 2; air pods pro second; эпл про наушники; white; True",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.496674
+        },
+        {
+          "matched_surface": "Sennheiser; Momentum; Momentum 4 Wireless; headphones; сенхайзер моментум 4; momentum four; моментум беспроводные; black; True",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.487601
+        },
+        {
+          "matched_surface": "Bose; QuietComfort; QuietComfort Ultra; headphones; боуз qc ultra; bose qc ultra; кьюси ультра; black; True",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.463353
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.399008
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "semantic-0024",
+      "score": 0.547567,
+      "status": "linked",
+      "target_product_ids": [],
+      "text": "нужны беспроводные наушники"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.36904
+        },
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.364285
+        },
+        {
+          "matched_surface": "Sony; BRAVIA; BRAVIA 8 OLED; television; сони бравиа 8 55; bravia eight oled; бравия олед; 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.292975
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.243953
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.225394
+        }
+      ],
+      "product_id": null,
+      "query_id": "semantic-0025",
+      "score": 0.36904,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "нужен пылесос для квартиры"
+    }
+  ],
+  "schema_version": "1.0",
+  "selection": {
+    "rule": "end_to_end, accepted_precision, coverage, higher_threshold",
+    "threshold": 0.4,
+    "threshold_metrics": {
+      "0.2": {
+        "accepted_precision": 0.52,
+        "accuracy_at_1": 0.65,
+        "answerable_count": 20,
+        "coverage": 1.0,
+        "end_to_end_accuracy": 0.52,
+        "example_count": 25,
+        "negative_accuracy": 0.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.25": {
+        "accepted_precision": 0.52,
+        "accuracy_at_1": 0.65,
+        "answerable_count": 20,
+        "coverage": 1.0,
+        "end_to_end_accuracy": 0.52,
+        "example_count": 25,
+        "negative_accuracy": 0.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.3": {
+        "accepted_precision": 0.5416666666666666,
+        "accuracy_at_1": 0.65,
+        "answerable_count": 20,
+        "coverage": 0.96,
+        "end_to_end_accuracy": 0.52,
+        "example_count": 25,
+        "negative_accuracy": 0.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.35": {
+        "accepted_precision": 0.5454545454545454,
+        "accuracy_at_1": 0.6,
+        "answerable_count": 20,
+        "coverage": 0.88,
+        "end_to_end_accuracy": 0.48,
+        "example_count": 25,
+        "negative_accuracy": 0.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.4": {
+        "accepted_precision": 0.6111111111111112,
+        "accuracy_at_1": 0.55,
+        "answerable_count": 20,
+        "coverage": 0.72,
+        "end_to_end_accuracy": 0.52,
+        "example_count": 25,
+        "negative_accuracy": 0.4,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.45": {
+        "accepted_precision": 0.5833333333333334,
+        "accuracy_at_1": 0.35,
+        "answerable_count": 20,
+        "coverage": 0.48,
+        "end_to_end_accuracy": 0.4,
+        "example_count": 25,
+        "negative_accuracy": 0.6,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.5": {
+        "accepted_precision": 0.75,
+        "accuracy_at_1": 0.3,
+        "answerable_count": 20,
+        "coverage": 0.32,
+        "end_to_end_accuracy": 0.4,
+        "example_count": 25,
+        "negative_accuracy": 0.8,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.55": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.2,
+        "answerable_count": 20,
+        "coverage": 0.16,
+        "end_to_end_accuracy": 0.36,
+        "example_count": 25,
+        "negative_accuracy": 1.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.6": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.15,
+        "answerable_count": 20,
+        "coverage": 0.12,
+        "end_to_end_accuracy": 0.32,
+        "example_count": 25,
+        "negative_accuracy": 1.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.65": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.15,
+        "answerable_count": 20,
+        "coverage": 0.12,
+        "end_to_end_accuracy": 0.32,
+        "example_count": 25,
+        "negative_accuracy": 1.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.7": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 20,
+        "coverage": 0.0,
+        "end_to_end_accuracy": 0.2,
+        "example_count": 25,
+        "negative_accuracy": 1.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.75": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 20,
+        "coverage": 0.0,
+        "end_to_end_accuracy": 0.2,
+        "example_count": 25,
+        "negative_accuracy": 1.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      },
+      "0.8": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 20,
+        "coverage": 0.0,
+        "end_to_end_accuracy": 0.2,
+        "example_count": 25,
+        "negative_accuracy": 1.0,
+        "negative_count": 5,
+        "recall_at_5": 0.9
+      }
+    }
+  }
+}

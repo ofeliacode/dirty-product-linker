@@ -1,0 +1,1085 @@
+{
+  "catalog_sha256": "9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526",
+  "dataset_role": "synthetic_development",
+  "dataset_sha256": "fb4e95e9527dd636f233d69d0435992ae5d51fd272ed470af505454d9d217ffc",
+  "decision_source_counts": {
+    "abstain": 21,
+    "dense_fallback": 1,
+    "lexical": 3
+  },
+  "evaluation_id": "semantic-hybrid-v0.1",
+  "metrics": {
+    "by_slice": {
+      "answerable": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.15,
+        "answerable_count": 20,
+        "coverage": 0.15,
+        "end_to_end_accuracy": 0.15,
+        "example_count": 20,
+        "negative_accuracy": 0.0,
+        "negative_count": 0,
+        "recall_at_5": 1.0
+      },
+      "negative": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 0,
+        "coverage": 0.2,
+        "end_to_end_accuracy": 0.8,
+        "example_count": 5,
+        "negative_accuracy": 0.8,
+        "negative_count": 5,
+        "recall_at_5": 0.0
+      }
+    },
+    "overall": {
+      "accepted_precision": 0.75,
+      "accuracy_at_1": 0.15,
+      "answerable_count": 20,
+      "coverage": 0.16,
+      "end_to_end_accuracy": 0.28,
+      "example_count": 25,
+      "negative_accuracy": 0.8,
+      "negative_count": 5,
+      "recall_at_5": 1.0
+    }
+  },
+  "model": {
+    "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "performance": {
+    "model_load_ms": 5181.867583014537,
+    "query_latency_ms": {
+      "count": 25,
+      "mean": 17.40993336075917,
+      "p50": 19.16520798113197,
+      "p95": 22.438441379927095
+    }
+  },
+  "policy": {
+    "dense_min_margin": 0.12,
+    "dense_min_score": 0.65,
+    "lexical_min_score": 0.42,
+    "lexical_support_score": 0.15
+  },
+  "predictions": [
+    {
+      "candidates": [
+        {
+          "matched_surface": "apple pro headphones",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.193275
+        },
+        {
+          "matched_surface": "apple iphone 15 pro max",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.146769
+        },
+        {
+          "matched_surface": "apple macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.146769
+        },
+        {
+          "matched_surface": "зефирка g14",
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.068057,
+      "dense_score": 0.460904,
+      "lexical_score": 0.193275,
+      "product_id": null,
+      "query_id": "semantic-0001",
+      "score": 0.193275,
+      "status": "unknown",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "самый большой флагман эпл на 256 черный"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "samsung qn90d",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.242151
+        },
+        {
+          "matched_surface": "samsung стиральная 9 кг",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.233529
+        },
+        {
+          "matched_surface": "samsung s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.220048
+        },
+        {
+          "matched_surface": "робот пылесос s8",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.02
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.01153,
+      "dense_score": 0.291192,
+      "lexical_score": 0.242151,
+      "product_id": null,
+      "query_id": "semantic-0002",
+      "score": 0.242151,
+      "status": "unknown",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "флагман самсунг со стилусом серого цвета"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "гугл пиксель 8 pro",
+          "product_id": "google-pixel-8-pro-128-black",
+          "score": 0.125629
+        },
+        {
+          "matched_surface": "роборок s8 maxv",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.017647
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.024939,
+      "dense_score": 0.429448,
+      "lexical_score": 0.125629,
+      "product_id": null,
+      "query_id": "semantic-0003",
+      "score": 0.125629,
+      "status": "unknown",
+      "target_product_ids": [
+        "google-pixel-8-pro-128-black"
+      ],
+      "text": "телефон гугл с чистым андроидом и хорошей камерой"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "ванплас 12",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.255921
+        },
+        {
+          "matched_surface": "леново карбон",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.021951
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.019823,
+      "dense_score": 0.477353,
+      "lexical_score": 0.255921,
+      "product_id": null,
+      "query_id": "semantic-0004",
+      "score": 0.255921,
+      "status": "unknown",
+      "target_product_ids": [
+        "oneplus-12-256-green"
+      ],
+      "text": "зеленый быстрый флагман ванплас на 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "apple macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.245
+        },
+        {
+          "matched_surface": "apple pro headphones",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.192602
+        },
+        {
+          "matched_surface": "apple iphone 15 pro max",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.145
+        },
+        {
+          "matched_surface": "samsung стиральная 9 кг",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.029508
+        },
+        {
+          "matched_surface": "беспроводной дайсон",
+          "product_id": "dyson-v15-detect",
+          "score": 0.015254
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.087062,
+      "dense_score": 0.659215,
+      "lexical_score": 0.245,
+      "product_id": null,
+      "query_id": "semantic-0005",
+      "score": 0.245,
+      "status": "unknown",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "компактный профессиональный ноутбук apple 14 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "dell xps 13 9340",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.142143
+        },
+        {
+          "matched_surface": "samsung стиральная 9 кг",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.028571
+        },
+        {
+          "matched_surface": "леново карбон",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.016364
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.016071
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.079643,
+      "dense_score": 0.650063,
+      "lexical_score": 0.142143,
+      "product_id": null,
+      "query_id": "semantic-0006",
+      "score": 0.142143,
+      "status": "unknown",
+      "target_product_ids": [
+        "dell-xps-13-9340"
+      ],
+      "text": "маленький премиальный ноутбук dell тринадцать дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "леново карбон",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.306838
+        },
+        {
+          "matched_surface": "mbp m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.11
+        },
+        {
+          "matched_surface": "делл xps 13",
+          "product_id": "dell-xps-13-9340",
+          "score": 0.025
+        },
+        {
+          "matched_surface": "беспроводной дайсон",
+          "product_id": "dyson-v15-detect",
+          "score": 0.02
+        },
+        {
+          "matched_surface": "моментум беспроводные",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.019149
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.163931,
+      "dense_score": 0.514164,
+      "lexical_score": 0.306838,
+      "product_id": null,
+      "query_id": "semantic-0007",
+      "score": 0.306838,
+      "status": "unknown",
+      "target_product_ids": [
+        "lenovo-thinkpad-x1-carbon-gen-12"
+      ],
+      "text": "деловой леново из карбона с экраном 14"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "rog g14 2024",
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "score": 0.157368
+        },
+        {
+          "matched_surface": "mbp m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.11
+        },
+        {
+          "matched_surface": "беспроводной дайсон",
+          "product_id": "dyson-v15-detect",
+          "score": 0.03913
+        },
+        {
+          "matched_surface": "моментум беспроводные",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.0375
+        },
+        {
+          "matched_surface": "леново карбон",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.0225
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.027131,
+      "dense_score": 0.407356,
+      "lexical_score": 0.157368,
+      "product_id": null,
+      "query_id": "semantic-0008",
+      "score": 0.157368,
+      "status": "unknown",
+      "target_product_ids": [
+        "asus-rog-zephyrus-g14-2024"
+      ],
+      "text": "игровой асус на 14 дюймов выпуска 2024"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "sony xm5",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.174235
+        },
+        {
+          "matched_surface": "sony бравиа 8 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.142727
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.016981
+        },
+        {
+          "matched_surface": "oneplus oneplus oneplus 12",
+          "product_id": "oneplus-12-256-green",
+          "score": 0.016981
+        },
+        {
+          "matched_surface": "леново карбон",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.016667
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.077149,
+      "dense_score": 0.504164,
+      "lexical_score": 0.174235,
+      "product_id": null,
+      "query_id": "semantic-0009",
+      "score": 0.174235,
+      "status": "unknown",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "полноразмерные sony с сильным шумоподавлением черные"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "apple pro headphones",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.226374
+        },
+        {
+          "matched_surface": "apple iphone 15 pro max",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.164
+        },
+        {
+          "matched_surface": "apple macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.164
+        },
+        {
+          "matched_surface": "samsung стиральная 9 кг",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.035294
+        },
+        {
+          "matched_surface": "моментум беспроводные",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.017647
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.088462,
+      "dense_score": 0.44876,
+      "lexical_score": 0.226374,
+      "product_id": null,
+      "query_id": "semantic-0010",
+      "score": 0.226374,
+      "status": "unknown",
+      "target_product_ids": [
+        "apple-airpods-pro-2-white"
+      ],
+      "text": "белые внутриканальные apple с шумодавом"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "bose qc ultra",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.175798
+        },
+        {
+          "matched_surface": "bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.019565
+        },
+        {
+          "matched_surface": "air pods pro second",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.017308
+        },
+        {
+          "matched_surface": "моментум беспроводные",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.016071
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.080428,
+      "dense_score": 0.405681,
+      "lexical_score": 0.175798,
+      "product_id": null,
+      "query_id": "semantic-0011",
+      "score": 0.175798,
+      "status": "unknown",
+      "target_product_ids": [
+        "bose-quietcomfort-ultra-black"
+      ],
+      "text": "флагманские полноразмерные bose черного цвета"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "сенхайзер моментум 4",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.253472
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "зефирка g14",
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.007291,
+      "dense_score": 0.358253,
+      "lexical_score": 0.253472,
+      "product_id": null,
+      "query_id": "semantic-0012",
+      "score": 0.253472,
+      "status": "unknown",
+      "target_product_ids": [
+        "sennheiser-momentum-4-black"
+      ],
+      "text": "сенхайзер с долгой батареей для поездок"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "lg oled c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.448485
+        },
+        {
+          "matched_surface": "бравия oled",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.238961
+        },
+        {
+          "matched_surface": "samsung qn90d 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.1375
+        },
+        {
+          "matched_surface": "тсл c855 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.1375
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "lexical",
+      "dense_margin": null,
+      "dense_score": null,
+      "lexical_score": 0.448485,
+      "product_id": "lg-oled-c3-55",
+      "query_id": "semantic-0013",
+      "score": 0.448485,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "oled телевизор lg на 55 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "samsung qn90d 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.354201
+        },
+        {
+          "matched_surface": "samsung ww90t554daw",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.2375
+        },
+        {
+          "matched_surface": "samsung s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.229365
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.122222
+        },
+        {
+          "matched_surface": "тсл c855 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.122222
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.025761,
+      "dense_score": 0.551144,
+      "lexical_score": 0.354201,
+      "product_id": null,
+      "query_id": "semantic-0014",
+      "score": 0.354201,
+      "status": "unknown",
+      "target_product_ids": [
+        "samsung-qn90d-55"
+      ],
+      "text": "яркий телевизор samsung 55 для светлой комнаты"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "sony bravia 8 oled",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.322857
+        },
+        {
+          "matched_surface": "lg oled c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.28
+        },
+        {
+          "matched_surface": "sony xm5",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.204167
+        },
+        {
+          "matched_surface": "samsung qn90d 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.148693
+        },
+        {
+          "matched_surface": "тсл c855 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.122222
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.025818,
+      "dense_score": 0.308396,
+      "lexical_score": 0.322857,
+      "product_id": null,
+      "query_id": "semantic-0015",
+      "score": 0.322857,
+      "status": "unknown",
+      "target_product_ids": [
+        "sony-bravia-8-oled-55"
+      ],
+      "text": "sony oled 55 для кино вечером"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "tcl c855",
+          "product_id": "tcl-c855-55",
+          "score": 0.151254
+        },
+        {
+          "matched_surface": "lg oled c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.126471
+        },
+        {
+          "matched_surface": "samsung qn90d 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.11
+        },
+        {
+          "matched_surface": "sony бравиа 8 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.1
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.095822,
+      "dense_score": 0.548578,
+      "lexical_score": 0.151254,
+      "product_id": null,
+      "query_id": "semantic-0016",
+      "score": 0.151254,
+      "status": "unknown",
+      "target_product_ids": [
+        "tcl-c855-55"
+      ],
+      "text": "mini led телевизор tcl 55 с высокой яркостью"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.273333
+        },
+        {
+          "matched_surface": "bose qc ultra",
+          "product_id": "bose-quietcomfort-ultra-black",
+          "score": 0.029032
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.032342,
+      "dense_score": 0.34893,
+      "lexical_score": 0.273333,
+      "product_id": null,
+      "query_id": "semantic-0017",
+      "score": 0.273333,
+      "status": "unknown",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "серебристый холодильник bosch для кухни"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; WW5000T; WW90T554DAW; home_appliance; стиралка самсунг ww90; ww90t554; самсунг стиральная 9 кг; white",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.684627
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.399576
+        },
+        {
+          "matched_surface": "Samsung; Neo QLED; QN90D; television; самсунг qn90d 55; neo qled 90d; куэн 90 д; 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.362147
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.359124
+        },
+        {
+          "matched_surface": "Roborock; S Series; S8 MaxV Ultra; home_appliance; роборок s8 maxv; s8 max v ultra; робот пылесос s8; True",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.344055
+        }
+      ],
+      "decision_source": "dense_fallback",
+      "dense_margin": 0.285051,
+      "dense_score": 0.684627,
+      "lexical_score": 0.391803,
+      "product_id": "samsung-ww90t554daw-white",
+      "query_id": "semantic-0018",
+      "score": 0.684627,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-ww90t554daw-white"
+      ],
+      "text": "белая стиральная машина samsung на девять килограмм"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "беспроводной дайсон",
+          "product_id": "dyson-v15-detect",
+          "score": 0.320779
+        },
+        {
+          "matched_surface": "робот пылесос s8",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.225735
+        },
+        {
+          "matched_surface": "моментум беспроводные",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.126316
+        },
+        {
+          "matched_surface": "samsung стиральная 9 кг",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.031579
+        },
+        {
+          "matched_surface": "sony xm5",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.020455
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.087292,
+      "dense_score": 0.472201,
+      "lexical_score": 0.320779,
+      "product_id": null,
+      "query_id": "semantic-0019",
+      "score": 0.320779,
+      "status": "unknown",
+      "target_product_ids": [
+        "dyson-v15-detect"
+      ],
+      "text": "мощный беспроводной вертикальный пылесос dyson"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "робот пылесос s8",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.424444
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "зефирка g14",
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "lexical",
+      "dense_margin": null,
+      "dense_score": null,
+      "lexical_score": 0.424444,
+      "product_id": "roborock-s8-maxv-ultra",
+      "query_id": "semantic-0020",
+      "score": 0.424444,
+      "status": "linked",
+      "target_product_ids": [
+        "roborock-s8-maxv-ultra"
+      ],
+      "text": "робот пылесос roborock со станцией самоочистки"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "роборок s8 maxv",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.026471
+        },
+        {
+          "matched_surface": "беспроводной дайсон",
+          "product_id": "dyson-v15-detect",
+          "score": 0.023077
+        },
+        {
+          "matched_surface": "моментум беспроводные",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.021951
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.032552,
+      "dense_score": 0.393173,
+      "lexical_score": 0.026471,
+      "product_id": null,
+      "query_id": "semantic-0021",
+      "score": 0.026471,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "нужен просто хороший телефон"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "леново карбон",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.025714
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.025
+        },
+        {
+          "matched_surface": "робот пылесос s8",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.024324
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.066321,
+      "dense_score": 0.463663,
+      "lexical_score": 0.025714,
+      "product_id": null,
+      "query_id": "semantic-0022",
+      "score": 0.025714,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "посоветуйте ноутбук для работы"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.183333
+        },
+        {
+          "matched_surface": "samsung qn90d 55",
+          "product_id": "samsung-qn90d-55",
+          "score": 0.183333
+        },
+        {
+          "matched_surface": "тсл c855 55",
+          "product_id": "tcl-c855-55",
+          "score": 0.183333
+        },
+        {
+          "matched_surface": "sony бравиа 8 55",
+          "product_id": "sony-bravia-8-oled-55",
+          "score": 0.157143
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.021063,
+      "dense_score": 0.446595,
+      "lexical_score": 0.183333,
+      "product_id": null,
+      "query_id": "semantic-0023",
+      "score": 0.183333,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "хочу телевизор 55 дюймов"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "моментум беспроводные",
+          "product_id": "sennheiser-momentum-4-black",
+          "score": 0.547727
+        },
+        {
+          "matched_surface": "беспроводной дайсон",
+          "product_id": "dyson-v15-detect",
+          "score": 0.232258
+        },
+        {
+          "matched_surface": "леново карбон",
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "score": 0.036
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "lexical",
+      "dense_margin": null,
+      "dense_score": null,
+      "lexical_score": 0.547727,
+      "product_id": "sennheiser-momentum-4-black",
+      "query_id": "semantic-0024",
+      "score": 0.547727,
+      "status": "linked",
+      "target_product_ids": [],
+      "text": "нужны беспроводные наушники"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "робот пылесос s8",
+          "product_id": "roborock-s8-maxv-ultra",
+          "score": 0.293506
+        },
+        {
+          "matched_surface": "стиралка samsung ww90",
+          "product_id": "samsung-ww90t554daw-white",
+          "score": 0.023684
+        },
+        {
+          "matched_surface": "аирподс pro 2",
+          "product_id": "apple-airpods-pro-2-white",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        }
+      ],
+      "decision_source": "abstain",
+      "dense_margin": 0.004755,
+      "dense_score": 0.36904,
+      "lexical_score": 0.293506,
+      "product_id": null,
+      "query_id": "semantic-0025",
+      "score": 0.293506,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "нужен пылесос для квартиры"
+    }
+  ],
+  "schema_version": "1.0"
+}
