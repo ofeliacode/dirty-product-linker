@@ -41,9 +41,13 @@ class AnalysisResponse(ApiModel):
 
     text: str
     status: Literal["linked", "unknown"]
-    decision_source: Literal["lexical", "feature_reranker"]
+    decision_source: str
     score: float = Field(ge=0, le=1)
+    confidence: float = Field(ge=0, le=1)
     processing_ms: float = Field(ge=0)
+    model_version: str
     catalog_version: str
+    product_id: str | None = None
+    category: str | None = None
     selected_product: ProductSummary | None = None
     candidates: list[CandidateResponse] = Field(default_factory=list)
