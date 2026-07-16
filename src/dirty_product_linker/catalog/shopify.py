@@ -49,7 +49,7 @@ def _required_string(record: Mapping[str, object], field: str, reason: str) -> s
 def _slug(value: str) -> str:
     ascii_value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode()
     slug = re.sub(r"[^a-z0-9]+", "-", ascii_value.casefold()).strip("-")
-    return slug[:60] or "product"
+    return slug[:60].strip("-") or "product"
 
 
 def _source_product_id(*, title: str, brand: str, source_category: str) -> str:

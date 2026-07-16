@@ -43,3 +43,15 @@ PYTHONPATH=src .venv/bin/python scripts/import_shopify_catalog.py --limit 1000
 It writes a validated local JSONL catalog and an audit report without committing the
 downloaded data to Git. See [docs/source-data.md](docs/source-data.md) for provenance,
 limitations, and the live smoke-test result.
+
+Build a deterministic balanced release from the imported products:
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/build_catalog.py \
+  --config configs/data/catalog_v1.yaml
+```
+
+The taxonomy, deduplication, balanced selection, manifest, and checksum process is
+documented in [docs/catalog-building.md](docs/catalog-building.md). A full source scan
+has not completed yet, so the current local smoke output is not presented as the
+final benchmark catalog.

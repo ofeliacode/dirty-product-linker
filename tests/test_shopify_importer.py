@@ -76,3 +76,18 @@ def test_phone_case_is_rejected_instead_of_becoming_a_smartphone() -> None:
 
     assert result.accepted == 0
     assert result.rejection_reasons == {"unsupported_category": 1}
+
+
+def test_long_title_does_not_leave_a_trailing_hyphen_in_product_id() -> None:
+    row = {
+        "product_title": "a" * 59 + " extended model name",
+        "ground_truth_brand": "Example",
+        "ground_truth_category": (
+            "Home & Garden > Household Appliances > Laundry Appliances"
+        ),
+        "ground_truth_is_secondhand": False,
+    }
+
+    product = convert_shopify_record(row, taxonomy=TAXONOMY)
+
+    assert "--" not in product.product_id
