@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+dist/
+build/
+models/*.bin
+models/*.pt
+models/*.safetensors
+reports/tmp/
