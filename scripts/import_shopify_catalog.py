@@ -11,6 +11,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=1000, help="Maximum source rows to read")
     parser.add_argument(
+        "--progress-every",
+        type=int,
+        default=1000,
+        help="Print progress after this many source rows",
+    )
+    parser.add_argument(
         "--taxonomy",
         type=Path,
         default=Path("configs/data/taxonomy.yaml"),
@@ -40,6 +46,8 @@ def main() -> None:
         catalog_path=args.output,
         report_path=args.report,
         taxonomy=taxonomy,
+        progress_every=args.progress_every,
+        on_progress=lambda read: print(f"Processed {read} source rows", flush=True),
     )
     print(
         f"Read {result.read}; accepted {result.accepted}; rejected {result.rejected}. "

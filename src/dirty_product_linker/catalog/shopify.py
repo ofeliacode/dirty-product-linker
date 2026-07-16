@@ -5,7 +5,7 @@ import json
 import re
 import unicodedata
 from collections import Counter
-from collections.abc import Iterable, Mapping
+from collections.abc import Callable, Iterable, Mapping
 from dataclasses import dataclass
 
 from dirty_product_linker.catalog.taxonomy import TaxonomyMap
@@ -105,8 +105,13 @@ def import_shopify_records(
     records: Iterable[Mapping[str, object]],
     *,
     taxonomy: TaxonomyMap,
+    progress_every: int = 1000,
+    on_progress: Callable[[int], None] | None = None,
 ) -> ShopifyImportResult:
     """Convert rows while retaining counts for every rejected record."""
+
+    if progress_every < 1:
+        raise ValueError("progress_every must be at least 1")
 
     products: list[Product] = []
     rejection_reasons: Counter[str] = Counter()
@@ -118,6 +123,8 @@ def import_shopify_records(
             products.append(convert_shopify_record(record, taxonomy=taxonomy))
         except ShopifyRecordRejected as error:
             rejection_reasons[error.reason] += 1
+        if on_progress is not None and read % progress_every == 0:
+            on_progress(read)
 
     return ShopifyImportResult(
         read=read,

@@ -1,7 +1,7 @@
 """I/O boundary for streaming and writing the Shopify catalog import."""
 
 import json
-from collections.abc import Iterable, Iterator, Mapping
+from collections.abc import Callable, Iterable, Iterator, Mapping
 from importlib import import_module
 from itertools import islice
 from pathlib import Path
@@ -57,10 +57,17 @@ def write_shopify_import(
     catalog_path: Path,
     report_path: Path,
     taxonomy: TaxonomyMap,
+    progress_every: int = 1000,
+    on_progress: Callable[[int], None] | None = None,
 ) -> ShopifyImportResult:
     """Validate source rows and atomically describe what was accepted or rejected."""
 
-    result = import_shopify_records(records, taxonomy=taxonomy)
+    result = import_shopify_records(
+        records,
+        taxonomy=taxonomy,
+        progress_every=progress_every,
+        on_progress=on_progress,
+    )
     catalog_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
 

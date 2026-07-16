@@ -91,3 +91,17 @@ def test_long_title_does_not_leave_a_trailing_hyphen_in_product_id() -> None:
     product = convert_shopify_record(row, taxonomy=TAXONOMY)
 
     assert "--" not in product.product_id
+
+
+def test_import_reports_progress_at_the_requested_interval() -> None:
+    rows = load_fixture_rows()[:5]
+    progress_events: list[int] = []
+
+    import_shopify_records(
+        rows,
+        taxonomy=TAXONOMY,
+        progress_every=2,
+        on_progress=progress_events.append,
+    )
+
+    assert progress_events == [2, 4]
