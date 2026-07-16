@@ -82,3 +82,18 @@ candidates remain separately marked `synthetic`; the review attestation records 
 promotion to human-reviewed data. The freeze command enforces human provenance,
 catalog references, unique IDs, deterministic ordering, and checksums. See
 [docs/benchmark-review.md](docs/benchmark-review.md) for the workflow and boundaries.
+
+## Run the lexical baseline
+
+The first dependency-free product linker normalizes noisy text and ranks catalog
+models, families, and aliases with token and character n-gram similarity:
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/evaluate_lexical_baseline.py
+```
+
+On the frozen 20-example seed benchmark it measured Accuracy@1 `0.733`, negative
+accuracy `1.000`, end-to-end accuracy `0.800`, accepted precision `1.000`, and
+coverage `0.550`. These are seed results, not production claims. See
+[docs/lexical-baseline.md](docs/lexical-baseline.md) for the full error analysis and
+limitations.
