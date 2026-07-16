@@ -60,3 +60,19 @@ class AnalysisResponse(ApiModel):
     detected_brand: str | None = None
     selected_product: ProductSummary | None = None
     candidates: list[CandidateResponse] = Field(default_factory=list)
+
+
+class LinkedMention(ApiModel):
+    """One exact source span resolved independently against the catalog."""
+
+    text: str
+    start: int = Field(ge=0)
+    end: int = Field(gt=0)
+    result: AnalysisResponse
+
+
+class ExtractionResponse(ApiModel):
+    """All explicit product mentions found in one customer message."""
+
+    text: str
+    mentions: list[LinkedMention] = Field(default_factory=list)
