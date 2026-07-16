@@ -115,6 +115,51 @@ class AnnotatedQuery(StrictModel):
         return self
 
 
+class ProductMentionAnnotation(StrictModel):
+    """One complete product mention linked to one canonical catalog record."""
+
+    start: int = Field(ge=0)
+    end: int = Field(gt=0)
+    text: NonEmptyString
+    product_id: ProductId
+
+    @model_validator(mode="after")
+    def end_must_follow_start(self) -> "ProductMentionAnnotation":
+        if self.end <= self.start:
+            raise ValueError("mention end must be greater than start")
+        return self
+
+
+class MultiProductQuery(StrictModel):
+    """Evaluation query with zero or more independently linked product spans."""
+
+    schema_version: str = "1.0"
+    query_id: ProductId
+    text: NonEmptyString
+    language: NonEmptyString
+    slice_name: NonEmptyString
+    noise_types: list[NonEmptyString] = Field(default_factory=list)
+    mentions: list[ProductMentionAnnotation] = Field(default_factory=list)
+    provenance: DataProvenance
+
+    @model_validator(mode="after")
+    def validate_mention_offsets(self) -> "MultiProductQuery":
+        occupied: set[int] = set()
+        for mention in self.mentions:
+            if (
+                mention.end > len(self.text)
+                or self.text[mention.start : mention.end] != mention.text
+            ):
+                raise ValueError(
+                    f"mention offsets do not match source text for {mention.text!r}"
+                )
+            positions = set(range(mention.start, mention.end))
+            if occupied & positions:
+                raise ValueError("product mentions cannot overlap")
+            occupied.update(positions)
+        return self
+
+
 class QueryProductJudgment(StrictModel):
     """One immutable relevance judgment imported from Amazon ESCI.
 
