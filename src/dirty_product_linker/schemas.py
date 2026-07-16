@@ -1,7 +1,7 @@
 """Versioned data contracts for catalog records and annotated queries."""
 
 from enum import StrEnum
-from typing import Annotated
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
 
@@ -48,6 +48,15 @@ class DataProvenance(StrEnum):
     HUMAN = "human"
     PUBLIC_DATASET = "public_dataset"
     SYNTHETIC = "synthetic"
+
+
+class EsciLabel(StrEnum):
+    """Amazon ESCI relevance between one query and one product."""
+
+    EXACT = "E"
+    SUBSTITUTE = "S"
+    COMPLEMENT = "C"
+    IRRELEVANT = "I"
 
 
 class Product(StrictModel):
@@ -104,3 +113,21 @@ class AnnotatedQuery(StrictModel):
             raise ValueError("unanswerable query cannot have target products")
 
         return self
+
+
+class QueryProductJudgment(StrictModel):
+    """One immutable relevance judgment imported from Amazon ESCI.
+
+    This source contract deliberately stays separate from ``Product`` because
+    ESCI does not provide the product taxonomy required by our catalog schema.
+    """
+
+    schema_version: str = "1.0"
+    source_example_id: int = Field(ge=0)
+    source_query_id: int = Field(ge=0)
+    query: NonEmptyString
+    source_product_id: NonEmptyString
+    locale: Literal["us", "es", "jp"]
+    label: EsciLabel
+    source_split: Literal["train", "test"]
+    source_revision: NonEmptyString

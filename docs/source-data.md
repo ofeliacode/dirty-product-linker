@@ -1,4 +1,4 @@
-# Source data registry and Shopify import
+# Source data registry and streaming imports
 
 Third-party data is treated as a versioned input, not as an implicit dependency. The
 registry at `configs/data/sources.yaml` records the dataset ID, exact revision,
@@ -59,3 +59,35 @@ records were home appliances. This is an integration smoke test, not a model met
 or a representative category sample; the source has a broad taxonomy while v1
 intentionally accepts only five categories.
 
+## Amazon ESCI query-product judgments
+
+The second registered source is Amazon's official
+[`Shopping Queries Dataset`](https://github.com/amazon-science/esci-data), accessed
+through the Hugging Face mirror
+[`milistu/amazon-esci-data`](https://huggingface.co/datasets/milistu/amazon-esci-data).
+The registry records both the official origin and the exact mirror revision
+`3bf15ee2b5c6483fc3b96f8656d0989bf33a18b5`.
+
+ESCI supplies real shopping queries and query-product relevance judgments:
+
+- `E`: exact match;
+- `S`: substitute;
+- `C`: complement;
+- `I`: irrelevant.
+
+This supports retrieval evaluation, relevance classification, and hard-negative
+mining. It does not contain a product taxonomy, Russian queries, or NER spans, so it
+cannot replace our categorized catalog or frozen Russian noisy-query test set.
+
+Import a bounded sample from the source training split:
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/import_esci_queries.py --limit 1000
+```
+
+The command intentionally rejects a request for the source `test` split. That split
+must remain isolated from training and development to prevent evaluation leakage.
+The first live smoke test read and accepted 100 pinned training judgments with zero
+schema rejections: 60 Exact, 22 Substitute, 1 Complement, and 17 Irrelevant; 61 were
+US English and 39 Spanish. These counts only verify integration and are not claimed
+to represent the full dataset distribution.

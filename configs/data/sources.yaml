@@ -20,3 +20,32 @@ sources:
       - ground_truth_brand
       - ground_truth_category
       - ground_truth_is_secondhand
+  amazon_esci_queries:
+    provider: huggingface
+    dataset_id: milistu/amazon-esci-data
+    config: queries
+    revision: 3bf15ee2b5c6483fc3b96f8656d0989bf33a18b5
+    license: apache-2.0
+    origin: https://github.com/amazon-science/esci-data
+    mirror: https://huggingface.co/datasets/milistu/amazon-esci-data
+    splits:
+      - train
+      - test
+    purposes:
+      - query_product_relevance
+      - retrieval_evaluation
+      - hard_negative_mining
+    prohibited_purposes:
+      - product_taxonomy_ground_truth
+      - russian_noisy_query_test_set
+      - training_on_source_test_split
+    columns:
+      - example_id
+      - query
+      - query_id
+      - product_id
+      - product_locale
+      - esci_label
+      - small_version
+      - large_version
+      - split

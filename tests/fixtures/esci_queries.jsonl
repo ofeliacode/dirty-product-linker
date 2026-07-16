@@ -1,0 +1,4 @@
+{"example_id": 1001, "query": "iphone 15 pro max", "query_id": 501, "product_id": "B0CHX1W1XY", "product_locale": "us", "esci_label": "E", "small_version": 1, "large_version": 1, "split": "train"}
+{"example_id": 1002, "query": "iphone 15 case", "query_id": 502, "product_id": "B0CASE0001", "product_locale": "us", "esci_label": "C", "small_version": 1, "large_version": 1, "split": "train"}
+{"example_id": 1003, "query": "", "query_id": 503, "product_id": "B0EMPTY001", "product_locale": "us", "esci_label": "I", "small_version": 0, "large_version": 1, "split": "train"}
+{"example_id": 1004, "query": "telefono", "query_id": 504, "product_id": "B0PHONE001", "product_locale": "xx", "esci_label": "E", "small_version": 1, "large_version": 1, "split": "train"}

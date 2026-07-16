@@ -57,3 +57,19 @@ and checksum process is documented in
 completed, but its supported output is heavily concentrated in home appliances; a
 second licensed source is required before this catalog can serve as the five-category
 benchmark matrix.
+
+## Import query-product relevance judgments
+
+Amazon ESCI is registered separately from the category catalog because it answers a
+different question: how relevant is a product to a real shopping query? Import a
+small, pinned, streaming sample of its training split with:
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/import_esci_queries.py --limit 1000
+```
+
+The importer preserves the ESCI label (Exact, Substitute, Complement, or Irrelevant),
+locale, original IDs, source split, and source revision. The official test split is
+intentionally blocked from this development-data command to prevent evaluation
+leakage. ESCI has no product-category ground truth, so it is not used to fill gaps in
+the five-category catalog.

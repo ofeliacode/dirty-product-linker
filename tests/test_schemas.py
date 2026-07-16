@@ -5,7 +5,9 @@ from dirty_product_linker.schemas import (
     AnnotatedQuery,
     EntityAnnotation,
     EntityType,
+    EsciLabel,
     Product,
+    QueryProductJudgment,
 )
 
 
@@ -109,5 +111,39 @@ def test_unanswerable_query_cannot_have_target_products() -> None:
                 "target_product_ids": ["apple-iphone-15-pro-max-256-black"],
                 "answerable": False,
                 "provenance": "human",
+            }
+        )
+
+
+def test_query_product_judgment_preserves_the_source_split() -> None:
+    judgment = QueryProductJudgment.model_validate(
+        {
+            "source_example_id": 42,
+            "source_query_id": 7,
+            "query": "iphone 15 pro max",
+            "source_product_id": "B0CHX1W1XY",
+            "locale": "us",
+            "label": "E",
+            "source_split": "train",
+            "source_revision": "abc123",
+        }
+    )
+
+    assert judgment.label is EsciLabel.EXACT
+    assert judgment.source_split == "train"
+
+
+def test_query_product_judgment_rejects_unknown_esci_label() -> None:
+    with pytest.raises(ValidationError):
+        QueryProductJudgment.model_validate(
+            {
+                "source_example_id": 42,
+                "source_query_id": 7,
+                "query": "iphone 15 pro max",
+                "source_product_id": "B0CHX1W1XY",
+                "locale": "us",
+                "label": "UNKNOWN",
+                "source_split": "train",
+                "source_revision": "abc123",
             }
         )
