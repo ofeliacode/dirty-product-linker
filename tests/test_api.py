@@ -80,6 +80,22 @@ def test_link_endpoint_rejects_blank_or_oversized_text() -> None:
     assert oversized.status_code == 422
 
 
+def test_cors_allows_the_public_github_pages_frontend() -> None:
+    response = client().options(
+        "/v1/link",
+        headers={
+            "Origin": "https://ofeliacode.github.io",
+            "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "content-type",
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == (
+        "https://ofeliacode.github.io"
+    )
+
+
 def test_default_runtime_resolves_a_dirty_alias_from_demo_catalog() -> None:
     response = TestClient(
         create_app(service=LexicalLinkingService.from_catalog(DEFAULT_CATALOG))
