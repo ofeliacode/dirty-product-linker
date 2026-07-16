@@ -1,0 +1,22 @@
+schema_version: "1.0"
+sources:
+  shopify_product_catalogue:
+    provider: huggingface
+    dataset_id: Shopify/product-catalogue
+    revision: d5c517c509f5aca99053897ef1de797d6d7e5aa5
+    license: apache-2.0
+    homepage: https://huggingface.co/datasets/Shopify/product-catalogue
+    splits:
+      - train
+    purposes:
+      - catalog_bootstrap
+      - category_classification
+    prohibited_purposes:
+      - entity_linking_ground_truth
+      - frozen_query_test_set
+    columns:
+      - product_title
+      - product_description
+      - ground_truth_brand
+      - ground_truth_category
+      - ground_truth_is_secondhand

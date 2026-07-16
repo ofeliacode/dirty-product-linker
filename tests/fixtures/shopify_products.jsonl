@@ -1,0 +1,7 @@
+{"product_title":"Apple iPhone 15 Pro Max 256GB","product_description":"Flagship smartphone","ground_truth_brand":"Apple","ground_truth_category":"Electronics > Communications > Telephony > Mobile Phones","ground_truth_is_secondhand":false}
+{"product_title":"ThinkPad X1 Carbon","product_description":"Business notebook","ground_truth_brand":"Lenovo","ground_truth_category":"Electronics > Computers > Laptops","ground_truth_is_secondhand":false}
+{"product_title":"WH-1000XM5 Wireless Headphones","product_description":"Noise cancelling","ground_truth_brand":"Sony","ground_truth_category":"Electronics > Audio > Audio Components > Headphones","ground_truth_is_secondhand":false}
+{"product_title":"OLED C3 55 inch Television","product_description":"OLED television","ground_truth_brand":"LG","ground_truth_category":"Electronics > Video > Televisions","ground_truth_is_secondhand":false}
+{"product_title":"Series 6 Dishwasher","product_description":"Built-in dishwasher","ground_truth_brand":"Bosch","ground_truth_category":"Home & Garden > Kitchen & Dining > Kitchen Appliances > Dishwashers","ground_truth_is_secondhand":false}
+{"product_title":"Panama Man","product_description":"Straw hat","ground_truth_brand":"100% Capri","ground_truth_category":"Apparel & Accessories > Clothing Accessories > Hats > Panama Hats","ground_truth_is_secondhand":false}
+{"product_title":"Mystery phone","product_description":"Missing manufacturer","ground_truth_brand":"","ground_truth_category":"Electronics > Communications > Telephony > Mobile Phones","ground_truth_is_secondhand":false}
