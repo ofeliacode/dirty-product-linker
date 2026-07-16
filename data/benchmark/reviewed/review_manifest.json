@@ -1,0 +1,14 @@
+{
+  "attestation": "reviewer approved every row and its annotations",
+  "candidate_sha256": "5e4a14b69ce225895ae7108e5701ec4925391477fbc94cffbfbd6b1621541d1a",
+  "example_count": 20,
+  "reviewed_at": "2026-07-16",
+  "reviewed_sha256": "d10ad0208dc2351c0fefd4312968775d08359b33c43558d9b4f6835502ff31c9",
+  "reviewer": "ofeliacode",
+  "schema_version": "1.0",
+  "slice_counts": {
+    "ambiguous": 3,
+    "dirty": 12,
+    "negative": 5
+  }
+}

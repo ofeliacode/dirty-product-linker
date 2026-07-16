@@ -28,8 +28,10 @@ The first pool contains 20 schema-valid proposals:
 | `ambiguous` | 3 | More than one catalog product is a justified candidate |
 | `negative` | 5 | No product request, unsupported category, or out-of-catalog product |
 
-This is a workflow seed, not enough data for credible final model metrics. After the
-process is validated, independent human-authored examples should expand every slice.
+The initial pool was reviewed by `ofeliacode` on 2026-07-16 and frozen as
+`ru-dirty-v0.1`. It remains a workflow seed, not enough data for credible final model
+metrics. Independent human-authored examples should expand every slice in a new
+benchmark version.
 
 ## Review checklist
 
@@ -57,6 +59,11 @@ The command rejects synthetic rows, duplicate query IDs, and unknown target prod
 IDs. It writes rows in deterministic order and records both the benchmark SHA-256 and
 a checksum of the catalog product-ID set. The checksum makes later benchmark or
 catalog drift visible.
+
+The frozen v0.1 release contains 20 examples and has benchmark SHA-256
+`df8473ba72bde5e19eb5e5de668836fbcfeaffb67b4e553026c5971079d02d53`.
+The review manifest retains the reviewer, review date, candidate checksum, and
+reviewed-data checksum.
 
 ## Testing and boundaries
 

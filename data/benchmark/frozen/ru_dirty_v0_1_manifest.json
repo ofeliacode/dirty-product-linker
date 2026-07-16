@@ -1,0 +1,13 @@
+{
+  "benchmark_version": "ru-dirty-v0.1",
+  "catalog_product_ids_sha256": "4b04b6c9f8c9ce8dfe2496eecdd5af7dbd8bdb6a4abeb940cfcd374e715fe721",
+  "example_count": 20,
+  "provenance_requirement": "human",
+  "schema_version": "1.0",
+  "sha256": "df8473ba72bde5e19eb5e5de668836fbcfeaffb67b4e553026c5971079d02d53",
+  "slice_counts": {
+    "ambiguous": 3,
+    "dirty": 12,
+    "negative": 5
+  }
+}

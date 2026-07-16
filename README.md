@@ -76,9 +76,9 @@ the five-category catalog.
 
 ## Build the Russian dirty-query benchmark
 
-The repository includes 20 AI-authored annotation candidates covering dirty,
-ambiguous, and negative queries. They are deliberately marked `synthetic` and cannot
-be frozen until a person reviews or edits every row. The freeze command enforces
-human provenance, catalog references, unique IDs, deterministic ordering, and
-checksums. See [docs/benchmark-review.md](docs/benchmark-review.md) for the review
-workflow and its boundaries.
+The repository includes the reviewed and frozen `ru-dirty-v0.1` seed benchmark:
+20 examples covering dirty, ambiguous, and negative queries. The original AI-authored
+candidates remain separately marked `synthetic`; the review attestation records their
+promotion to human-reviewed data. The freeze command enforces human provenance,
+catalog references, unique IDs, deterministic ordering, and checksums. See
+[docs/benchmark-review.md](docs/benchmark-review.md) for the workflow and boundaries.

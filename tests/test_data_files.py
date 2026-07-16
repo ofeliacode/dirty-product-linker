@@ -1,3 +1,4 @@
+import hashlib
 import json
 from pathlib import Path
 
@@ -57,3 +58,41 @@ def test_benchmark_candidates_are_valid_but_not_claimed_as_human_reviewed() -> N
     assert len({query.query_id for query in queries}) == len(queries)
     assert all(query.provenance == "synthetic" for query in queries)
     assert all(set(query.target_product_ids) <= product_ids for query in queries)
+
+
+def test_frozen_benchmark_matches_manifest_and_contains_only_reviewed_rows() -> None:
+    benchmark_path = (
+        PROJECT_ROOT / "data/benchmark/frozen/ru_dirty_v0_1.jsonl"
+    )
+    manifest_path = (
+        PROJECT_ROOT / "data/benchmark/frozen/ru_dirty_v0_1_manifest.json"
+    )
+    benchmark_bytes = benchmark_path.read_bytes()
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    rows = [json.loads(line) for line in benchmark_bytes.decode().splitlines() if line]
+    queries = [
+        AnnotatedQuery.model_validate({key: value for key, value in row.items() if key != "slice"})
+        for row in rows
+    ]
+
+    assert hashlib.sha256(benchmark_bytes).hexdigest() == manifest["sha256"]
+    assert len(queries) == manifest["example_count"] == 20
+    assert all(query.provenance == "human" for query in queries)
+    assert {row["slice"] for row in rows} == {"ambiguous", "dirty", "negative"}
+
+
+def test_review_attestation_matches_reviewed_slice_files() -> None:
+    reviewed_dir = PROJECT_ROOT / "data/benchmark/reviewed"
+    manifest = json.loads(
+        (reviewed_dir / "review_manifest.json").read_text(encoding="utf-8")
+    )
+    queries = [
+        AnnotatedQuery.model_validate(row)
+        for path in sorted(reviewed_dir.glob("*.jsonl"))
+        for row in read_jsonl(path)
+    ]
+
+    assert manifest["reviewer"] == "ofeliacode"
+    assert manifest["reviewed_at"] == "2026-07-16"
+    assert len(queries) == manifest["example_count"] == 20
+    assert all(query.provenance == "human" for query in queries)
