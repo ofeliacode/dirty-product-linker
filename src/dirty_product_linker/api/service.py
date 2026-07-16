@@ -9,6 +9,7 @@ from typing import Protocol
 from dirty_product_linker.api.schemas import (
     AnalysisResponse,
     CandidateResponse,
+    DecisionReason,
     ProductSummary,
 )
 from dirty_product_linker.linking.embedding import (
@@ -18,7 +19,7 @@ from dirty_product_linker.linking.embedding import (
 )
 from dirty_product_linker.linking.lexical import LexicalProductLinker, LinkResult
 from dirty_product_linker.linking.pipeline import EndToEndProductLinker
-from dirty_product_linker.linking.reranker import FeatureAwareReranker
+from dirty_product_linker.linking.reranker import FeatureAwareReranker, detect_brand
 from dirty_product_linker.schemas import Product
 
 CATALOG_VERSION = "demo-catalog-v0.2"
@@ -91,12 +92,20 @@ class ProductLinkingService:
             if result.product_id is not None
             else None
         )
+        detected_brand_key = detect_brand(text)
+        detected_brand = self._display_brand(detected_brand_key)
+        decision_source = getattr(result, "decision_source", "lexical")
+        reason = self._decision_reason(
+            status=result.status,
+            decision_source=decision_source,
+            detected_brand_key=detected_brand_key,
+        )
         return AnalysisResponse(
             text=text,
             status=result.status,
             # EndToEndProductLinker returns FeatureAwareResult with this field.
             # getattr keeps the same response mapper reusable for the lexical baseline.
-            decision_source=getattr(result, "decision_source", "lexical"),
+            decision_source=decision_source,
             score=result.score,
             confidence=result.score,
             processing_ms=round((perf_counter() - started_at) * 1000, 3),
@@ -104,6 +113,8 @@ class ProductLinkingService:
             catalog_version=self._catalog_version,
             product_id=result.product_id,
             category=selected.category if selected is not None else None,
+            reason=reason,
+            detected_brand=detected_brand,
             selected_product=selected,
             candidates=candidates,
         )
@@ -117,6 +128,36 @@ class ProductLinkingService:
             score=score,
             matched_surface=matched_surface,
         )
+
+    def _display_brand(self, normalized_brand: str | None) -> str | None:
+        if normalized_brand is None:
+            return None
+        return next(
+            (
+                product.brand
+                for product in self._products.values()
+                if product.brand.casefold() == normalized_brand
+            ),
+            normalized_brand.title(),
+        )
+
+    def _decision_reason(
+        self,
+        *,
+        status: str,
+        decision_source: str,
+        detected_brand_key: str | None,
+    ) -> DecisionReason | None:
+        if status == "linked":
+            return None
+        catalog_brands = {product.brand.casefold() for product in self._products.values()}
+        if detected_brand_key is not None and detected_brand_key not in catalog_brands:
+            return "brand_not_in_catalog"
+        reasons_by_source: dict[str, DecisionReason] = {
+            "abstain_low_margin": "ambiguous_candidates",
+            "abstain_no_identity": "missing_product_identity",
+        }
+        return reasons_by_source.get(decision_source, "low_score")
 
     @staticmethod
     def _summary(product: Product) -> ProductSummary:

@@ -112,6 +112,27 @@ def test_default_runtime_resolves_a_dirty_alias_from_demo_catalog() -> None:
     assert body["processing_ms"] >= 0
 
 
+def test_runtime_explains_a_detected_brand_missing_from_catalog() -> None:
+    service = LexicalLinkingService.from_catalog(DEFAULT_CATALOG)
+
+    result = service.analyze("хочу телефон виво")
+
+    assert result.status == "unknown"
+    assert result.product_id is None
+    assert result.reason == "brand_not_in_catalog"
+    assert result.detected_brand == "Vivo"
+
+
+def test_runtime_reports_low_score_when_no_product_identity_is_detected() -> None:
+    service = LexicalLinkingService.from_catalog(DEFAULT_CATALOG)
+
+    result = service.analyze("какой-нибудь хороший телефон")
+
+    assert result.status == "unknown"
+    assert result.reason == "low_score"
+    assert result.detected_brand is None
+
+
 class ConstantEncoder:
     def encode(self, texts: Sequence[str]) -> list[list[float]]:
         return [[1.0] for _ in texts]

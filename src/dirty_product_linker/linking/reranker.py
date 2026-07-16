@@ -22,6 +22,7 @@ BRAND_ALIASES = {
     "sennheiser": ("sennheiser", "сенхайзер"),
     "sony": ("sony", "сони"),
     "tcl": ("tcl", "тсл"),
+    "vivo": ("vivo", "виво"),
 }
 
 CATEGORY_TERMS = {
@@ -89,6 +90,20 @@ def _brand_evidence(query: str, product: Product) -> float:
     canonical = normalize_text(product.brand)
     aliases = BRAND_ALIASES.get(canonical, (canonical,))
     return float(_contains_phrase(query, aliases))
+
+
+def detect_brand(query: str) -> str | None:
+    """Return a normalized known brand mention, including out-of-catalog brands."""
+
+    normalized_query = normalize_text(query)
+    return next(
+        (
+            brand
+            for brand, aliases in sorted(BRAND_ALIASES.items())
+            if _contains_phrase(normalized_query, aliases)
+        ),
+        None,
+    )
 
 
 def _alias_evidence(query: str, product: Product) -> float:

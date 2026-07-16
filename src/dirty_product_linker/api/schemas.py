@@ -4,6 +4,13 @@ from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints
 
+DecisionReason = Literal[
+    "brand_not_in_catalog",
+    "low_score",
+    "ambiguous_candidates",
+    "missing_product_identity",
+]
+
 
 class ApiModel(BaseModel):
     """Strict base model so client mistakes fail loudly."""
@@ -49,5 +56,7 @@ class AnalysisResponse(ApiModel):
     catalog_version: str
     product_id: str | None = None
     category: str | None = None
+    reason: DecisionReason | None = None
+    detected_brand: str | None = None
     selected_product: ProductSummary | None = None
     candidates: list[CandidateResponse] = Field(default_factory=list)
