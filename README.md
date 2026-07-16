@@ -64,6 +64,9 @@ accuracy `0.833` on a pinned 25-query **synthetic candidate set**. It preserves
 precision `1.000` but gets `0.000` recall on deliberately unseen wording. These are
 development diagnostics, not final holdout claims. See the
 [multi-product evaluation](docs/multi-product-evaluation.md).
+The candidate set can only be promoted after completing the
+[human review checklist](docs/multi-product-review-checklist.md); the guarded command
+records reviewer attestation and refuses to overwrite frozen data.
 
 ## API example
 

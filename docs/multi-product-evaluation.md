@@ -57,3 +57,7 @@ Before this becomes a final holdout, a person must inspect every query, product 
 and half-open offset, correct unnatural wording, add genuinely authored queries, and
 record a reviewer attestation. Until that happens, the candidate provenance remains
 `synthetic` and the report remains under `reports/development/`.
+
+Use the [human review checklist](multi-product-review-checklist.md) and the guarded
+`scripts/promote_multi_product_holdout.py` command. Promotion requires an explicit
+reviewer, date, and `--confirm-all`, and refuses to overwrite a frozen benchmark.
