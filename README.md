@@ -59,6 +59,12 @@ claim. The public free deployment uses the lightweight lexical runtime. Its
 [the lexical evaluation](docs/lexical-baseline.md) and
 [reranker methodology](docs/feature-reranker.md) for limitations and error analysis.
 
+The multi-product rule baseline reaches exact span F1 `0.909` and end-to-end mention
+accuracy `0.833` on a pinned 25-query **synthetic candidate set**. It preserves
+precision `1.000` but gets `0.000` recall on deliberately unseen wording. These are
+development diagnostics, not final holdout claims. See the
+[multi-product evaluation](docs/multi-product-evaluation.md).
+
 ## API example
 
 ```bash
