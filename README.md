@@ -22,7 +22,8 @@ apple-iphone-15-pro-max-256-black · confidence 0.82 · lexical-v0.2
 
 ```mermaid
 flowchart LR
-    A[Noisy customer text] --> B[Normalization]
+    A[Noisy customer text] --> M[Catalog-aware mention extraction]
+    M --> B[Normalize each mention]
     B --> C[Lexical retrieval]
     B --> D[Multilingual embeddings]
     C --> E[Candidate union]
@@ -66,9 +67,23 @@ curl -X POST https://dirty-product-linker-api.onrender.com/v1/link \
   -d '{"text":"ищу 15pm на 256"}'
 ```
 
+Extract and independently link multiple explicit mentions while preserving their
+half-open character offsets:
+
+```bash
+curl -X POST https://dirty-product-linker-api.onrender.com/v1/extract-and-link \
+  -H 'Content-Type: application/json' \
+  -d '{"text":"нужен айфон 15 про макс и наушники sony xm5"}'
+```
+
 The response includes the selected product, ranked candidates, matched surface,
 decision reason, latency, model version, and catalog version. A query such as
 `виво` returns `brand_not_in_catalog` instead of inventing a SKU.
+
+The multi-product extractor is a high-precision rule baseline. It recognizes only
+explicit catalog models and aliases, selects the longest non-overlapping surfaces,
+and may miss unseen wording. This establishes a measurable baseline for a future
+token-classification NER model without presenting rules as trained NER.
 
 ## Current verification
 
@@ -113,9 +128,10 @@ npm run dev
 ```
 
 Open `http://127.0.0.1:5173`. The Vite development server proxies `/v1` and `/health`
-to FastAPI on port `8000`. The page accepts a noisy product mention and displays the
-selected canonical record, confidence, matched alias, top-five candidates, catalog
-version, and request latency. API documentation is available at
+to FastAPI on port `8000`. The page supports both one-mention resolution and
+multi-product extraction. It displays canonical records, confidence, exact source
+offsets, matched aliases, candidates, catalog version, and request latency. API
+documentation is available at
 `http://127.0.0.1:8000/docs`.
 
 Build the production frontend with:
