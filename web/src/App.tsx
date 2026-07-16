@@ -6,6 +6,7 @@ const EXAMPLES = [
   "ищу 15pm на 256",
   "нужен самсунь s24 ultra",
   "сони наушники xm5",
+  "айфон эир",
   "какой-нибудь хороший телефон",
 ];
 
@@ -19,6 +20,15 @@ const CATEGORY_NAMES: Record<string, string> = {
 
 function percent(score: number): string {
   return `${Math.round(score * 100)}%`;
+}
+
+function abstentionTitle(analysis: Analysis): string {
+  if (analysis.reason === "brand_not_in_catalog" && analysis.detected_brand) {
+    return `${analysis.detected_brand} is not in this catalog`;
+  }
+  if (analysis.reason === "ambiguous_candidates") return "Multiple close matches";
+  if (analysis.reason === "missing_product_identity") return "Not enough product identity";
+  return "No reliable catalog match";
 }
 
 function CandidateRow({ candidate, rank }: { candidate: Candidate; rank: number }) {
@@ -158,7 +168,7 @@ export function App() {
                       </div>
                     </>
                   ) : (
-                    <h3>No reliable<br />catalog match</h3>
+                    <h3>{abstentionTitle(analysis)}</h3>
                   )}
                 </div>
 

@@ -21,6 +21,8 @@ export type Analysis = {
   catalog_version: string;
   product_id: string | null;
   category: string | null;
+  reason: "brand_not_in_catalog" | "low_score" | "ambiguous_candidates" | "missing_product_identity" | null;
+  detected_brand: string | null;
   selected_product: ProductSummary | null;
   candidates: Candidate[];
 };

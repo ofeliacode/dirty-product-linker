@@ -26,24 +26,27 @@ button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px sol
 .runtime span { width: 7px; height: 7px; border-radius: 50%; background: #29a56d; box-shadow: 0 0 0 4px rgba(41, 165, 109, .12); }
 
 main { padding: 70px 0 54px; }
-.intro { display: grid; grid-template-columns: 1.2fr 1fr; column-gap: 7vw; align-items: end; margin-bottom: 55px; }
+.intro { display: grid; grid-template-columns: 1.05fr 1fr; column-gap: 7vw; align-items: end; margin-bottom: 46px; }
 .eyebrow { grid-column: 1 / -1; margin: 0 0 22px; color: var(--accent); font: 700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; }
-h1 { margin: 0; font-size: clamp(58px, 7vw, 104px); line-height: .9; letter-spacing: -.065em; font-weight: 560; }
+h1 { margin: 0; font-size: clamp(48px, 5.4vw, 78px); line-height: .94; letter-spacing: -.058em; font-weight: 580; }
 .lede { max-width: 540px; margin: 0 0 4px; font-size: clamp(18px, 1.7vw, 25px); line-height: 1.45; letter-spacing: -.025em; color: var(--muted); }
 
-.workspace { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); border: 1px solid var(--line); background: var(--paper); }
+.workspace { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); border: 1px solid #b9c9bf; background: var(--paper); }
 .query-panel, .result-panel { min-width: 0; padding: clamp(28px, 3.5vw, 52px); }
-.query-panel { border-right: 1px solid var(--line); }
+.query-panel { border-right: 1px solid #b9c9bf; background: #f2f7f3; box-shadow: inset 0 4px 0 var(--accent); }
+.result-panel { background: #fbfcfa; }
+.query-panel .step { border-color: #92b5a2; background: #deeee4; color: var(--accent); }
 .panel-heading { display: flex; gap: 17px; align-items: flex-start; margin-bottom: 42px; }
 .step { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; border: 1px solid var(--line); color: var(--muted); font: 600 10px/1 ui-monospace, monospace; }
 .panel-heading h2 { margin: 0 0 5px; font-size: 16px; letter-spacing: -.02em; }
 .panel-heading p { margin: 0; font-size: 13px; color: var(--muted); }
 label { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 680; }
-textarea { display: block; width: 100%; resize: vertical; min-height: 170px; padding: 20px; border: 1px solid #bdc4be; border-radius: 0; background: white; color: var(--ink); font-size: 20px; line-height: 1.5; transition: border-color 160ms ease; }
-textarea:hover, textarea:focus { border-color: var(--accent); }
+textarea { display: block; width: 100%; resize: vertical; min-height: 170px; padding: 20px; border: 1px solid #89a696; border-radius: 0; background: white; color: var(--ink); font-size: 20px; line-height: 1.5; transition: border-color 160ms ease, box-shadow 160ms ease; }
+textarea:hover { border-color: var(--accent); }
+textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(22, 107, 73, .10); }
 .input-meta { display: flex; justify-content: space-between; margin: 9px 0 23px; color: #818983; font: 500 10px/1.3 ui-monospace, monospace; text-transform: uppercase; letter-spacing: .04em; }
-.primary { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 17px 19px; border: 1px solid var(--ink); border-radius: 0; background: var(--ink); color: white; font-size: 14px; font-weight: 670; cursor: pointer; transition: background 160ms ease, transform 160ms ease; }
-.primary:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); }
+.primary { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 17px 19px; border: 1px solid var(--accent); border-radius: 0; background: var(--accent); color: white; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 160ms ease, transform 160ms ease; }
+.primary:hover:not(:disabled) { background: #0f573b; border-color: #0f573b; }
 .primary:active:not(:disabled) { transform: translateY(1px); }
 .primary:disabled { cursor: not-allowed; opacity: .48; }
 .error { padding: 12px 14px; background: #f8e7e3; color: #8b3025; font-size: 13px; }
@@ -97,7 +100,7 @@ footer a:hover { color: var(--accent); }
   .shell { padding: 0 22px; }
   main { padding-top: 46px; }
   .intro { grid-template-columns: 1fr; gap: 28px; }
-  h1 { font-size: clamp(54px, 15vw, 80px); }
+  h1 { font-size: clamp(48px, 12vw, 68px); }
   .workspace { grid-template-columns: 1fr; }
   .query-panel { border-right: 0; border-bottom: 1px solid var(--line); }
 }
