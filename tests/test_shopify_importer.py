@@ -4,9 +4,11 @@ from pathlib import Path
 import yaml
 
 from dirty_product_linker.catalog.shopify import convert_shopify_record, import_shopify_records
+from dirty_product_linker.catalog.taxonomy import TaxonomyMap
 from dirty_product_linker.schemas import ProductCategory
 
 PROJECT_ROOT = Path(__file__).parents[1]
+TAXONOMY = TaxonomyMap.from_yaml(PROJECT_ROOT / "configs/data/taxonomy.yaml")
 
 
 def load_fixture_rows() -> list[dict[str, object]]:
@@ -29,7 +31,7 @@ def test_source_registry_pins_license_revision_and_allowed_usage() -> None:
 def test_shopify_record_becomes_a_versioned_product() -> None:
     row = load_fixture_rows()[0]
 
-    product = convert_shopify_record(row)
+    product = convert_shopify_record(row, taxonomy=TAXONOMY)
 
     assert product.category is ProductCategory.SMARTPHONE
     assert product.brand == "Apple"
@@ -41,14 +43,14 @@ def test_shopify_record_becomes_a_versioned_product() -> None:
 def test_product_ids_are_deterministic_for_the_same_source_record() -> None:
     row = load_fixture_rows()[0]
 
-    first = convert_shopify_record(row)
-    second = convert_shopify_record(row)
+    first = convert_shopify_record(row, taxonomy=TAXONOMY)
+    second = convert_shopify_record(row, taxonomy=TAXONOMY)
 
     assert first.product_id == second.product_id
 
 
 def test_import_reports_supported_categories_and_rejection_reasons() -> None:
-    result = import_shopify_records(load_fixture_rows())
+    result = import_shopify_records(load_fixture_rows(), taxonomy=TAXONOMY)
 
     assert result.read == 7
     assert result.accepted == 5
@@ -58,3 +60,19 @@ def test_import_reports_supported_categories_and_rejection_reasons() -> None:
         "missing_brand": 1,
         "unsupported_category": 1,
     }
+
+
+def test_phone_case_is_rejected_instead_of_becoming_a_smartphone() -> None:
+    row = {
+        "product_title": "Protective Phone Case",
+        "ground_truth_brand": "CaseCo",
+        "ground_truth_category": (
+            "Electronics > Communications > Telephony > Mobile Phone Accessories > Cases"
+        ),
+        "ground_truth_is_secondhand": False,
+    }
+
+    result = import_shopify_records([row], taxonomy=TAXONOMY)
+
+    assert result.accepted == 0
+    assert result.rejection_reasons == {"unsupported_category": 1}

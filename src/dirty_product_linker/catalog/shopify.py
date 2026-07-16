@@ -8,19 +8,11 @@ from collections import Counter
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
 
-from dirty_product_linker.schemas import Product, ProductCategory
+from dirty_product_linker.catalog.taxonomy import TaxonomyMap
+from dirty_product_linker.schemas import Product
 
 SOURCE_ID = "Shopify/product-catalogue"
 SOURCE_REVISION = "d5c517c509f5aca99053897ef1de797d6d7e5aa5"
-
-_CATEGORY_MARKERS: tuple[tuple[str, ProductCategory], ...] = (
-    ("mobile phones", ProductCategory.SMARTPHONE),
-    ("laptops", ProductCategory.LAPTOP),
-    ("headphones", ProductCategory.HEADPHONES),
-    ("televisions", ProductCategory.TELEVISION),
-    ("appliances", ProductCategory.HOME_APPLIANCE),
-)
-
 
 class ShopifyRecordRejected(ValueError):
     """A source row that cannot safely become a supported catalog product."""
@@ -54,14 +46,6 @@ def _required_string(record: Mapping[str, object], field: str, reason: str) -> s
     return value.strip()
 
 
-def _map_category(source_category: str) -> ProductCategory:
-    normalized = source_category.casefold()
-    for marker, category in _CATEGORY_MARKERS:
-        if marker in normalized:
-            return category
-    raise ShopifyRecordRejected("unsupported_category")
-
-
 def _slug(value: str) -> str:
     ascii_value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode()
     slug = re.sub(r"[^a-z0-9]+", "-", ascii_value.casefold()).strip("-")
@@ -79,7 +63,11 @@ def _source_product_id(*, title: str, brand: str, source_category: str) -> str:
     return f"shopify-{_slug(brand)}-{_slug(title)}-{digest}"
 
 
-def convert_shopify_record(record: Mapping[str, object]) -> Product:
+def convert_shopify_record(
+    record: Mapping[str, object],
+    *,
+    taxonomy: TaxonomyMap,
+) -> Product:
     """Convert one supported Shopify row or raise a reasoned rejection."""
 
     title = _required_string(record, "product_title", "missing_title")
@@ -87,7 +75,9 @@ def convert_shopify_record(record: Mapping[str, object]) -> Product:
     source_category = _required_string(
         record, "ground_truth_category", "missing_source_category"
     )
-    category = _map_category(source_category)
+    category = taxonomy.match(source_category)
+    if category is None:
+        raise ShopifyRecordRejected("unsupported_category")
     is_secondhand = record.get("ground_truth_is_secondhand", False)
 
     if not isinstance(is_secondhand, bool):
@@ -111,7 +101,11 @@ def convert_shopify_record(record: Mapping[str, object]) -> Product:
     )
 
 
-def import_shopify_records(records: Iterable[Mapping[str, object]]) -> ShopifyImportResult:
+def import_shopify_records(
+    records: Iterable[Mapping[str, object]],
+    *,
+    taxonomy: TaxonomyMap,
+) -> ShopifyImportResult:
     """Convert rows while retaining counts for every rejected record."""
 
     products: list[Product] = []
@@ -121,7 +115,7 @@ def import_shopify_records(records: Iterable[Mapping[str, object]]) -> ShopifyIm
     for record in records:
         read += 1
         try:
-            products.append(convert_shopify_record(record))
+            products.append(convert_shopify_record(record, taxonomy=taxonomy))
         except ShopifyRecordRejected as error:
             rejection_reasons[error.reason] += 1
 

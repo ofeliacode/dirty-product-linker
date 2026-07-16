@@ -5,9 +5,11 @@ from types import SimpleNamespace
 import pytest
 
 from dirty_product_linker.catalog.pipeline import stream_shopify_rows, write_shopify_import
+from dirty_product_linker.catalog.taxonomy import TaxonomyMap
 from dirty_product_linker.schemas import Product
 
 PROJECT_ROOT = Path(__file__).parents[1]
+TAXONOMY = TaxonomyMap.from_yaml(PROJECT_ROOT / "configs/data/taxonomy.yaml")
 
 
 def load_fixture_rows() -> list[dict[str, object]]:
@@ -24,6 +26,7 @@ def test_pipeline_writes_valid_products_and_audit_report(tmp_path: Path) -> None
         load_fixture_rows(),
         catalog_path=catalog_path,
         report_path=report_path,
+        taxonomy=TAXONOMY,
     )
 
     with catalog_path.open(encoding="utf-8") as source:

@@ -13,6 +13,7 @@ from dirty_product_linker.catalog.shopify import (
     ShopifyImportResult,
     import_shopify_records,
 )
+from dirty_product_linker.catalog.taxonomy import TaxonomyMap
 
 SOURCE_COLUMNS = [
     "product_title",
@@ -55,10 +56,11 @@ def write_shopify_import(
     *,
     catalog_path: Path,
     report_path: Path,
+    taxonomy: TaxonomyMap,
 ) -> ShopifyImportResult:
     """Validate source rows and atomically describe what was accepted or rejected."""
 
-    result = import_shopify_records(records)
+    result = import_shopify_records(records, taxonomy=taxonomy)
     catalog_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
 

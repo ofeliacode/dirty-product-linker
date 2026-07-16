@@ -1,0 +1,23 @@
+schema_version: "1.0"
+categories:
+  smartphone:
+    exact_paths:
+      - Electronics > Communications > Telephony > Mobile Phones
+    subtree_paths: []
+  laptop:
+    exact_paths:
+      - Electronics > Computers > Laptops
+    subtree_paths: []
+  headphones:
+    exact_paths:
+      - Electronics > Audio > Audio Components > Headphones
+    subtree_paths: []
+  television:
+    exact_paths:
+      - Electronics > Video > Televisions
+    subtree_paths: []
+  home_appliance:
+    exact_paths: []
+    subtree_paths:
+      - Home & Garden > Household Appliances
+      - Home & Garden > Kitchen & Dining > Kitchen Appliances
