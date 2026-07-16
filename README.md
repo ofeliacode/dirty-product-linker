@@ -103,3 +103,20 @@ development set. Compact model matching and weak-category filtering raised its
 end-to-end score from `0.708` to `1.000`; this is a development result, not a new
 unbiased test claim. See [docs/development-set.md](docs/development-set.md) for the
 before/after experiment and evaluation boundary.
+
+## Compare dense and lexical retrieval
+
+An optional pinned multilingual MiniLM baseline compares 384-dimensional cosine
+retrieval with lexical v0.2 on the same synthetic development set:
+
+```bash
+.venv/bin/python -m pip install -e '.[embeddings]'
+HF_HUB_OFFLINE=1 PYTHONPATH=src .venv/bin/python \
+  scripts/evaluate_embedding_development.py
+```
+
+Dense retrieval reached end-to-end `0.833` at p50 `15.869 ms`; lexical v0.2 reached
+`1.000` at p50 `0.158 ms` in the same local run. This negative result is retained
+because dense semantic similarity produced brand/category false positives. See
+[docs/embedding-baseline.md](docs/embedding-baseline.md) for methodology, memory,
+errors, and limitations.

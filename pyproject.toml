@@ -19,6 +19,9 @@ dependencies = [
 data = [
   "datasets>=4.8,<5",
 ]
+embeddings = [
+  "sentence-transformers>=5.2,<6",
+]
 dev = [
   "mypy>=1.15,<2",
   "pytest>=8.3,<9",

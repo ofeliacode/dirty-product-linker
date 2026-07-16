@@ -1,0 +1,1140 @@
+{
+  "dataset_role": "synthetic_development",
+  "dataset_sha256": "1d5b281a5e53851767b08c19e40e87772e8aade31c8b291db6b0d0655b71fbff",
+  "evaluation_id": "embedding-development-v0.1",
+  "lexical_comparison": {
+    "metrics": {
+      "by_slice": {
+        "answerable": {
+          "accepted_precision": 1.0,
+          "accuracy_at_1": 1.0,
+          "answerable_count": 18,
+          "coverage": 1.0,
+          "end_to_end_accuracy": 1.0,
+          "example_count": 18,
+          "negative_accuracy": 0.0,
+          "negative_count": 0,
+          "recall_at_5": 1.0
+        },
+        "negative": {
+          "accepted_precision": 0.0,
+          "accuracy_at_1": 0.0,
+          "answerable_count": 0,
+          "coverage": 0.0,
+          "end_to_end_accuracy": 1.0,
+          "example_count": 6,
+          "negative_accuracy": 1.0,
+          "negative_count": 6,
+          "recall_at_5": 0.0
+        }
+      },
+      "overall": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 1.0,
+        "answerable_count": 18,
+        "coverage": 0.75,
+        "end_to_end_accuracy": 1.0,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      }
+    },
+    "query_latency_ms": {
+      "count": 24,
+      "mean": 0.16453808590692157,
+      "p50": 0.1584164856467396,
+      "p95": 0.19448127131909132
+    },
+    "settings": {
+      "min_score": 0.42,
+      "top_k": 5
+    }
+  },
+  "metrics": {
+    "by_slice": {
+      "answerable": {
+        "accepted_precision": 0.8888888888888888,
+        "accuracy_at_1": 0.8888888888888888,
+        "answerable_count": 18,
+        "coverage": 1.0,
+        "end_to_end_accuracy": 0.8888888888888888,
+        "example_count": 18,
+        "negative_accuracy": 0.0,
+        "negative_count": 0,
+        "recall_at_5": 1.0
+      },
+      "negative": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 0,
+        "coverage": 0.3333333333333333,
+        "end_to_end_accuracy": 0.6666666666666666,
+        "example_count": 6,
+        "negative_accuracy": 0.6666666666666666,
+        "negative_count": 6,
+        "recall_at_5": 0.0
+      }
+    },
+    "overall": {
+      "accepted_precision": 0.8,
+      "accuracy_at_1": 0.8888888888888888,
+      "answerable_count": 18,
+      "coverage": 0.8333333333333334,
+      "end_to_end_accuracy": 0.8333333333333334,
+      "example_count": 24,
+      "negative_accuracy": 0.6666666666666666,
+      "negative_count": 6,
+      "recall_at_5": 1.0
+    }
+  },
+  "model": {
+    "device": "cpu",
+    "embedding_dimensions": 384,
+    "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "license": "apache-2.0",
+    "primary_weight_bytes": 470641600,
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "performance": {
+    "catalog_index_ms": 197.41841597715393,
+    "model_load_ms": 5874.590417020954,
+    "peak_rss_bytes": 1168654336,
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python": "3.12.1",
+    "query_latency_ms": {
+      "count": 24,
+      "mean": 16.07033491988356,
+      "p50": 15.868958027567714,
+      "p95": 17.868384884786792
+    }
+  },
+  "predictions": [
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.648028
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.45184
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.429758
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.292329
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.235615
+        }
+      ],
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "dev-0001",
+      "score": 0.648028,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "айфон15промакс на 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.546224
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.246069
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.199024
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.176272
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.093869
+        }
+      ],
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "dev-0002",
+      "score": 0.546224,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "iphone15pm black"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.514026
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.410652
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.405937
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.400746
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.321708
+        }
+      ],
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "dev-0003",
+      "score": 0.514026,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "эпл 15 pro max 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.718969
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.340363
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.335596
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.323706
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.314255
+        }
+      ],
+      "product_id": "samsung-galaxy-s24-ultra-256-gray",
+      "query_id": "dev-0004",
+      "score": 0.718969,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "galaxys24ultra 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.425917
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.394281
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.364586
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.290399
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.203583
+        }
+      ],
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "dev-0005",
+      "score": 0.425917,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "самсунгс24у серый"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.752509
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.420265
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.402195
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.322575
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.322538
+        }
+      ],
+      "product_id": "samsung-galaxy-s24-ultra-256-gray",
+      "query_id": "dev-0006",
+      "score": 0.752509,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "s24 ultra samsung"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.705701
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.456383
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.395316
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.388543
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.333496
+        }
+      ],
+      "product_id": "apple-macbook-pro-14-m3-512",
+      "query_id": "dev-0007",
+      "score": 0.705701,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "macbookpro14m3 512"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.457193
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.351037
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.339422
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.260399
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.230773
+        }
+      ],
+      "product_id": "apple-macbook-pro-14-m3-512",
+      "query_id": "dev-0008",
+      "score": 0.457193,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "макбукпро 14 м3"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.621888
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.616482
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.415918
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.41362
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.382676
+        }
+      ],
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "dev-0009",
+      "score": 0.621888,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "apple ноут m3 четырнадцать"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.493669
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.404548
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.355424
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.334027
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.321771
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "dev-0010",
+      "score": 0.493669,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "sonywh1000xm5 black"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.507138
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.45065
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.410645
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.388239
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.372294
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "dev-0011",
+      "score": 0.507138,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "сони тысяча xm5"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.736078
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.476285
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.391392
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.383204
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.377823
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "dev-0012",
+      "score": 0.736078,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "wh 1000 xm 5 наушники"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.531152
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.448479
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.32986
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.256554
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.247887
+        }
+      ],
+      "product_id": "lg-oled-c3-55",
+      "query_id": "dev-0013",
+      "score": 0.531152,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "lgoledc3 на 55"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.538092
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.332167
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.283514
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.275634
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.207403
+        }
+      ],
+      "product_id": "lg-oled-c3-55",
+      "query_id": "dev-0014",
+      "score": 0.538092,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "эл джи c3 телевизор"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.449543
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.248441
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.201508
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.201325
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.183201
+        }
+      ],
+      "product_id": "lg-oled-c3-55",
+      "query_id": "dev-0015",
+      "score": 0.449543,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "oled 55 c3 lg"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.692754
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.422932
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.372106
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.302049
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.28612
+        }
+      ],
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "dev-0016",
+      "score": 0.692754,
+      "status": "linked",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "boschkgn39 серебристый"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.409685
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.347937
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.302337
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.232804
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.22799
+        }
+      ],
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "dev-0017",
+      "score": 0.409685,
+      "status": "linked",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "бош холодильник kgn 39"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.587124
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.408278
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.349148
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.336042
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.296912
+        }
+      ],
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "dev-0018",
+      "score": 0.587124,
+      "status": "linked",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "kgn39vl25r bosch"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.225786
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.159576
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.153874
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.126259
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.120189
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0019",
+      "score": 0.225786,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "google pixel 8a"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.411404
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.370908
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.307113
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.292919
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.243259
+        }
+      ],
+      "product_id": "lg-oled-c3-55",
+      "query_id": "dev-0020",
+      "score": 0.411404,
+      "status": "linked",
+      "target_product_ids": [],
+      "text": "зарядка usb c 65w"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.180027
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.147941
+        },
+        {
+          "matched_surface": "Apple; iPhone; iPhone 15 Pro Max; smartphone; айфон 15 про макс; iphone 15 promax; 15pm; black; 256",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.14708
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.116525
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.103414
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0021",
+      "score": 0.180027,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "сравни цены в магазинах"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.190086
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.176535
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.149123
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.122443
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.108105
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0022",
+      "score": 0.190086,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "xiaomi робот пылесос"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.343371
+        },
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.170032
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.151178
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.1222
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.051022
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0023",
+      "score": 0.343371,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "ремонт телевизора рядом"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "Sony; WH-1000X; WH-1000XM5; headphones; сони xm5; sony xm5; наушники xm5; black; True",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.490143
+        },
+        {
+          "matched_surface": "LG; OLED C; OLED C3; television; телек lg c3 55; lg oled c3 55; 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.280467
+        },
+        {
+          "matched_surface": "Samsung; Galaxy S; Galaxy S24 Ultra; smartphone; самсунь s24 ultra; s24u; галакси с24 ультра; gray; 256",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.191436
+        },
+        {
+          "matched_surface": "Apple; MacBook Pro; MacBook Pro 14 M3; laptop; mbp m3 14; макбук про м3 14; 14; 512",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.190489
+        },
+        {
+          "matched_surface": "Bosch; KGN; KGN39VL25R; home_appliance; холодос бош kgn39; bosch kgn39; silver",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.185023
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "dev-0024",
+      "score": 0.490143,
+      "status": "linked",
+      "target_product_ids": [],
+      "text": "наушники airpods pro 2"
+    }
+  ],
+  "schema_version": "1.0",
+  "selection": {
+    "rule": "end_to_end, accepted_precision, coverage, higher_threshold",
+    "threshold": 0.4,
+    "threshold_metrics": {
+      "0.2": {
+        "accepted_precision": 0.7272727272727273,
+        "accuracy_at_1": 0.8888888888888888,
+        "answerable_count": 18,
+        "coverage": 0.9166666666666666,
+        "end_to_end_accuracy": 0.75,
+        "example_count": 24,
+        "negative_accuracy": 0.3333333333333333,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.25": {
+        "accepted_precision": 0.7619047619047619,
+        "accuracy_at_1": 0.8888888888888888,
+        "answerable_count": 18,
+        "coverage": 0.875,
+        "end_to_end_accuracy": 0.7916666666666666,
+        "example_count": 24,
+        "negative_accuracy": 0.5,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.3": {
+        "accepted_precision": 0.7619047619047619,
+        "accuracy_at_1": 0.8888888888888888,
+        "answerable_count": 18,
+        "coverage": 0.875,
+        "end_to_end_accuracy": 0.7916666666666666,
+        "example_count": 24,
+        "negative_accuracy": 0.5,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.35": {
+        "accepted_precision": 0.8,
+        "accuracy_at_1": 0.8888888888888888,
+        "answerable_count": 18,
+        "coverage": 0.8333333333333334,
+        "end_to_end_accuracy": 0.8333333333333334,
+        "example_count": 24,
+        "negative_accuracy": 0.6666666666666666,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.4": {
+        "accepted_precision": 0.8,
+        "accuracy_at_1": 0.8888888888888888,
+        "answerable_count": 18,
+        "coverage": 0.8333333333333334,
+        "end_to_end_accuracy": 0.8333333333333334,
+        "example_count": 24,
+        "negative_accuracy": 0.6666666666666666,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.45": {
+        "accepted_precision": 0.875,
+        "accuracy_at_1": 0.7777777777777778,
+        "answerable_count": 18,
+        "coverage": 0.6666666666666666,
+        "end_to_end_accuracy": 0.7916666666666666,
+        "example_count": 24,
+        "negative_accuracy": 0.8333333333333334,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.5": {
+        "accepted_precision": 0.9230769230769231,
+        "accuracy_at_1": 0.6666666666666666,
+        "answerable_count": 18,
+        "coverage": 0.5416666666666666,
+        "end_to_end_accuracy": 0.75,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.55": {
+        "accepted_precision": 0.875,
+        "accuracy_at_1": 0.3888888888888889,
+        "answerable_count": 18,
+        "coverage": 0.3333333333333333,
+        "end_to_end_accuracy": 0.5416666666666666,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.6": {
+        "accepted_precision": 0.8571428571428571,
+        "accuracy_at_1": 0.3333333333333333,
+        "answerable_count": 18,
+        "coverage": 0.2916666666666667,
+        "end_to_end_accuracy": 0.5,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.65": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.2777777777777778,
+        "answerable_count": 18,
+        "coverage": 0.20833333333333334,
+        "end_to_end_accuracy": 0.4583333333333333,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.7": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.2222222222222222,
+        "answerable_count": 18,
+        "coverage": 0.16666666666666666,
+        "end_to_end_accuracy": 0.4166666666666667,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.75": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 0.05555555555555555,
+        "answerable_count": 18,
+        "coverage": 0.041666666666666664,
+        "end_to_end_accuracy": 0.2916666666666667,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      },
+      "0.8": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 18,
+        "coverage": 0.0,
+        "end_to_end_accuracy": 0.25,
+        "example_count": 24,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 1.0
+      }
+    }
+  }
+}
