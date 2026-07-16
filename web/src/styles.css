@@ -25,7 +25,7 @@ button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px sol
 .runtime { display: flex; align-items: center; gap: 8px; font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 .runtime span { width: 7px; height: 7px; border-radius: 50%; background: #29a56d; box-shadow: 0 0 0 4px rgba(41, 165, 109, .12); }
 
-main { padding: 70px 0 54px; }
+main { padding: 28px 0 54px; }
 .intro { display: grid; grid-template-columns: 1.05fr 1fr; column-gap: 7vw; align-items: end; margin-bottom: 46px; }
 .eyebrow { grid-column: 1 / -1; margin: 0 0 22px; color: var(--accent); font: 700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; }
 h1 { margin: 0; font-size: clamp(48px, 5.4vw, 78px); line-height: .94; letter-spacing: -.058em; font-weight: 580; }
@@ -98,7 +98,7 @@ footer a:hover { color: var(--accent); }
 
 @media (max-width: 860px) {
   .shell { padding: 0 22px; }
-  main { padding-top: 46px; }
+  main { padding-top: 28px; }
   .intro { grid-template-columns: 1fr; gap: 28px; }
   h1 { font-size: clamp(48px, 12vw, 68px); }
   .workspace { grid-template-columns: 1fr; }
@@ -108,6 +108,7 @@ footer a:hover { color: var(--accent); }
 @media (max-width: 520px) {
   .shell { padding: 0 14px; }
   .topbar { height: 68px; }
+  main { padding-top: 22px; }
   .brand > span:last-child { display: none; }
   .intro { margin-bottom: 38px; }
   .lede { font-size: 17px; }
