@@ -1,6 +1,7 @@
 """Explainable dependency-free lexical product-linking baseline."""
 
 from dataclasses import dataclass
+from typing import Literal
 
 from dirty_product_linker.normalization.text import normalize_text
 from dirty_product_linker.schemas import Product
@@ -29,7 +30,7 @@ class LinkCandidate:
 class LinkResult:
     """Baseline decision with explicit abstention and inspectable candidates."""
 
-    status: str
+    status: Literal["linked", "unknown"]
     product_id: str | None
     score: float
     candidates: tuple[LinkCandidate, ...]

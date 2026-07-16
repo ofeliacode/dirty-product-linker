@@ -2,17 +2,18 @@
 
 Production-oriented product extraction and entity linking from noisy Russian, English, and transliterated text.
 
-The project now includes its first executable milestone: versioned Pydantic data
-contracts and validated sample JSONL records. See [SPEC.md](SPEC.md) for the complete
+The repository contains a reproducible data pipeline, frozen benchmark, several
+retrieval baselines, an explainable feature-aware reranker, a FastAPI inference API,
+and a lightweight React demonstration. See [SPEC.md](SPEC.md) for the complete
 architecture and [docs/data-contract.md](docs/data-contract.md) for the implemented
 catalog and annotation formats.
 
-Planned interfaces:
+Implemented interfaces:
 
 - Python library
-- batch CLI
 - FastAPI inference service
-- reproducible training and evaluation pipeline
+- React interactive demo
+- reproducible data, training, and evaluation pipeline
 
 No quality metrics are claimed before the test split is frozen and the baseline is executed.
 
@@ -22,7 +23,7 @@ Create a Python 3.12 virtual environment and install the development dependencie
 
 ```bash
 python3 -m venv .venv
-.venv/bin/python -m pip install -e '.[data,dev]'
+.venv/bin/python -m pip install -e '.[api,data,dev]'
 PYTHONPATH=src .venv/bin/pytest
 .venv/bin/ruff check .
 .venv/bin/mypy src
@@ -30,6 +31,37 @@ PYTHONPATH=src .venv/bin/pytest
 
 The sample catalog is intentionally small. It validates the format and category
 coverage; it is not used to claim model quality.
+
+## Run the interactive demo
+
+The demo deliberately uses the dependency-free lexical runtime so it starts quickly
+on CPU and does not load the optional embedding model. Start the API in the repository
+root:
+
+```bash
+.venv/bin/uvicorn dirty_product_linker.api.app:app --reload
+```
+
+In another terminal, install and start the React client:
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open `http://127.0.0.1:5173`. The Vite development server proxies `/v1` and `/health`
+to FastAPI on port `8000`. The page accepts a noisy product mention and displays the
+selected canonical record, confidence, matched alias, top-five candidates, catalog
+version, and request latency. API documentation is available at
+`http://127.0.0.1:8000/docs`.
+
+Build the production frontend with:
+
+```bash
+cd web
+npm run build
+```
 
 ## Import the public catalog source
 
