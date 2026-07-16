@@ -1,0 +1,14 @@
+schema_version: "1.0"
+evaluation_id: hybrid-development-v0.1
+dataset_path: data/development/retrieval_dev_v0_1.jsonl
+expected_dataset_sha256: 1d5b281a5e53851767b08c19e40e87772e8aade31c8b291db6b0d0655b71fbff
+catalog_path: data/catalog/sample_catalog.jsonl
+model_id: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+model_revision: e8f8c211226b894fcb81acc59f3b34ba3efd5f42
+device: cpu
+top_k: 5
+lexical_min_score: 0.42
+dense_min_score: 0.65
+dense_min_margin: 0.12
+lexical_support_score: 0.15
+output_path: reports/development/hybrid_development_v0_1.json

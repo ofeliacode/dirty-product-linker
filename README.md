@@ -120,3 +120,13 @@ Dense retrieval reached end-to-end `0.833` at p50 `15.869 ms`; lexical v0.2 reac
 because dense semantic similarity produced brand/category false positives. See
 [docs/embedding-baseline.md](docs/embedding-baseline.md) for methodology, memory,
 errors, and limitations.
+
+## Hybrid decision policy
+
+The experimental hybrid linker invokes dense retrieval only after lexical abstention
+and requires score, margin, and lexical-agreement guards. On the current development
+set it preserved end-to-end `1.000`, with 18 lexical decisions and 6 abstentions, but
+recovered zero additional queries. Its p50 stayed near lexical at `0.17 ms`, while
+p95 rose to `17.63 ms`. Dense fallback therefore remains disabled by default. See
+[docs/hybrid-linker.md](docs/hybrid-linker.md) for the policy and architectural
+decision.
