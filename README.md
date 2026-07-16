@@ -51,7 +51,9 @@ PYTHONPATH=src .venv/bin/python scripts/build_catalog.py \
   --config configs/data/catalog_v1.yaml
 ```
 
-The taxonomy, deduplication, balanced selection, manifest, and checksum process is
-documented in [docs/catalog-building.md](docs/catalog-building.md). A full source scan
-has not completed yet, so the current local smoke output is not presented as the
-final benchmark catalog.
+The taxonomy, checkpoint/resume flow, deduplication, balanced selection, manifest,
+and checksum process is documented in
+[docs/catalog-building.md](docs/catalog-building.md). The pinned Shopify train scan
+completed, but its supported output is heavily concentrated in home appliances; a
+second licensed source is required before this catalog can serve as the five-category
+benchmark matrix.

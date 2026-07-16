@@ -53,7 +53,24 @@ model text. The same source, configuration, and seed produce a byte-identical ca
 
 ## Current status
 
-The release and resumable import code are verified against local fixtures. Earlier
-full Shopify attempts exposed slow remote Parquet blocks, which motivated atomic
-checkpointing. No full-catalog quality or category-coverage claim is made until the
-checkpoint reaches the end of the pinned train split.
+The resumable import completed the pinned Shopify train split with the following
+observed counts:
+
+```text
+source rows:          43,111
+accepted:                700
+missing brand:           786
+unsupported category: 41,625
+duplicates removed:       82
+catalog output:           506
+```
+
+The deterministic release contains 500 home appliances, 3 laptops, and 3
+televisions. It contains no smartphones or headphones under the current exact
+taxonomy mapping. This is a source-coverage result, not model quality. We will add a
+second licensed source for missing consumer-electronics categories instead of
+loosening taxonomy rules until accessories become false device matches.
+
+The generated catalog checksum is
+`c3f4b195ff3bba3e06fe5952efa55f1e8284723147e709d3ad6ae59e5b3247c9`.
+Generated JSONL, reports, and checkpoints remain local and ignored by Git.
