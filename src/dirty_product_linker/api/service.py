@@ -10,6 +10,8 @@ from dirty_product_linker.api.schemas import (
     AnalysisResponse,
     CandidateResponse,
     DecisionReason,
+    ExtractionResponse,
+    LinkedMention,
     ProductSummary,
 )
 from dirty_product_linker.linking.embedding import (
@@ -18,6 +20,7 @@ from dirty_product_linker.linking.embedding import (
     SentenceTransformerEncoder,
 )
 from dirty_product_linker.linking.lexical import LexicalProductLinker, LinkResult
+from dirty_product_linker.linking.mentions import CatalogMentionExtractor
 from dirty_product_linker.linking.pipeline import EndToEndProductLinker
 from dirty_product_linker.linking.reranker import FeatureAwareReranker, detect_brand
 from dirty_product_linker.schemas import Product
@@ -34,6 +37,9 @@ class LinkingService(Protocol):
 
     def analyze(self, text: str) -> AnalysisResponse:
         """Resolve one noisy product mention."""
+
+    def extract_and_link(self, text: str) -> ExtractionResponse:
+        """Find and independently resolve all explicit product mentions."""
 
 
 class LazyLinkingService:
@@ -53,6 +59,16 @@ class LazyLinkingService:
                     service = self._factory()
                     self._service = service
         return service.analyze(text)
+
+    def extract_and_link(self, text: str) -> ExtractionResponse:
+        service = self._service
+        if service is None:
+            with self._lock:
+                service = self._service
+                if service is None:
+                    service = self._factory()
+                    self._service = service
+        return service.extract_and_link(text)
 
 
 class ResultLinker(Protocol):
@@ -74,6 +90,7 @@ class ProductLinkingService:
         catalog_version: str,
     ) -> None:
         self._products = {product.product_id: product for product in products}
+        self._mention_extractor = CatalogMentionExtractor(list(products))
         self._linker = linker
         self._model_version = model_version
         self._catalog_version = catalog_version
@@ -118,6 +135,20 @@ class ProductLinkingService:
             selected_product=selected,
             candidates=candidates,
         )
+
+    def extract_and_link(self, text: str) -> ExtractionResponse:
+        """Extract explicit spans and link each span as an independent query."""
+
+        mentions = [
+            LinkedMention(
+                text=span.text,
+                start=span.start,
+                end=span.end,
+                result=self.analyze(span.text),
+            )
+            for span in self._mention_extractor.extract(text)
+        ]
+        return ExtractionResponse(text=text, mentions=mentions)
 
     def _candidate(
         self, product_id: str, score: float, matched_surface: str

@@ -7,7 +7,11 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from dirty_product_linker.api.schemas import AnalysisResponse, LinkRequest
+from dirty_product_linker.api.schemas import (
+    AnalysisResponse,
+    ExtractionResponse,
+    LinkRequest,
+)
 from dirty_product_linker.api.service import (
     LazyLinkingService,
     LinkingService,
@@ -74,6 +78,10 @@ def create_app(service: LinkingService | None = None) -> FastAPI:
     @application.post("/v1/link", response_model=AnalysisResponse)
     def link_product(request: LinkRequest) -> AnalysisResponse:
         return runtime.analyze(request.text)
+
+    @application.post("/v1/extract-and-link", response_model=ExtractionResponse)
+    def extract_and_link_products(request: LinkRequest) -> ExtractionResponse:
+        return runtime.extract_and_link(request.text)
 
     return application
 

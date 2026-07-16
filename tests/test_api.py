@@ -7,6 +7,7 @@ from dirty_product_linker.api.app import DEFAULT_CATALOG, create_app
 from dirty_product_linker.api.schemas import (
     AnalysisResponse,
     CandidateResponse,
+    ExtractionResponse,
     ProductSummary,
 )
 from dirty_product_linker.api.service import (
@@ -45,6 +46,9 @@ class StubService:
                 )
             ],
         )
+
+    def extract_and_link(self, text: str) -> ExtractionResponse:
+        return ExtractionResponse(text=text)
 
 
 def client() -> TestClient:
@@ -158,3 +162,37 @@ def test_end_to_end_service_combines_retrieval_reranking_and_versions() -> None:
     assert result.confidence == result.score
     assert result.decision_source == "feature_reranker"
     assert result.model_version == "feature-reranker-v0.1.1"
+
+
+def test_extract_and_link_returns_multiple_exact_independent_mentions() -> None:
+    service = LexicalLinkingService.from_catalog(DEFAULT_CATALOG)
+    message = "нужен айфон 15 про макс и наушники sony xm5 сегодня"
+
+    response = TestClient(create_app(service=service)).post(
+        "/v1/extract-and-link",
+        json={"text": message},
+    )
+
+    assert response.status_code == 200
+    mentions = response.json()["mentions"]
+    assert [(item["text"], item["start"], item["end"]) for item in mentions] == [
+        ("айфон 15 про макс", 6, 23),
+        ("sony xm5", 35, 43),
+    ]
+    assert [item["result"]["product_id"] for item in mentions] == [
+        "apple-iphone-15-pro-max-256-black",
+        "sony-wh-1000xm5-black",
+    ]
+    assert all(message[item["start"] : item["end"]] == item["text"] for item in mentions)
+
+
+def test_extract_and_link_returns_empty_mentions_for_generic_request() -> None:
+    service = LexicalLinkingService.from_catalog(DEFAULT_CATALOG)
+
+    response = TestClient(create_app(service=service)).post(
+        "/v1/extract-and-link",
+        json={"text": "посоветуй какой-нибудь хороший телефон"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["mentions"] == []
