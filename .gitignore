@@ -12,3 +12,5 @@ models/*.bin
 models/*.pt
 models/*.safetensors
 reports/tmp/
+data/processed/
+reports/data/

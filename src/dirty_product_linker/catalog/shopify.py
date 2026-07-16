@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from dirty_product_linker.schemas import Product, ProductCategory
 
 SOURCE_ID = "Shopify/product-catalogue"
+SOURCE_REVISION = "d5c517c509f5aca99053897ef1de797d6d7e5aa5"
 
 _CATEGORY_MARKERS: tuple[tuple[str, ProductCategory], ...] = (
     ("mobile phones", ProductCategory.SMARTPHONE),

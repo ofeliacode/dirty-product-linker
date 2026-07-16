@@ -22,7 +22,7 @@ Create a Python 3.12 virtual environment and install the development dependencie
 
 ```bash
 python3 -m venv .venv
-.venv/bin/python -m pip install -e '.[dev]'
+.venv/bin/python -m pip install -e '.[data,dev]'
 PYTHONPATH=src .venv/bin/pytest
 .venv/bin/ruff check .
 .venv/bin/mypy src
@@ -30,3 +30,16 @@ PYTHONPATH=src .venv/bin/pytest
 
 The sample catalog is intentionally small. It validates the format and category
 coverage; it is not used to claim model quality.
+
+## Import the public catalog source
+
+The project includes a pinned, streaming importer for the Apache-2.0 Shopify Product
+Catalogue:
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/import_shopify_catalog.py --limit 1000
+```
+
+It writes a validated local JSONL catalog and an audit report without committing the
+downloaded data to Git. See [docs/source-data.md](docs/source-data.md) for provenance,
+limitations, and the live smoke-test result.
