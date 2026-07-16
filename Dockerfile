@@ -12,9 +12,8 @@ RUN useradd --create-home --uid 10001 appuser
 
 COPY pyproject.toml README.md ./
 COPY src ./src
-RUN pip install --no-cache-dir ".[api]"
-
 COPY data/catalog/demo_catalog_v0_2.jsonl ./data/catalog/demo_catalog_v0_2.jsonl
+RUN pip install --no-cache-dir ".[api]"
 
 USER appuser
 EXPOSE 10000
