@@ -122,6 +122,10 @@ def promote_reviewed_multi_product_candidates(
         raise ValueError("reviewed_at cannot be empty")
     if not queries:
         raise ValueError("queries cannot be empty")
+    if reviewed_path.exists():
+        raise FileExistsError(f"reviewed benchmark already exists: {reviewed_path}")
+    if manifest_path.exists():
+        raise FileExistsError(f"review manifest already exists: {manifest_path}")
 
     candidate_lines: list[str] = []
     reviewed_lines: list[str] = []

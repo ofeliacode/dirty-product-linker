@@ -113,3 +113,19 @@ def test_multi_product_promotion_refuses_false_human_provenance(
             reviewer="ofeliacode",
             reviewed_at="2026-07-16",
         )
+
+
+def test_multi_product_promotion_refuses_to_overwrite_frozen_data(
+    tmp_path: Path,
+) -> None:
+    reviewed_path = tmp_path / "reviewed.jsonl"
+    reviewed_path.write_text("already frozen\n", encoding="utf-8")
+
+    with pytest.raises(FileExistsError, match="already exists"):
+        promote_reviewed_multi_product_candidates(
+            queries=[multi_candidate()],
+            reviewed_path=reviewed_path,
+            manifest_path=tmp_path / "manifest.json",
+            reviewer="ofeliacode",
+            reviewed_at="2026-07-16",
+        )
