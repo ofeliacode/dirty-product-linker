@@ -8,6 +8,13 @@ services:
     dockerContext: .
     healthCheckPath: /health
     autoDeployTrigger: checksPass
+    buildFilter:
+      paths:
+        - Dockerfile
+        - pyproject.toml
+        - render.yaml
+        - src/**
+        - data/catalog/demo_catalog_v0_2.jsonl
     envVars:
       - key: DPL_RUNTIME
         value: lexical
