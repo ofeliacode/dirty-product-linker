@@ -1,6 +1,12 @@
+from pathlib import Path
+
+import pytest
+
 from dirty_product_linker.linking.lexical import LinkCandidate, LinkResult
 from dirty_product_linker.linking.reranker import FeatureAwareReranker
 from dirty_product_linker.schemas import Product, ProductCategory
+
+PROJECT_ROOT = Path(__file__).parents[1]
 
 
 def raw_result(candidates: list[tuple[str, float]]) -> LinkResult:
@@ -99,3 +105,36 @@ def test_phonetic_brand_evidence_selects_pixel_from_union_candidates() -> None:
     assert result.status == "linked"
     assert result.product_id == "google-pixel"
     assert result.decision_source == "feature_reranker"
+
+
+@pytest.mark.parametrize(
+    ("query", "target_product_id"),
+    [
+        ("ищу 15pm на 256", "apple-iphone-15-pro-max-256-black"),
+        ("нужен s24u", "samsung-galaxy-s24-ultra-256-gray"),
+        ("хочу наушники xm5", "sony-wh-1000xm5-black"),
+    ],
+)
+def test_explicit_catalog_alias_is_identity_evidence(
+    query: str,
+    target_product_id: str,
+) -> None:
+    products = [
+        Product.model_validate_json(line)
+        for line in (PROJECT_ROOT / "data/catalog/demo_catalog_v0_2.jsonl")
+        .read_text(encoding="utf-8")
+        .splitlines()
+        if line
+    ]
+    competitor_id = "oneplus-12-256-green"
+    reranker = FeatureAwareReranker(products, min_score=0.4, min_margin=0.08)
+
+    result = reranker.rerank(
+        query,
+        lexical=raw_result([(target_product_id, 0.82), (competitor_id, 0.10)]),
+        dense=raw_result([(competitor_id, 0.50), (target_product_id, 0.40)]),
+    )
+
+    assert result.status == "linked"
+    assert result.product_id == target_product_id
+    assert result.features_by_product[target_product_id].alias_evidence == 1.0

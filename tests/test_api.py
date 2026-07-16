@@ -130,4 +130,4 @@ def test_end_to_end_service_combines_retrieval_reranking_and_versions() -> None:
     assert result.category == "smartphone"
     assert result.confidence == result.score
     assert result.decision_source == "feature_reranker"
-    assert result.model_version == "feature-reranker-v0.1.0"
+    assert result.model_version == "feature-reranker-v0.1.1"

@@ -63,6 +63,7 @@ class CandidateFeatures:
 
     lexical_score: float
     dense_score: float
+    alias_evidence: float
     brand_evidence: float
     category_compatibility: float
     model_token_overlap: float
@@ -88,6 +89,15 @@ def _brand_evidence(query: str, product: Product) -> float:
     canonical = normalize_text(product.brand)
     aliases = BRAND_ALIASES.get(canonical, (canonical,))
     return float(_contains_phrase(query, aliases))
+
+
+def _alias_evidence(query: str, product: Product) -> float:
+    aliases = tuple(
+        normalized
+        for alias in product.aliases
+        if len((normalized := normalize_text(alias)).replace(" ", "")) >= 3
+    )
+    return float(_contains_phrase(normalize_text(query), aliases))
 
 
 def _category_compatibility(query: str, category: ProductCategory) -> float:
@@ -166,21 +176,25 @@ class FeatureAwareReranker:
             product = self._products[product_id]
             lexical_score = max(0.0, lexical_scores.get(product_id, 0.0))
             dense_score = max(0.0, dense_scores.get(product_id, 0.0))
+            alias = _alias_evidence(text, product)
             brand = _brand_evidence(text, product)
             category = _category_compatibility(text, product.category)
             model = _model_token_overlap(text, product)
             attributes = _attribute_agreement(text, product)
-            combined = (
+            combined = min(
+                1.0,
                 0.30 * brand
                 + 0.15 * category
                 + 0.15 * model
                 + 0.10 * attributes
                 + 0.20 * dense_score
                 + 0.10 * lexical_score
+                + 0.30 * alias,
             )
             features_by_product[product_id] = CandidateFeatures(
                 lexical_score=round(lexical_score, 6),
                 dense_score=round(dense_score, 6),
+                alias_evidence=alias,
                 brand_evidence=brand,
                 category_compatibility=category,
                 model_token_overlap=round(model, 6),
@@ -204,7 +218,8 @@ class FeatureAwareReranker:
         margin = best.score - second_score
         best_features = features_by_product[best.product_id]
         has_identity = (
-            best_features.brand_evidence > 0
+            best_features.alias_evidence > 0
+            or best_features.brand_evidence > 0
             or best_features.model_token_overlap >= 0.25
         )
         if not has_identity:

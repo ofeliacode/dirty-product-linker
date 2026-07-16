@@ -23,7 +23,7 @@ from dirty_product_linker.schemas import Product
 
 CATALOG_VERSION = "demo-catalog-v0.2"
 LEXICAL_MODEL_VERSION = "lexical-v0.2"
-RERANKER_MODEL_VERSION = "feature-reranker-v0.1.0"
+RERANKER_MODEL_VERSION = "feature-reranker-v0.1.1"
 EMBEDDING_MODEL_ID = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 EMBEDDING_MODEL_REVISION = "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
 
