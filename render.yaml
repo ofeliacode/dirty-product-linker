@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: dirty-product-linker-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: DPL_RUNTIME
+        value: lexical
+      - key: DPL_CATALOG_PATH
+        value: /app/data/catalog/demo_catalog_v0_2.jsonl

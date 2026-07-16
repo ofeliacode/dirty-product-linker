@@ -14,7 +14,12 @@ from dirty_product_linker.api.service import (
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_CATALOG = PROJECT_ROOT / "data/catalog/demo_catalog_v0_2.jsonl"
+DEFAULT_CATALOG = Path(
+    os.getenv(
+        "DPL_CATALOG_PATH",
+        str(PROJECT_ROOT / "data/catalog/demo_catalog_v0_2.jsonl"),
+    )
+)
 
 
 def create_app(service: LinkingService | None = None) -> FastAPI:

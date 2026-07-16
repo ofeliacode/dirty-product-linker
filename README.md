@@ -85,6 +85,27 @@ category, confidence, candidate ranking, request latency, model version, and cat
 version. Full mode never silently falls back to lexical retrieval if model loading
 fails.
 
+## Deploy the public demo
+
+The React client is deployed to GitHub Pages by
+`.github/workflows/pages.yml`. Its production build targets the public API declared by
+`VITE_API_URL` (the repository variable can override the default Render URL).
+
+The root `render.yaml` and `Dockerfile` define a free Render web service. The free
+deployment intentionally uses the dependency-free lexical runtime to stay within a
+small CPU container; it does not claim the feature-reranker development metrics.
+Create the service from the Blueprint at:
+
+```text
+https://render.com/deploy?repo=https://github.com/ofeliacode/dirty-product-linker
+```
+
+Render builds the container as a non-root user, injects its public `PORT`, checks
+`/health`, and exposes the API at `https://dirty-product-linker-api.onrender.com`.
+Free services sleep after inactivity, so the first request after a cold start can be
+substantially slower. The GitHub Pages origin is explicitly included in the API CORS
+allowlist.
+
 ## Import the public catalog source
 
 The project includes a pinned, streaming importer for the Apache-2.0 Shopify Product
