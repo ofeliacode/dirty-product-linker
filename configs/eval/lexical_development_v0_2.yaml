@@ -1,0 +1,8 @@
+schema_version: "1.0"
+evaluation_id: lexical-development-v0.2
+dataset_path: data/development/retrieval_dev_v0_1.jsonl
+expected_dataset_sha256: 1d5b281a5e53851767b08c19e40e87772e8aade31c8b291db6b0d0655b71fbff
+catalog_path: data/catalog/sample_catalog.jsonl
+min_score: 0.42
+top_k: 5
+output_path: reports/development/lexical_development_v0_2.json

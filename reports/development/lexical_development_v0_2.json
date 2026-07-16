@@ -1,0 +1,925 @@
+{
+  "dataset_role": "synthetic_development",
+  "dataset_sha256": "1d5b281a5e53851767b08c19e40e87772e8aade31c8b291db6b0d0655b71fbff",
+  "evaluation_id": "lexical-development-v0.2",
+  "metrics": {
+    "by_slice": {
+      "answerable": {
+        "accepted_precision": 1.0,
+        "accuracy_at_1": 1.0,
+        "answerable_count": 18,
+        "coverage": 1.0,
+        "end_to_end_accuracy": 1.0,
+        "example_count": 18,
+        "negative_accuracy": 0.0,
+        "negative_count": 0,
+        "recall_at_5": 1.0
+      },
+      "negative": {
+        "accepted_precision": 0.0,
+        "accuracy_at_1": 0.0,
+        "answerable_count": 0,
+        "coverage": 0.0,
+        "end_to_end_accuracy": 1.0,
+        "example_count": 6,
+        "negative_accuracy": 1.0,
+        "negative_count": 6,
+        "recall_at_5": 0.0
+      }
+    },
+    "overall": {
+      "accepted_precision": 1.0,
+      "accuracy_at_1": 1.0,
+      "answerable_count": 18,
+      "coverage": 0.75,
+      "end_to_end_accuracy": 1.0,
+      "example_count": 24,
+      "negative_accuracy": 1.0,
+      "negative_count": 6,
+      "recall_at_5": 1.0
+    }
+  },
+  "predictions": [
+    {
+      "candidates": [
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.88
+        },
+        {
+          "matched_surface": "apple macbook pro macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.075
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "dev-0001",
+      "score": 0.88,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "айфон15промакс на 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "iphone",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.84
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "dev-0002",
+      "score": 0.84,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "iphone15pm black"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "apple iphone 15 pro max",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.730323
+        },
+        {
+          "matched_surface": "apple macbook pro macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.383636
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "apple-iphone-15-pro-max-256-black",
+      "query_id": "dev-0003",
+      "score": 0.730323,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-iphone-15-pro-max-256-black"
+      ],
+      "text": "эпл 15 pro max 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "galaxy s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.88
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        }
+      ],
+      "product_id": "samsung-galaxy-s24-ultra-256-gray",
+      "query_id": "dev-0004",
+      "score": 0.88,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "galaxys24ultra 256"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "s24u",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.82
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        }
+      ],
+      "product_id": "samsung-galaxy-s24-ultra-256-gray",
+      "query_id": "dev-0005",
+      "score": 0.82,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "самсунгс24у серый"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "samsung s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.930769
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        }
+      ],
+      "product_id": "samsung-galaxy-s24-ultra-256-gray",
+      "query_id": "dev-0006",
+      "score": 0.930769,
+      "status": "linked",
+      "target_product_ids": [
+        "samsung-galaxy-s24-ultra-256-gray"
+      ],
+      "text": "s24 ultra samsung"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.88
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.033333
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "apple-macbook-pro-14-m3-512",
+      "query_id": "dev-0007",
+      "score": 0.88,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "macbookpro14m3 512"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.88
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0375
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "apple-macbook-pro-14-m3-512",
+      "query_id": "dev-0008",
+      "score": 0.88,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "макбукпро 14 м3"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "apple macbook pro 14 m3",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.5625
+        },
+        {
+          "matched_surface": "apple iphone 15 pro max",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.25
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "apple-macbook-pro-14-m3-512",
+      "query_id": "dev-0009",
+      "score": 0.5625,
+      "status": "linked",
+      "target_product_ids": [
+        "apple-macbook-pro-14-m3-512"
+      ],
+      "text": "apple ноут m3 четырнадцать"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "sony wh 1000xm5",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.88
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "dev-0010",
+      "score": 0.88,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "sonywh1000xm5 black"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "headphones xm5",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.81
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "dev-0011",
+      "score": 0.81,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "сони тысяча xm5"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "wh 1000xm5",
+          "product_id": "sony-wh-1000xm5-black",
+          "score": 0.85
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        }
+      ],
+      "product_id": "sony-wh-1000xm5-black",
+      "query_id": "dev-0012",
+      "score": 0.85,
+      "status": "linked",
+      "target_product_ids": [
+        "sony-wh-1000xm5-black"
+      ],
+      "text": "wh 1000 xm 5 наушники"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "lg oled c3",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.84
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "lg-oled-c3-55",
+      "query_id": "dev-0013",
+      "score": 0.84,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "lgoledc3 на 55"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.74
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "lg-oled-c3-55",
+      "query_id": "dev-0014",
+      "score": 0.74,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "эл джи c3 телевизор"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "lg oled c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.6625
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "lg-oled-c3-55",
+      "query_id": "dev-0015",
+      "score": 0.6625,
+      "status": "linked",
+      "target_product_ids": [
+        "lg-oled-c3-55"
+      ],
+      "text": "oled 55 c3 lg"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.86
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "dev-0016",
+      "score": 0.86,
+      "status": "linked",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "boschkgn39 серебристый"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.86
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "dev-0017",
+      "score": 0.86,
+      "status": "linked",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "бош холодильник kgn 39"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "bosch kgn39vl25r",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.930769
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": "bosch-kgn39vl25r-silver",
+      "query_id": "dev-0018",
+      "score": 0.930769,
+      "status": "linked",
+      "target_product_ids": [
+        "bosch-kgn39vl25r-silver"
+      ],
+      "text": "kgn39vl25r bosch"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0019",
+      "score": 0.0,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "google pixel 8a"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "oled c",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.183333
+        },
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0020",
+      "score": 0.183333,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "зарядка usb c 65w"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0021",
+      "score": 0.0,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "сравни цены в магазинах"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0022",
+      "score": 0.0,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "xiaomi робот пылесос"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "iphone 15 promax",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "макбук pro m3 14",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0023",
+      "score": 0.0,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "ремонт телевизора рядом"
+    },
+    {
+      "candidates": [
+        {
+          "matched_surface": "macbook pro",
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "score": 0.272941
+        },
+        {
+          "matched_surface": "iphone 15 pro max",
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "score": 0.2
+        },
+        {
+          "matched_surface": "холодос bosch kgn39",
+          "product_id": "bosch-kgn39vl25r-silver",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "television lg c3 55",
+          "product_id": "lg-oled-c3-55",
+          "score": 0.0
+        },
+        {
+          "matched_surface": "галакси s24 ultra",
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "score": 0.0
+        }
+      ],
+      "product_id": null,
+      "query_id": "dev-0024",
+      "score": 0.272941,
+      "status": "unknown",
+      "target_product_ids": [],
+      "text": "наушники airpods pro 2"
+    }
+  ],
+  "schema_version": "1.0",
+  "settings": {
+    "min_score": 0.42,
+    "top_k": 5
+  }
+}

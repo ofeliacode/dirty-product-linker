@@ -61,3 +61,36 @@ def test_top_k_is_deterministic_when_scores_are_equal() -> None:
         "brand-model-a",
         "brand-model-b",
     ]
+
+
+def test_compact_model_form_matches_a_spaced_catalog_surface() -> None:
+    macbook = Product(
+        product_id="apple-macbook-pro-14-m3-512",
+        category="laptop",
+        brand="Apple",
+        family="MacBook Pro",
+        model="MacBook Pro 14 M3",
+        aliases=["mbp m3 14"],
+    )
+    linker = LexicalProductLinker([macbook], min_score=0.42)
+
+    result = linker.link("macbookpro14m3 512")
+
+    assert result.status == "linked"
+    assert result.product_id == macbook.product_id
+
+
+def test_generic_category_word_does_not_link_an_out_of_catalog_model() -> None:
+    sony = Product(
+        product_id="sony-wh-1000xm5-black",
+        category="headphones",
+        brand="Sony",
+        family="WH-1000X",
+        model="WH-1000XM5",
+        aliases=["наушники xm5", "sony xm5"],
+    )
+    linker = LexicalProductLinker([sony], min_score=0.42)
+
+    result = linker.link("наушники airpods pro 2")
+
+    assert result.status == "unknown"

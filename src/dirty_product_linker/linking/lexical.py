@@ -5,6 +5,16 @@ from dataclasses import dataclass
 from dirty_product_linker.normalization.text import normalize_text
 from dirty_product_linker.schemas import Product
 
+WEAK_CATEGORY_TOKENS = {
+    "headphones",
+    "home_appliance",
+    "laptop",
+    "smartphone",
+    "television",
+    "телевизор",
+    "холодильник",
+}
+
 
 @dataclass(frozen=True, slots=True)
 class LinkCandidate:
@@ -50,10 +60,20 @@ def _token_f1(left: str, right: str) -> float:
 
 
 def _surface_score(query: str, surface: str) -> float:
+    query = " ".join(token for token in query.split() if token not in WEAK_CATEGORY_TOKENS)
+    surface = " ".join(
+        token for token in surface.split() if token not in WEAK_CATEGORY_TOKENS
+    )
+    if not query or not surface:
+        return 0.0
     if query == surface:
         return 1.0
     if len(surface) >= 3 and surface in query:
         return min(0.90, 0.78 + len(surface) / 100)
+    compact_query = query.replace(" ", "")
+    compact_surface = surface.replace(" ", "")
+    if len(compact_surface) >= 3 and compact_surface in compact_query:
+        return min(0.88, 0.76 + len(compact_surface) / 100)
     token_score = _token_f1(query, surface)
     character_score = _dice(_character_ngrams(query), _character_ngrams(surface))
     return 0.55 * token_score + 0.45 * character_score

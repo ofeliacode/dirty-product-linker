@@ -97,3 +97,9 @@ accuracy `1.000`, end-to-end accuracy `0.800`, accepted precision `1.000`, and
 coverage `0.550`. These are seed results, not production claims. See
 [docs/lexical-baseline.md](docs/lexical-baseline.md) for the full error analysis and
 limitations.
+
+Further lexical changes are developed only on the separate 24-example synthetic
+development set. Compact model matching and weak-category filtering raised its
+end-to-end score from `0.708` to `1.000`; this is a development result, not a new
+unbiased test claim. See [docs/development-set.md](docs/development-set.md) for the
+before/after experiment and evaluation boundary.
