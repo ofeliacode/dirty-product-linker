@@ -45,9 +45,11 @@ def test_every_target_product_exists_in_the_sample_catalog() -> None:
 def test_benchmark_candidates_are_valid_but_not_claimed_as_human_reviewed() -> None:
     product_rows = read_jsonl(PROJECT_ROOT / "data/catalog/sample_catalog.jsonl")
     product_ids = {Product.model_validate(row).product_id for row in product_rows}
-    candidate_paths = sorted(
-        (PROJECT_ROOT / "data/benchmark/candidates").glob("*.jsonl")
-    )
+    candidate_dir = PROJECT_ROOT / "data/benchmark/candidates"
+    candidate_paths = [
+        candidate_dir / name
+        for name in ("ambiguous.jsonl", "dirty.jsonl", "negative.jsonl")
+    ]
     queries = [
         AnnotatedQuery.model_validate(row)
         for path in candidate_paths

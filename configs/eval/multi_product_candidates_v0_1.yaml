@@ -1,0 +1,8 @@
+schema_version: "1.0"
+evaluation_id: multi-product-candidates-v0.1
+dataset_role: synthetic_candidate
+dataset_path: data/benchmark/candidates/multi_product_v0_1.jsonl
+expected_dataset_sha256: d32e7cd8c29b1e73f713e9ad0f2ab2f55b53fe21de749247d37bde5c4bc503a0
+catalog_path: data/catalog/demo_catalog_v0_2.jsonl
+expected_catalog_sha256: 9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526
+output_path: reports/development/multi_product_candidates_v0_1.json

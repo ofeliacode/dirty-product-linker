@@ -1,0 +1,2139 @@
+{
+  "catalog_sha256": "9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526",
+  "dataset_role": "synthetic_candidate",
+  "dataset_sha256": "d32e7cd8c29b1e73f713e9ad0f2ab2f55b53fe21de749247d37bde5c4bc503a0",
+  "evaluation_id": "multi-product-candidates-v0.1",
+  "extractor": "catalog-longest-surface-v0.1",
+  "metrics": {
+    "by_slice": {
+      "context": {
+        "end_to_end_mention_accuracy": 1.0,
+        "exact_span_f1": 1.0,
+        "exact_span_precision": 1.0,
+        "exact_span_recall": 1.0,
+        "gold_mention_count": 5,
+        "linking_accuracy_on_exact_spans": 1.0,
+        "negative_accuracy": 0.0,
+        "predicted_mention_count": 5,
+        "query_count": 5,
+        "query_exact_match": 1.0
+      },
+      "explicit_alias": {
+        "end_to_end_mention_accuracy": 1.0,
+        "exact_span_f1": 1.0,
+        "exact_span_precision": 1.0,
+        "exact_span_recall": 1.0,
+        "gold_mention_count": 20,
+        "linking_accuracy_on_exact_spans": 1.0,
+        "negative_accuracy": 0.0,
+        "predicted_mention_count": 20,
+        "query_count": 10,
+        "query_exact_match": 1.0
+      },
+      "negative": {
+        "end_to_end_mention_accuracy": 0.0,
+        "exact_span_f1": 0.0,
+        "exact_span_precision": 0.0,
+        "exact_span_recall": 0.0,
+        "gold_mention_count": 0,
+        "linking_accuracy_on_exact_spans": 0.0,
+        "negative_accuracy": 1.0,
+        "predicted_mention_count": 0,
+        "query_count": 5,
+        "query_exact_match": 1.0
+      },
+      "unseen_surface": {
+        "end_to_end_mention_accuracy": 0.0,
+        "exact_span_f1": 0.0,
+        "exact_span_precision": 0.0,
+        "exact_span_recall": 0.0,
+        "gold_mention_count": 5,
+        "linking_accuracy_on_exact_spans": 0.0,
+        "negative_accuracy": 0.0,
+        "predicted_mention_count": 0,
+        "query_count": 5,
+        "query_exact_match": 0.0
+      }
+    },
+    "overall": {
+      "end_to_end_mention_accuracy": 0.8333333333333334,
+      "exact_span_f1": 0.9090909090909091,
+      "exact_span_precision": 1.0,
+      "exact_span_recall": 0.8333333333333334,
+      "gold_mention_count": 30,
+      "linking_accuracy_on_exact_spans": 1.0,
+      "negative_accuracy": 1.0,
+      "predicted_mention_count": 25,
+      "query_count": 25,
+      "query_exact_match": 0.8
+    }
+  },
+  "predictions": [
+    {
+      "gold_mentions": [
+        {
+          "end": 23,
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "start": 6,
+          "text": "айфон 15 про макс"
+        },
+        {
+          "end": 43,
+          "product_id": "sony-wh-1000xm5-black",
+          "start": 35,
+          "text": "sony xm5"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 23,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 pro max",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "apple pro headphones",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.233333
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "macbook pro",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.228333
+              },
+              {
+                "brand": "Google",
+                "category": "smartphone",
+                "matched_surface": "pixel 8 pro",
+                "model": "Pixel 8 Pro",
+                "product_id": "google-pixel-8-pro-128-black",
+                "score": 0.204511
+              },
+              {
+                "brand": "Roborock",
+                "category": "home_appliance",
+                "matched_surface": "s8 max v ultra",
+                "model": "S8 MaxV Ultra",
+                "product_id": "roborock-s8-maxv-ultra",
+                "score": 0.180357
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "smartphone",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 1.082,
+            "product_id": "apple-iphone-15-pro-max-256-black",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Apple",
+              "category": "smartphone",
+              "model": "iPhone 15 Pro Max",
+              "product_id": "apple-iphone-15-pro-max-256-black"
+            },
+            "status": "linked",
+            "text": "айфон 15 про макс"
+          },
+          "start": 6,
+          "text": "айфон 15 про макс"
+        },
+        {
+          "end": 43,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Sony",
+                "category": "headphones",
+                "matched_surface": "sony xm5",
+                "model": "WH-1000XM5",
+                "product_id": "sony-wh-1000xm5-black",
+                "score": 1.0
+              },
+              {
+                "brand": "Sony",
+                "category": "television",
+                "matched_surface": "sony бравиа 8 55",
+                "model": "BRAVIA 8 OLED",
+                "product_id": "sony-bravia-8-oled-55",
+                "score": 0.295833
+              },
+              {
+                "brand": "OnePlus",
+                "category": "smartphone",
+                "matched_surface": "oneplus oneplus oneplus 12",
+                "model": "OnePlus 12",
+                "product_id": "oneplus-12-256-green",
+                "score": 0.064286
+              },
+              {
+                "brand": "Dyson",
+                "category": "home_appliance",
+                "matched_surface": "dyson detect 15",
+                "model": "V15 Detect",
+                "product_id": "dyson-v15-detect",
+                "score": 0.05625
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "headphones",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Sony",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.601,
+            "product_id": "sony-wh-1000xm5-black",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Sony",
+              "category": "headphones",
+              "model": "WH-1000XM5",
+              "product_id": "sony-wh-1000xm5-black"
+            },
+            "status": "linked",
+            "text": "sony xm5"
+          },
+          "start": 35,
+          "text": "sony xm5"
+        }
+      ],
+      "query_id": "multi-0001",
+      "slice_name": "explicit_alias",
+      "text": "нужен айфон 15 про макс и наушники sony xm5"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 11,
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "start": 7,
+          "text": "s24u"
+        },
+        {
+          "end": 38,
+          "product_id": "google-pixel-8-pro-128-black",
+          "start": 20,
+          "text": "пиксель восемь про"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 11,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Samsung",
+                "category": "smartphone",
+                "matched_surface": "s24u",
+                "model": "Galaxy S24 Ultra",
+                "product_id": "samsung-galaxy-s24-ultra-256-gray",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "smartphone",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.514,
+            "product_id": "samsung-galaxy-s24-ultra-256-gray",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Samsung",
+              "category": "smartphone",
+              "model": "Galaxy S24 Ultra",
+              "product_id": "samsung-galaxy-s24-ultra-256-gray"
+            },
+            "status": "linked",
+            "text": "s24u"
+          },
+          "start": 7,
+          "text": "s24u"
+        },
+        {
+          "end": 38,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Google",
+                "category": "smartphone",
+                "matched_surface": "пиксель восемь pro",
+                "model": "Pixel 8 Pro",
+                "product_id": "google-pixel-8-pro-128-black",
+                "score": 1.0
+              },
+              {
+                "brand": "TCL",
+                "category": "television",
+                "matched_surface": "си восемь пять пять",
+                "model": "C855",
+                "product_id": "tcl-c855-55",
+                "score": 0.327333
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "apple pro headphones",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.265
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "macbook pro",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.260909
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 pro max",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.191758
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "smartphone",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.743,
+            "product_id": "google-pixel-8-pro-128-black",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Google",
+              "category": "smartphone",
+              "model": "Pixel 8 Pro",
+              "product_id": "google-pixel-8-pro-128-black"
+            },
+            "status": "linked",
+            "text": "пиксель восемь про"
+          },
+          "start": 20,
+          "text": "пиксель восемь про"
+        }
+      ],
+      "query_id": "multi-0002",
+      "slice_name": "explicit_alias",
+      "text": "возьму s24u, а жене пиксель восемь про"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 16,
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "start": 7,
+          "text": "mbp m3 14"
+        },
+        {
+          "end": 35,
+          "product_id": "apple-airpods-pro-2-white",
+          "start": 22,
+          "text": "аирподс про 2"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 16,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "mbp m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              },
+              {
+                "brand": "Bosch",
+                "category": "home_appliance",
+                "matched_surface": "холодос bosch kgn39",
+                "model": "KGN39VL25R",
+                "product_id": "bosch-kgn39vl25r-silver",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "laptop",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.56,
+            "product_id": "apple-macbook-pro-14-m3-512",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Apple",
+              "category": "laptop",
+              "model": "MacBook Pro 14 M3",
+              "product_id": "apple-macbook-pro-14-m3-512"
+            },
+            "status": "linked",
+            "text": "mbp m3 14"
+          },
+          "start": 7,
+          "text": "mbp m3 14"
+        },
+        {
+          "end": 35,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "macbook pro",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.272941
+              },
+              {
+                "brand": "Google",
+                "category": "smartphone",
+                "matched_surface": "pixel 8 pro",
+                "model": "Pixel 8 Pro",
+                "product_id": "google-pixel-8-pro-128-black",
+                "score": 0.239583
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 pro max",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.2
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "headphones",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.637,
+            "product_id": "apple-airpods-pro-2-white",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Apple",
+              "category": "headphones",
+              "model": "AirPods Pro 2",
+              "product_id": "apple-airpods-pro-2-white"
+            },
+            "status": "linked",
+            "text": "аирподс про 2"
+          },
+          "start": 22,
+          "text": "аирподс про 2"
+        }
+      ],
+      "query_id": "multi-0003",
+      "slice_name": "explicit_alias",
+      "text": "закажи mbp m3 14 плюс аирподс про 2"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 18,
+          "product_id": "dell-xps-13-9340",
+          "start": 7,
+          "text": "делл xps 13"
+        },
+        {
+          "end": 41,
+          "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+          "start": 21,
+          "text": "тинкпад x1 карбон 12"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 18,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Dell",
+                "category": "laptop",
+                "matched_surface": "делл xps 13",
+                "model": "XPS 13 9340",
+                "product_id": "dell-xps-13-9340",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "laptop",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Dell",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.597,
+            "product_id": "dell-xps-13-9340",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Dell",
+              "category": "laptop",
+              "model": "XPS 13 9340",
+              "product_id": "dell-xps-13-9340"
+            },
+            "status": "linked",
+            "text": "делл xps 13"
+          },
+          "start": 7,
+          "text": "делл xps 13"
+        },
+        {
+          "end": 41,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Lenovo",
+                "category": "laptop",
+                "matched_surface": "тинкпад x1 карбон 12",
+                "model": "ThinkPad X1 Carbon Gen 12",
+                "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+                "score": 1.0
+              },
+              {
+                "brand": "OnePlus",
+                "category": "smartphone",
+                "matched_surface": "ванплас 12",
+                "model": "OnePlus 12",
+                "product_id": "oneplus-12-256-green",
+                "score": 0.183333
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "laptop",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.716,
+            "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Lenovo",
+              "category": "laptop",
+              "model": "ThinkPad X1 Carbon Gen 12",
+              "product_id": "lenovo-thinkpad-x1-carbon-gen-12"
+            },
+            "status": "linked",
+            "text": "тинкпад x1 карбон 12"
+          },
+          "start": 21,
+          "text": "тинкпад x1 карбон 12"
+        }
+      ],
+      "query_id": "multi-0004",
+      "slice_name": "explicit_alias",
+      "text": "сравни делл xps 13 и тинкпад x1 карбон 12"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 24,
+          "product_id": "lg-oled-c3-55",
+          "start": 11,
+          "text": "lg oled c3 55"
+        },
+        {
+          "end": 52,
+          "product_id": "sony-bravia-8-oled-55",
+          "start": 36,
+          "text": "сони бравиа 8 55"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 24,
+          "result": {
+            "candidates": [
+              {
+                "brand": "LG",
+                "category": "television",
+                "matched_surface": "lg oled c3 55",
+                "model": "OLED C3",
+                "product_id": "lg-oled-c3-55",
+                "score": 1.0
+              },
+              {
+                "brand": "Sony",
+                "category": "television",
+                "matched_surface": "бравия oled",
+                "model": "BRAVIA 8 OLED",
+                "product_id": "sony-bravia-8-oled-55",
+                "score": 0.295833
+              },
+              {
+                "brand": "Samsung",
+                "category": "television",
+                "matched_surface": "samsung qn90d 55",
+                "model": "QN90D",
+                "product_id": "samsung-qn90d-55",
+                "score": 0.157143
+              },
+              {
+                "brand": "TCL",
+                "category": "television",
+                "matched_surface": "тсл c855 55",
+                "model": "C855",
+                "product_id": "tcl-c855-55",
+                "score": 0.157143
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "television",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "LG",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.593,
+            "product_id": "lg-oled-c3-55",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "LG",
+              "category": "television",
+              "model": "OLED C3",
+              "product_id": "lg-oled-c3-55"
+            },
+            "status": "linked",
+            "text": "lg oled c3 55"
+          },
+          "start": 11,
+          "text": "lg oled c3 55"
+        },
+        {
+          "end": 52,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Sony",
+                "category": "television",
+                "matched_surface": "sony бравиа 8 55",
+                "model": "BRAVIA 8 OLED",
+                "product_id": "sony-bravia-8-oled-55",
+                "score": 1.0
+              },
+              {
+                "brand": "Sony",
+                "category": "headphones",
+                "matched_surface": "sony xm5",
+                "model": "WH-1000XM5",
+                "product_id": "sony-wh-1000xm5-black",
+                "score": 0.295833
+              },
+              {
+                "brand": "TCL",
+                "category": "television",
+                "matched_surface": "тсл c855 55",
+                "model": "C855",
+                "product_id": "tcl-c855-55",
+                "score": 0.210084
+              },
+              {
+                "brand": "Google",
+                "category": "smartphone",
+                "matched_surface": "pixel 8 pro",
+                "model": "Pixel 8 Pro",
+                "product_id": "google-pixel-8-pro-128-black",
+                "score": 0.157143
+              },
+              {
+                "brand": "LG",
+                "category": "television",
+                "matched_surface": "television lg c3 55",
+                "model": "OLED C3",
+                "product_id": "lg-oled-c3-55",
+                "score": 0.157143
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "television",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Sony",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.697,
+            "product_id": "sony-bravia-8-oled-55",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Sony",
+              "category": "television",
+              "model": "BRAVIA 8 OLED",
+              "product_id": "sony-bravia-8-oled-55"
+            },
+            "status": "linked",
+            "text": "сони бравиа 8 55"
+          },
+          "start": 36,
+          "text": "сони бравиа 8 55"
+        }
+      ],
+      "query_id": "multi-0005",
+      "slice_name": "explicit_alias",
+      "text": "в гостиную lg oled c3 55, в спальню сони бравиа 8 55"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 27,
+          "product_id": "samsung-ww90t554daw-white",
+          "start": 6,
+          "text": "стиралка самсунг ww90"
+        },
+        {
+          "end": 53,
+          "product_id": "bosch-kgn39vl25r-silver",
+          "start": 42,
+          "text": "bosch kgn39"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 27,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Samsung",
+                "category": "home_appliance",
+                "matched_surface": "стиралка samsung ww90",
+                "model": "WW90T554DAW",
+                "product_id": "samsung-ww90t554daw-white",
+                "score": 1.0
+              },
+              {
+                "brand": "Samsung",
+                "category": "television",
+                "matched_surface": "samsung qn90d",
+                "model": "QN90D",
+                "product_id": "samsung-qn90d-55",
+                "score": 0.386667
+              },
+              {
+                "brand": "Samsung",
+                "category": "smartphone",
+                "matched_surface": "samsung s24 ultra",
+                "model": "Galaxy S24 Ultra",
+                "product_id": "samsung-galaxy-s24-ultra-256-gray",
+                "score": 0.333333
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "home_appliance",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Samsung",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.724,
+            "product_id": "samsung-ww90t554daw-white",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Samsung",
+              "category": "home_appliance",
+              "model": "WW90T554DAW",
+              "product_id": "samsung-ww90t554daw-white"
+            },
+            "status": "linked",
+            "text": "стиралка самсунг ww90"
+          },
+          "start": 6,
+          "text": "стиралка самсунг ww90"
+        },
+        {
+          "end": 53,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Bosch",
+                "category": "home_appliance",
+                "matched_surface": "bosch kgn39",
+                "model": "KGN39VL25R",
+                "product_id": "bosch-kgn39vl25r-silver",
+                "score": 1.0
+              },
+              {
+                "brand": "Bose",
+                "category": "headphones",
+                "matched_surface": "bose qc ultra",
+                "model": "QuietComfort Ultra",
+                "product_id": "bose-quietcomfort-ultra-black",
+                "score": 0.052941
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "home_appliance",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Bosch",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.594,
+            "product_id": "bosch-kgn39vl25r-silver",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Bosch",
+              "category": "home_appliance",
+              "model": "KGN39VL25R",
+              "product_id": "bosch-kgn39vl25r-silver"
+            },
+            "status": "linked",
+            "text": "bosch kgn39"
+          },
+          "start": 42,
+          "text": "bosch kgn39"
+        }
+      ],
+      "query_id": "multi-0006",
+      "slice_name": "explicit_alias",
+      "text": "нужны стиралка самсунг ww90 и холодильник bosch kgn39"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 18,
+          "product_id": "dyson-v15-detect",
+          "start": 8,
+          "text": "дайсон v15"
+        },
+        {
+          "end": 39,
+          "product_id": "roborock-s8-maxv-ultra",
+          "start": 24,
+          "text": "роборок s8 maxv"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 18,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Dyson",
+                "category": "home_appliance",
+                "matched_surface": "дайсон v15",
+                "model": "V15 Detect",
+                "product_id": "dyson-v15-detect",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "home_appliance",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Dyson",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.581,
+            "product_id": "dyson-v15-detect",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Dyson",
+              "category": "home_appliance",
+              "model": "V15 Detect",
+              "product_id": "dyson-v15-detect"
+            },
+            "status": "linked",
+            "text": "дайсон v15"
+          },
+          "start": 8,
+          "text": "дайсон v15"
+        },
+        {
+          "end": 39,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Roborock",
+                "category": "home_appliance",
+                "matched_surface": "роборок s8 maxv",
+                "model": "S8 MaxV Ultra",
+                "product_id": "roborock-s8-maxv-ultra",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.03913
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "home_appliance",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Roborock",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.65,
+            "product_id": "roborock-s8-maxv-ultra",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Roborock",
+              "category": "home_appliance",
+              "model": "S8 MaxV Ultra",
+              "product_id": "roborock-s8-maxv-ultra"
+            },
+            "status": "linked",
+            "text": "роборок s8 maxv"
+          },
+          "start": 24,
+          "text": "роборок s8 maxv"
+        }
+      ],
+      "query_id": "multi-0007",
+      "slice_name": "explicit_alias",
+      "text": "выбираю дайсон v15 либо роборок s8 maxv"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 20,
+          "product_id": "bose-quietcomfort-ultra-black",
+          "start": 7,
+          "text": "боуз qc ultra"
+        },
+        {
+          "end": 43,
+          "product_id": "sennheiser-momentum-4-black",
+          "start": 23,
+          "text": "сенхайзер моментум 4"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 20,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Bose",
+                "category": "headphones",
+                "matched_surface": "боуз qc ultra",
+                "model": "QuietComfort Ultra",
+                "product_id": "bose-quietcomfort-ultra-black",
+                "score": 1.0
+              },
+              {
+                "brand": "Roborock",
+                "category": "home_appliance",
+                "matched_surface": "s8 maxv ultra",
+                "model": "S8 MaxV Ultra",
+                "product_id": "roborock-s8-maxv-ultra",
+                "score": 0.333333
+              },
+              {
+                "brand": "Samsung",
+                "category": "smartphone",
+                "matched_surface": "galaxy s24 ultra",
+                "model": "Galaxy S24 Ultra",
+                "product_id": "samsung-galaxy-s24-ultra-256-gray",
+                "score": 0.311905
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "headphones",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Bose",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.623,
+            "product_id": "bose-quietcomfort-ultra-black",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Bose",
+              "category": "headphones",
+              "model": "QuietComfort Ultra",
+              "product_id": "bose-quietcomfort-ultra-black"
+            },
+            "status": "linked",
+            "text": "боуз qc ultra"
+          },
+          "start": 7,
+          "text": "боуз qc ultra"
+        },
+        {
+          "end": 43,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Sennheiser",
+                "category": "headphones",
+                "matched_surface": "сенхайзер моментум 4",
+                "model": "Momentum 4 Wireless",
+                "product_id": "sennheiser-momentum-4-black",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "headphones",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Sennheiser",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.717,
+            "product_id": "sennheiser-momentum-4-black",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Sennheiser",
+              "category": "headphones",
+              "model": "Momentum 4 Wireless",
+              "product_id": "sennheiser-momentum-4-black"
+            },
+            "status": "linked",
+            "text": "сенхайзер моментум 4"
+          },
+          "start": 23,
+          "text": "сенхайзер моментум 4"
+        }
+      ],
+      "query_id": "multi-0008",
+      "slice_name": "explicit_alias",
+      "text": "покажи боуз qc ultra и сенхайзер моментум 4"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 15,
+          "product_id": "tcl-c855-55",
+          "start": 6,
+          "text": "tcl c 855"
+        },
+        {
+          "end": 40,
+          "product_id": "samsung-qn90d-55",
+          "start": 24,
+          "text": "самсунг qn90d 55"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 15,
+          "result": {
+            "candidates": [
+              {
+                "brand": "TCL",
+                "category": "television",
+                "matched_surface": "tcl c 855",
+                "model": "C855",
+                "product_id": "tcl-c855-55",
+                "score": 1.0
+              },
+              {
+                "brand": "LG",
+                "category": "television",
+                "matched_surface": "oled c",
+                "model": "OLED C3",
+                "product_id": "lg-oled-c3-55",
+                "score": 0.22
+              },
+              {
+                "brand": "Sony",
+                "category": "television",
+                "matched_surface": "sony бравиа 8 55",
+                "model": "BRAVIA 8 OLED",
+                "product_id": "sony-bravia-8-oled-55",
+                "score": 0.05625
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "television",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "TCL",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.543,
+            "product_id": "tcl-c855-55",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "TCL",
+              "category": "television",
+              "model": "C855",
+              "product_id": "tcl-c855-55"
+            },
+            "status": "linked",
+            "text": "tcl c 855"
+          },
+          "start": 6,
+          "text": "tcl c 855"
+        },
+        {
+          "end": 40,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Samsung",
+                "category": "television",
+                "matched_surface": "samsung qn90d 55",
+                "model": "QN90D",
+                "product_id": "samsung-qn90d-55",
+                "score": 1.0
+              },
+              {
+                "brand": "Samsung",
+                "category": "home_appliance",
+                "matched_surface": "samsung ww90t554daw",
+                "model": "WW90T554DAW",
+                "product_id": "samsung-ww90t554daw-white",
+                "score": 0.380714
+              },
+              {
+                "brand": "Samsung",
+                "category": "smartphone",
+                "matched_surface": "samsung s24 ultra",
+                "model": "Galaxy S24 Ultra",
+                "product_id": "samsung-galaxy-s24-ultra-256-gray",
+                "score": 0.363333
+              },
+              {
+                "brand": "LG",
+                "category": "television",
+                "matched_surface": "television lg c3 55",
+                "model": "OLED C3",
+                "product_id": "lg-oled-c3-55",
+                "score": 0.183333
+              },
+              {
+                "brand": "TCL",
+                "category": "television",
+                "matched_surface": "тсл c855 55",
+                "model": "C855",
+                "product_id": "tcl-c855-55",
+                "score": 0.183333
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "television",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Samsung",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.648,
+            "product_id": "samsung-qn90d-55",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Samsung",
+              "category": "television",
+              "model": "QN90D",
+              "product_id": "samsung-qn90d-55"
+            },
+            "status": "linked",
+            "text": "самсунг qn90d 55"
+          },
+          "start": 24,
+          "text": "самсунг qn90d 55"
+        }
+      ],
+      "query_id": "multi-0009",
+      "slice_name": "explicit_alias",
+      "text": "телек tcl c 855 рядом с самсунг qn90d 55"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 10,
+          "product_id": "oneplus-12-256-green",
+          "start": 0,
+          "text": "ванплас 12"
+        },
+        {
+          "end": 29,
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "start": 13,
+          "text": "асус зефирус g14"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 10,
+          "result": {
+            "candidates": [
+              {
+                "brand": "OnePlus",
+                "category": "smartphone",
+                "matched_surface": "ванплас 12",
+                "model": "OnePlus 12",
+                "product_id": "oneplus-12-256-green",
+                "score": 1.0
+              },
+              {
+                "brand": "Lenovo",
+                "category": "laptop",
+                "matched_surface": "тинкпад x1 карбон 12",
+                "model": "ThinkPad X1 Carbon Gen 12",
+                "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+                "score": 0.183333
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "smartphone",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "OnePlus",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.584,
+            "product_id": "oneplus-12-256-green",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "OnePlus",
+              "category": "smartphone",
+              "model": "OnePlus 12",
+              "product_id": "oneplus-12-256-green"
+            },
+            "status": "linked",
+            "text": "ванплас 12"
+          },
+          "start": 0,
+          "text": "ванплас 12"
+        },
+        {
+          "end": 29,
+          "result": {
+            "candidates": [
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "асус зефирус g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "Bosch",
+                "category": "home_appliance",
+                "matched_surface": "холодос bosch kgn39",
+                "model": "KGN39VL25R",
+                "product_id": "bosch-kgn39vl25r-silver",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "laptop",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "ASUS",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.651,
+            "product_id": "asus-rog-zephyrus-g14-2024",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "ASUS",
+              "category": "laptop",
+              "model": "ROG Zephyrus G14 2024",
+              "product_id": "asus-rog-zephyrus-g14-2024"
+            },
+            "status": "linked",
+            "text": "асус зефирус g14"
+          },
+          "start": 13,
+          "text": "асус зефирус g14"
+        }
+      ],
+      "query_id": "multi-0010",
+      "slice_name": "explicit_alias",
+      "text": "ванплас 12 и асус зефирус g14"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 35,
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "start": 31,
+          "text": "15pm"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 35,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "15pm",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              },
+              {
+                "brand": "Bosch",
+                "category": "home_appliance",
+                "matched_surface": "холодос bosch kgn39",
+                "model": "KGN39VL25R",
+                "product_id": "bosch-kgn39vl25r-silver",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "smartphone",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.463,
+            "product_id": "apple-iphone-15-pro-max-256-black",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Apple",
+              "category": "smartphone",
+              "model": "iPhone 15 Pro Max",
+              "product_id": "apple-iphone-15-pro-max-256-black"
+            },
+            "status": "linked",
+            "text": "15pm"
+          },
+          "start": 31,
+          "text": "15pm"
+        }
+      ],
+      "query_id": "context-0001",
+      "slice_name": "context",
+      "text": "если есть, отложите пожалуйста 15pm до вечера"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 23,
+          "product_id": "sony-wh-1000xm5-black",
+          "start": 11,
+          "text": "наушники xm5"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 23,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Sony",
+                "category": "headphones",
+                "matched_surface": "headphones xm5",
+                "model": "WH-1000XM5",
+                "product_id": "sony-wh-1000xm5-black",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "headphones",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.448,
+            "product_id": "sony-wh-1000xm5-black",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Sony",
+              "category": "headphones",
+              "model": "WH-1000XM5",
+              "product_id": "sony-wh-1000xm5-black"
+            },
+            "status": "linked",
+            "text": "наушники xm5"
+          },
+          "start": 11,
+          "text": "наушники xm5"
+        }
+      ],
+      "query_id": "context-0002",
+      "slice_name": "context",
+      "text": "мне только наушники xm5, больше ничего"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 26,
+          "product_id": "asus-rog-zephyrus-g14-2024",
+          "start": 15,
+          "text": "зефирка g14"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 26,
+          "result": {
+            "candidates": [
+              {
+                "brand": "ASUS",
+                "category": "laptop",
+                "matched_surface": "зефирка g14",
+                "model": "ROG Zephyrus G14 2024",
+                "product_id": "asus-rog-zephyrus-g14-2024",
+                "score": 1.0
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "laptop",
+                "matched_surface": "макбук pro m3 14",
+                "model": "MacBook Pro 14 M3",
+                "product_id": "apple-macbook-pro-14-m3-512",
+                "score": 0.0
+              },
+              {
+                "brand": "Bosch",
+                "category": "home_appliance",
+                "matched_surface": "холодос bosch kgn39",
+                "model": "KGN39VL25R",
+                "product_id": "bosch-kgn39vl25r-silver",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "laptop",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.595,
+            "product_id": "asus-rog-zephyrus-g14-2024",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "ASUS",
+              "category": "laptop",
+              "model": "ROG Zephyrus G14 2024",
+              "product_id": "asus-rog-zephyrus-g14-2024"
+            },
+            "status": "linked",
+            "text": "зефирка g14"
+          },
+          "start": 15,
+          "text": "зефирка g14"
+        }
+      ],
+      "query_id": "context-0003",
+      "slice_name": "context",
+      "text": "хочу тот самый зефирка g14"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 29,
+          "product_id": "sony-bravia-8-oled-55",
+          "start": 18,
+          "text": "бравия олед"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 29,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Sony",
+                "category": "television",
+                "matched_surface": "бравия oled",
+                "model": "BRAVIA 8 OLED",
+                "product_id": "sony-bravia-8-oled-55",
+                "score": 1.0
+              },
+              {
+                "brand": "LG",
+                "category": "television",
+                "matched_surface": "oled c",
+                "model": "OLED C3",
+                "product_id": "lg-oled-c3-55",
+                "score": 0.438636
+              },
+              {
+                "brand": "Samsung",
+                "category": "television",
+                "matched_surface": "neo qled",
+                "model": "QN90D",
+                "product_id": "samsung-qn90d-55",
+                "score": 0.069231
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "television",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": null,
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.593,
+            "product_id": "sony-bravia-8-oled-55",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Sony",
+              "category": "television",
+              "model": "BRAVIA 8 OLED",
+              "product_id": "sony-bravia-8-oled-55"
+            },
+            "status": "linked",
+            "text": "бравия олед"
+          },
+          "start": 18,
+          "text": "бравия олед"
+        }
+      ],
+      "query_id": "context-0004",
+      "slice_name": "context",
+      "text": "есть ли в наличии бравия олед"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 25,
+          "product_id": "dyson-v15-detect",
+          "start": 6,
+          "text": "беспроводной дайсон"
+        }
+      ],
+      "predicted_mentions": [
+        {
+          "end": 25,
+          "result": {
+            "candidates": [
+              {
+                "brand": "Dyson",
+                "category": "home_appliance",
+                "matched_surface": "беспроводной дайсон",
+                "model": "V15 Detect",
+                "product_id": "dyson-v15-detect",
+                "score": 1.0
+              },
+              {
+                "brand": "Sennheiser",
+                "category": "headphones",
+                "matched_surface": "моментум беспроводные",
+                "model": "Momentum 4 Wireless",
+                "product_id": "sennheiser-momentum-4-black",
+                "score": 0.211765
+              },
+              {
+                "brand": "Lenovo",
+                "category": "laptop",
+                "matched_surface": "леново карбон",
+                "model": "ThinkPad X1 Carbon Gen 12",
+                "product_id": "lenovo-thinkpad-x1-carbon-gen-12",
+                "score": 0.034615
+              },
+              {
+                "brand": "Apple",
+                "category": "headphones",
+                "matched_surface": "аирподс pro 2",
+                "model": "AirPods Pro 2",
+                "product_id": "apple-airpods-pro-2-white",
+                "score": 0.0
+              },
+              {
+                "brand": "Apple",
+                "category": "smartphone",
+                "matched_surface": "iphone 15 promax",
+                "model": "iPhone 15 Pro Max",
+                "product_id": "apple-iphone-15-pro-max-256-black",
+                "score": 0.0
+              }
+            ],
+            "catalog_version": "demo-catalog-v0.2",
+            "category": "home_appliance",
+            "confidence": 1.0,
+            "decision_source": "lexical",
+            "detected_brand": "Dyson",
+            "model_version": "lexical-v0.2",
+            "processing_ms": 0.696,
+            "product_id": "dyson-v15-detect",
+            "reason": null,
+            "score": 1.0,
+            "selected_product": {
+              "brand": "Dyson",
+              "category": "home_appliance",
+              "model": "V15 Detect",
+              "product_id": "dyson-v15-detect"
+            },
+            "status": "linked",
+            "text": "беспроводной дайсон"
+          },
+          "start": 6,
+          "text": "беспроводной дайсон"
+        }
+      ],
+      "query_id": "context-0005",
+      "slice_name": "context",
+      "text": "нужен беспроводной дайсон"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 29,
+          "product_id": "apple-iphone-15-pro-max-256-black",
+          "start": 0,
+          "text": "яблочный пятнадцатый про макс"
+        }
+      ],
+      "predicted_mentions": [],
+      "query_id": "unseen-0001",
+      "slice_name": "unseen_surface",
+      "text": "яблочный пятнадцатый про макс"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 39,
+          "product_id": "samsung-galaxy-s24-ultra-256-gray",
+          "start": 0,
+          "text": "самсунговский двадцать четвертый ультра"
+        }
+      ],
+      "predicted_mentions": [],
+      "query_id": "unseen-0002",
+      "slice_name": "unseen_surface",
+      "text": "самсунговский двадцать четвертый ультра"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 27,
+          "product_id": "sony-wh-1000xm5-black",
+          "start": 0,
+          "text": "сонькины тысяча икс эм пять"
+        }
+      ],
+      "predicted_mentions": [],
+      "query_id": "unseen-0003",
+      "slice_name": "unseen_surface",
+      "text": "сонькины тысяча икс эм пять"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 29,
+          "product_id": "apple-macbook-pro-14-m3-512",
+          "start": 0,
+          "text": "макбук на эм три четырнадцать"
+        }
+      ],
+      "predicted_mentions": [],
+      "query_id": "unseen-0004",
+      "slice_name": "unseen_surface",
+      "text": "макбук на эм три четырнадцать"
+    },
+    {
+      "gold_mentions": [
+        {
+          "end": 40,
+          "product_id": "roborock-s8-maxv-ultra",
+          "start": 0,
+          "text": "пылесос от роборока восьмой максимальный"
+        }
+      ],
+      "predicted_mentions": [],
+      "query_id": "unseen-0005",
+      "slice_name": "unseen_surface",
+      "text": "пылесос от роборока восьмой максимальный"
+    },
+    {
+      "gold_mentions": [],
+      "predicted_mentions": [],
+      "query_id": "negative-0001",
+      "slice_name": "negative",
+      "text": "посоветуй хороший телефон и наушники"
+    },
+    {
+      "gold_mentions": [],
+      "predicted_mentions": [],
+      "query_id": "negative-0002",
+      "slice_name": "negative",
+      "text": "хочу что-нибудь для уборки"
+    },
+    {
+      "gold_mentions": [],
+      "predicted_mentions": [],
+      "query_id": "negative-0003",
+      "slice_name": "negative",
+      "text": "нужен ноутбук для работы"
+    },
+    {
+      "gold_mentions": [],
+      "predicted_mentions": [],
+      "query_id": "negative-0004",
+      "slice_name": "negative",
+      "text": "есть телевизор подешевле"
+    },
+    {
+      "gold_mentions": [],
+      "predicted_mentions": [],
+      "query_id": "negative-0005",
+      "slice_name": "negative",
+      "text": "сегодня ничего не покупаю"
+    }
+  ],
+  "schema_version": "1.0"
+}
