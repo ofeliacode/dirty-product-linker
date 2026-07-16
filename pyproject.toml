@@ -40,6 +40,9 @@ dev = [
 [tool.hatch.build.targets.wheel]
 packages = ["src/dirty_product_linker"]
 
+[tool.hatch.build.targets.wheel.force-include]
+"data/catalog/demo_catalog_v0_2.jsonl" = "dirty_product_linker/data/demo_catalog_v0_2.jsonl"
+
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]

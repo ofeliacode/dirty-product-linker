@@ -1,6 +1,7 @@
 """FastAPI application factory for local and production inference."""
 
 import os
+from importlib.resources import files
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -13,13 +14,26 @@ from dirty_product_linker.api.service import (
     build_runtime_service,
 )
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_CATALOG = Path(
-    os.getenv(
-        "DPL_CATALOG_PATH",
-        str(PROJECT_ROOT / "data/catalog/demo_catalog_v0_2.jsonl"),
-    )
+PACKAGED_CATALOG = files("dirty_product_linker").joinpath(
+    "data/demo_catalog_v0_2.jsonl"
 )
+
+
+def _default_catalog_path() -> Path:
+    configured_path = os.getenv("DPL_CATALOG_PATH")
+    if configured_path is not None:
+        return Path(configured_path)
+
+    packaged_path = Path(str(PACKAGED_CATALOG))
+    if packaged_path.is_file():
+        return packaged_path
+
+    # Editable installs resolve resources from src/, before Hatch has copied
+    # the release catalog into a wheel. Keep local development reproducible too.
+    return Path(__file__).resolve().parents[3] / "data/catalog/demo_catalog_v0_2.jsonl"
+
+
+DEFAULT_CATALOG = _default_catalog_path()
 
 
 def create_app(service: LinkingService | None = None) -> FastAPI:

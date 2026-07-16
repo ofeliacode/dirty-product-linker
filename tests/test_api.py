@@ -1,4 +1,5 @@
 from collections.abc import Sequence
+from pathlib import Path
 
 from fastapi.testclient import TestClient
 
@@ -48,6 +49,11 @@ class StubService:
 
 def client() -> TestClient:
     return TestClient(create_app(service=StubService()))
+
+
+def test_default_catalog_is_shipped_with_the_python_package() -> None:
+    assert isinstance(DEFAULT_CATALOG, Path)
+    assert DEFAULT_CATALOG.is_file()
 
 
 def test_health_reports_ready_without_exposing_internal_details() -> None:
