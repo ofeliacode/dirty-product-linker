@@ -1,21 +1,74 @@
 # Dirty Product Linker
 
-Production-oriented product extraction and entity linking from noisy Russian, English, and transliterated text.
+[![CI](https://github.com/ofeliacode/dirty-product-linker/actions/workflows/ci.yml/badge.svg)](https://github.com/ofeliacode/dirty-product-linker/actions/workflows/ci.yml)
+[![Live demo](https://img.shields.io/badge/demo-GitHub%20Pages-166b49)](https://ofeliacode.github.io/dirty-product-linker/)
+[![API health](https://img.shields.io/badge/API-Render-166b49)](https://dirty-product-linker-api.onrender.com/health)
+
+Product entity linking for noisy Russian, English, and transliterated shopping text.
+The system resolves slang, abbreviations, misspellings, and model aliases to canonical
+catalog records, while abstaining when the evidence is insufficient.
+
+**[Try the live demo](https://ofeliacode.github.io/dirty-product-linker/)** ·
+**[Open the API](https://dirty-product-linker-api.onrender.com/docs)** ·
+**[Read the architecture](SPEC.md)**
+
+```text
+"ищу 15pm на 256"
+              ↓
+apple-iphone-15-pro-max-256-black · confidence 0.82 · lexical-v0.2
+```
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[Noisy customer text] --> B[Normalization]
+    B --> C[Lexical retrieval]
+    B --> D[Multilingual embeddings]
+    C --> E[Candidate union]
+    D --> E
+    E --> F[Feature-aware reranker]
+    F --> G{Confidence and margin}
+    G -->|enough evidence| H[Canonical product]
+    G -->|insufficient evidence| I[Safe abstention]
+```
 
 The repository contains a reproducible data pipeline, frozen benchmark, several
 retrieval baselines, an explainable feature-aware reranker, a FastAPI inference API,
-and a lightweight React demonstration. See [SPEC.md](SPEC.md) for the complete
-architecture and [docs/data-contract.md](docs/data-contract.md) for the implemented
-catalog and annotation formats.
+CLI, Docker deployment, CI quality gates, and a lightweight React demonstration.
 
-Implemented interfaces:
+| Layer | Implementation |
+| --- | --- |
+| Contracts | Versioned Pydantic schemas and validated JSONL |
+| Retrieval | Character/token lexical matching and multilingual MiniLM |
+| Decision | Explainable catalog features, candidate reranking, abstention |
+| Interfaces | Python, `product-linker` CLI, FastAPI, React |
+| Delivery | Docker, Render Blueprint, GitHub Pages, GitHub Actions |
 
-- Python library
-- FastAPI inference service
-- React interactive demo
-- reproducible data, training, and evaluation pipeline
+## Measured results
 
-No quality metrics are claimed before the test split is frozen and the baseline is executed.
+| Evaluation | End-to-end | Accepted precision | Coverage |
+| --- | ---: | ---: | ---: |
+| Frozen 20-query lexical seed benchmark | 0.800 | 1.000 | 0.550 |
+| 25-query semantic development set, feature reranker | 0.920 | 1.000 | 0.720 |
+
+The second row is a **synthetic development result**, not an unbiased final test
+claim. The public free deployment uses the lightweight lexical runtime. Its
+`confidence` field is a decision score, not a calibrated probability. See
+[the lexical evaluation](docs/lexical-baseline.md) and
+[reranker methodology](docs/feature-reranker.md) for limitations and error analysis.
+
+## API example
+
+```bash
+curl -X POST https://dirty-product-linker-api.onrender.com/v1/link \
+  -H 'Content-Type: application/json' \
+  -d '{"text":"ищу 15pm на 256"}'
+```
+
+The response includes the selected product, ranked candidates, matched surface,
+decision reason, latency, model version, and catalog version. A query such as
+`виво` returns `brand_not_in_catalog` instead of inventing a SKU.
 
 ## Current verification
 

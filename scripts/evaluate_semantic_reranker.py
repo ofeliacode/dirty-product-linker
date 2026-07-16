@@ -152,6 +152,7 @@ def main() -> None:
             "min_score": config.min_score,
             "min_margin": config.min_margin,
             "weights": {
+                "explicit_alias_boost": 0.30,
                 "brand": 0.30,
                 "category": 0.15,
                 "model": 0.15,
