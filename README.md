@@ -73,3 +73,12 @@ locale, original IDs, source split, and source revision. The official test split
 intentionally blocked from this development-data command to prevent evaluation
 leakage. ESCI has no product-category ground truth, so it is not used to fill gaps in
 the five-category catalog.
+
+## Build the Russian dirty-query benchmark
+
+The repository includes 20 AI-authored annotation candidates covering dirty,
+ambiguous, and negative queries. They are deliberately marked `synthetic` and cannot
+be frozen until a person reviews or edits every row. The freeze command enforces
+human provenance, catalog references, unique IDs, deterministic ordering, and
+checksums. See [docs/benchmark-review.md](docs/benchmark-review.md) for the review
+workflow and its boundaries.

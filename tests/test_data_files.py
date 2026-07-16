@@ -39,3 +39,21 @@ def test_every_target_product_exists_in_the_sample_catalog() -> None:
     for row in query_rows:
         query = AnnotatedQuery.model_validate(row)
         assert set(query.target_product_ids) <= product_ids
+
+
+def test_benchmark_candidates_are_valid_but_not_claimed_as_human_reviewed() -> None:
+    product_rows = read_jsonl(PROJECT_ROOT / "data/catalog/sample_catalog.jsonl")
+    product_ids = {Product.model_validate(row).product_id for row in product_rows}
+    candidate_paths = sorted(
+        (PROJECT_ROOT / "data/benchmark/candidates").glob("*.jsonl")
+    )
+    queries = [
+        AnnotatedQuery.model_validate(row)
+        for path in candidate_paths
+        for row in read_jsonl(path)
+    ]
+
+    assert len(queries) == 20
+    assert len({query.query_id for query in queries}) == len(queries)
+    assert all(query.provenance == "synthetic" for query in queries)
+    assert all(set(query.target_product_ids) <= product_ids for query in queries)
