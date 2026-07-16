@@ -1,12 +1,17 @@
 """FastAPI application factory for local and production inference."""
 
+import os
 from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from dirty_product_linker.api.schemas import AnalysisResponse, LinkRequest
-from dirty_product_linker.api.service import LexicalLinkingService, LinkingService
+from dirty_product_linker.api.service import (
+    LazyLinkingService,
+    LinkingService,
+    build_runtime_service,
+)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_CATALOG = PROJECT_ROOT / "data/catalog/demo_catalog_v0_2.jsonl"
@@ -15,7 +20,17 @@ DEFAULT_CATALOG = PROJECT_ROOT / "data/catalog/demo_catalog_v0_2.jsonl"
 def create_app(service: LinkingService | None = None) -> FastAPI:
     """Create an app with an injectable runtime for deterministic tests."""
 
-    runtime = service or LexicalLinkingService.from_catalog(DEFAULT_CATALOG)
+    runtime_mode = os.getenv("DPL_RUNTIME", "full")
+    runtime_device = os.getenv("DPL_DEVICE", "cpu")
+    local_files_only = os.getenv("DPL_OFFLINE", "0") == "1"
+    runtime = service or LazyLinkingService(
+        lambda: build_runtime_service(
+            runtime_mode,
+            catalog_path=DEFAULT_CATALOG,
+            device=runtime_device,
+            local_files_only=local_files_only,
+        )
+    )
     application = FastAPI(
         title="Dirty Product Linker API",
         version="0.1.0",

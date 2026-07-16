@@ -13,10 +13,14 @@ export type Candidate = ProductSummary & {
 export type Analysis = {
   text: string;
   status: "linked" | "unknown";
-  decision_source: "lexical" | "feature_reranker";
+  decision_source: string;
   score: number;
+  confidence: number;
   processing_ms: number;
+  model_version: string;
   catalog_version: string;
+  product_id: string | null;
+  category: string | null;
   selected_product: ProductSummary | null;
   candidates: Candidate[];
 };

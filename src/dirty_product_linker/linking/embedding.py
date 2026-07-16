@@ -26,6 +26,7 @@ class SentenceTransformerEncoder:
         model_id: str,
         revision: str,
         device: str = "cpu",
+        local_files_only: bool = False,
     ) -> None:
         try:
             module = import_module("sentence_transformers")
@@ -38,6 +39,7 @@ class SentenceTransformerEncoder:
             model_id,
             revision=revision,
             device=device,
+            local_files_only=local_files_only,
         )
 
     def encode(self, texts: Sequence[str]) -> list[list[float]]:

@@ -1,7 +1,8 @@
 """Production-shaped runtime service backed by the lightweight baseline."""
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from pathlib import Path
+from threading import Lock
 from time import perf_counter
 from typing import Protocol
 
@@ -10,7 +11,11 @@ from dirty_product_linker.api.schemas import (
     CandidateResponse,
     ProductSummary,
 )
-from dirty_product_linker.linking.embedding import EmbeddingEncoder, EmbeddingProductLinker
+from dirty_product_linker.linking.embedding import (
+    EmbeddingEncoder,
+    EmbeddingProductLinker,
+    SentenceTransformerEncoder,
+)
 from dirty_product_linker.linking.lexical import LexicalProductLinker, LinkResult
 from dirty_product_linker.linking.pipeline import EndToEndProductLinker
 from dirty_product_linker.linking.reranker import FeatureAwareReranker
@@ -19,6 +24,8 @@ from dirty_product_linker.schemas import Product
 CATALOG_VERSION = "demo-catalog-v0.2"
 LEXICAL_MODEL_VERSION = "lexical-v0.2"
 RERANKER_MODEL_VERSION = "feature-reranker-v0.1.0"
+EMBEDDING_MODEL_ID = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_MODEL_REVISION = "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
 
 
 class LinkingService(Protocol):
@@ -26,6 +33,25 @@ class LinkingService(Protocol):
 
     def analyze(self, text: str) -> AnalysisResponse:
         """Resolve one noisy product mention."""
+
+
+class LazyLinkingService:
+    """Defer model allocation until the first inference request."""
+
+    def __init__(self, factory: Callable[[], LinkingService]) -> None:
+        self._factory = factory
+        self._service: LinkingService | None = None
+        self._lock = Lock()
+
+    def analyze(self, text: str) -> AnalysisResponse:
+        service = self._service
+        if service is None:
+            with self._lock:
+                service = self._service
+                if service is None:
+                    service = self._factory()
+                    self._service = service
+        return service.analyze(text)
 
 
 class ResultLinker(Protocol):
@@ -143,6 +169,44 @@ class EndToEndLinkingService(ProductLinkingService):
             model_version=RERANKER_MODEL_VERSION,
             catalog_version=CATALOG_VERSION,
         )
+
+    @classmethod
+    def from_sentence_transformer(
+        cls,
+        path: Path,
+        *,
+        device: str = "cpu",
+        local_files_only: bool = False,
+    ) -> "EndToEndLinkingService":
+        """Load the pinned multilingual embedding model and complete runtime."""
+
+        encoder = SentenceTransformerEncoder(
+            model_id=EMBEDDING_MODEL_ID,
+            revision=EMBEDDING_MODEL_REVISION,
+            device=device,
+            local_files_only=local_files_only,
+        )
+        return cls.from_catalog(path, encoder=encoder)
+
+
+def build_runtime_service(
+    mode: str,
+    *,
+    catalog_path: Path,
+    device: str = "cpu",
+    local_files_only: bool = False,
+) -> LinkingService:
+    """Build one explicitly selected runtime without silent model fallback."""
+
+    if mode == "lexical":
+        return LexicalLinkingService.from_catalog(catalog_path)
+    if mode == "full":
+        return EndToEndLinkingService.from_sentence_transformer(
+            catalog_path,
+            device=device,
+            local_files_only=local_files_only,
+        )
+    raise ValueError(f"unsupported runtime mode: {mode!r}")
 
 
 def _load_products(path: Path) -> list[Product]:

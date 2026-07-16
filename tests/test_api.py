@@ -8,7 +8,10 @@ from dirty_product_linker.api.schemas import (
     CandidateResponse,
     ProductSummary,
 )
-from dirty_product_linker.api.service import EndToEndLinkingService
+from dirty_product_linker.api.service import (
+    EndToEndLinkingService,
+    LexicalLinkingService,
+)
 
 
 class StubService:
@@ -78,7 +81,9 @@ def test_link_endpoint_rejects_blank_or_oversized_text() -> None:
 
 
 def test_default_runtime_resolves_a_dirty_alias_from_demo_catalog() -> None:
-    response = TestClient(create_app()).post(
+    response = TestClient(
+        create_app(service=LexicalLinkingService.from_catalog(DEFAULT_CATALOG))
+    ).post(
         "/v1/link", json={"text": "ищу 15pm на 256"}
     )
 

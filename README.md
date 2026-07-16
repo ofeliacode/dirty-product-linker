@@ -23,7 +23,7 @@ Create a Python 3.12 virtual environment and install the development dependencie
 
 ```bash
 python3 -m venv .venv
-.venv/bin/python -m pip install -e '.[api,data,dev]'
+.venv/bin/python -m pip install -e '.[api,data,embeddings,dev]'
 PYTHONPATH=src .venv/bin/pytest
 .venv/bin/ruff check .
 .venv/bin/mypy src
@@ -34,13 +34,22 @@ coverage; it is not used to claim model quality.
 
 ## Run the interactive demo
 
-The demo deliberately uses the dependency-free lexical runtime so it starts quickly
-on CPU and does not load the optional embedding model. Start the API in the repository
+The default runtime executes normalization, lexical retrieval, multilingual MiniLM
+retrieval, feature-aware reranking, and conservative abstention. The pinned model is
+loaded lazily on the first prediction and then reused. Start the API in the repository
 root:
 
 ```bash
 .venv/bin/uvicorn dirty_product_linker.api.app:app --reload
 ```
+
+For an offline machine with the pinned model already in the Hugging Face cache:
+
+```bash
+DPL_OFFLINE=1 .venv/bin/uvicorn dirty_product_linker.api.app:app --reload
+```
+
+The dependency-free baseline remains available explicitly with `DPL_RUNTIME=lexical`.
 
 In another terminal, install and start the React client:
 
@@ -62,6 +71,19 @@ Build the production frontend with:
 cd web
 npm run build
 ```
+
+The same runtime is available as a machine-readable CLI:
+
+```bash
+product-linker predict "хочу 15pm на 256"
+product-linker predict "ищу самсунь s24 ultra серый" --offline
+product-linker predict "сони наушники xm5" --runtime lexical
+```
+
+The command prints JSON containing the decision status, canonical product and
+category, confidence, candidate ranking, request latency, model version, and catalog
+version. Full mode never silently falls back to lexical retrieval if model loading
+fails.
 
 ## Import the public catalog source
 

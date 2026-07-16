@@ -15,6 +15,9 @@ dependencies = [
   "pyyaml>=6.0,<7",
 ]
 
+[project.scripts]
+product-linker = "dirty_product_linker.cli:main"
+
 [project.optional-dependencies]
 data = [
   "datasets>=4.8,<5",

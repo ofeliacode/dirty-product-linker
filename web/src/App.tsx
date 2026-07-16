@@ -147,7 +147,7 @@ export function App() {
                 <div className={`decision decision--${analysis.status}`}>
                   <div className="decision__label">
                     <span>{analysis.status === "linked" ? "MATCH FOUND" : "SAFE ABSTENTION"}</span>
-                    <strong>{percent(analysis.score)}</strong>
+                    <strong>{percent(analysis.confidence)}</strong>
                   </div>
                   {analysis.selected_product ? (
                     <>
@@ -175,8 +175,9 @@ export function App() {
                 </div>
 
                 <div className="telemetry">
-                  <span>Mode <strong>{analysis.decision_source}</strong></span>
+                  <span>Decision <strong>{analysis.decision_source}</strong></span>
                   <span>Latency <strong>{analysis.processing_ms.toFixed(2)} ms</strong></span>
+                  <span>Model <strong>{analysis.model_version}</strong></span>
                   <span>Catalog <strong>{analysis.catalog_version}</strong></span>
                 </div>
               </div>
