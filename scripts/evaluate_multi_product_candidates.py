@@ -11,7 +11,7 @@ from pydantic import BaseModel, ConfigDict
 
 from dirty_product_linker.api.service import LexicalLinkingService
 from dirty_product_linker.evaluation.mentions import evaluate_mentions
-from dirty_product_linker.schemas import MultiProductQuery
+from dirty_product_linker.schemas import DataProvenance, MultiProductQuery
 
 
 class EvaluationConfig(BaseModel):
@@ -22,8 +22,11 @@ class EvaluationConfig(BaseModel):
     schema_version: str
     evaluation_id: str
     dataset_role: str
+    expected_provenance: DataProvenance
     dataset_path: Path
     expected_dataset_sha256: str
+    manifest_path: Path | None = None
+    expected_manifest_sha256: str | None = None
     catalog_path: Path
     expected_catalog_sha256: str
     output_path: Path
@@ -54,12 +57,33 @@ def main() -> None:
         raise ValueError("candidate dataset checksum mismatch")
     if catalog_sha256 != config.expected_catalog_sha256:
         raise ValueError("catalog checksum mismatch")
+    manifest_sha256 = None
+    manifest = None
+    if config.manifest_path is not None:
+        manifest_sha256 = _sha256(config.manifest_path)
+        if manifest_sha256 != config.expected_manifest_sha256:
+            raise ValueError("review manifest checksum mismatch")
+        manifest = json.loads(config.manifest_path.read_text(encoding="utf-8"))
+        if manifest.get("reviewed_sha256") != dataset_sha256:
+            raise ValueError("review manifest does not match frozen dataset")
 
     examples = [
         MultiProductQuery.model_validate_json(line)
         for line in config.dataset_path.read_text(encoding="utf-8").splitlines()
         if line
     ]
+    unexpected_provenance = [
+        example.query_id
+        for example in examples
+        if example.provenance is not config.expected_provenance
+    ]
+    if unexpected_provenance:
+        raise ValueError(
+            "dataset provenance mismatch for query IDs: "
+            f"{unexpected_provenance}"
+        )
+    if manifest is not None and manifest.get("example_count") != len(examples):
+        raise ValueError("review manifest example count mismatch")
     service = LexicalLinkingService.from_catalog(config.catalog_path)
     predictions = {
         example.query_id: service.extract_and_link(example.text) for example in examples
@@ -81,6 +105,8 @@ def main() -> None:
         "dataset_role": config.dataset_role,
         "dataset_sha256": dataset_sha256,
         "catalog_sha256": catalog_sha256,
+        "manifest_sha256": manifest_sha256,
+        "review": manifest,
         "extractor": "catalog-longest-surface-v0.1",
         "metrics": {"overall": asdict(overall), "by_slice": by_slice},
         "predictions": [

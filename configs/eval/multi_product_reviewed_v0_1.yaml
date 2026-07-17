@@ -1,0 +1,11 @@
+schema_version: "1.0"
+evaluation_id: multi-product-reviewed-v0.1
+dataset_role: human_reviewed_synthetic_origin
+expected_provenance: human
+dataset_path: data/benchmark/frozen/multi_product_v0_1.jsonl
+expected_dataset_sha256: 9f8add6cb98028ac1449d278ed9f3bc2c6f9bfc4fc037ccaca5c703b154b2443
+manifest_path: data/benchmark/frozen/multi_product_v0_1_manifest.json
+expected_manifest_sha256: 8de1d9a8bc5cb5a892d76381efcb76ea3b021c73db0b0e1f9e068940fe3dadff
+catalog_path: data/catalog/demo_catalog_v0_2.jsonl
+expected_catalog_sha256: 9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526
+output_path: reports/evaluation/multi_product_reviewed_v0_1.json
