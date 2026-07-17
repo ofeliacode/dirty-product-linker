@@ -1,4 +1,4 @@
-"""Create the AI-authored 100-query product-linking challenge set."""
+"""Create the synthetic 100-query product-linking challenge set."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from pathlib import Path
 
 from dirty_product_linker.schemas import MultiProductQuery
 
-OUTPUT_PATH = Path("data/benchmark/candidates/ai_challenge_v0_1.jsonl")
+OUTPUT_PATH = Path("data/benchmark/candidates/synthetic_challenge_v0_1.jsonl")
 
 # Each mention is (surface text, canonical product_id). Offsets are derived below.
 SLICES: dict[str, list[tuple[str, list[tuple[str, str]], list[str]]]] = {
@@ -468,7 +468,7 @@ def build_rows() -> list[MultiProductQuery]:
                 MultiProductQuery.model_validate(
                     {
                         "schema_version": "1.0",
-                        "query_id": f"ai-challenge-{sequence:03d}",
+                        "query_id": f"synthetic-challenge-{sequence:03d}",
                         "text": text,
                         "language": "ru-mixed"
                         if any(char.isascii() and char.isalpha() for char in text)
@@ -489,7 +489,7 @@ def main() -> None:
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     content = "".join(f"{row.model_dump_json()}\n" for row in rows)
     OUTPUT_PATH.write_text(content, encoding="utf-8")
-    print(f"Wrote {len(rows)} AI-authored challenge queries to {OUTPUT_PATH}")
+    print(f"Wrote {len(rows)} synthetic challenge queries to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

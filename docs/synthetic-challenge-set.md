@@ -1,6 +1,7 @@
-# AI-authored 100-query challenge set
+# Synthetic 100-query challenge set
 
-`data/benchmark/candidates/ai_challenge_v0_1.jsonl` is a deliberately broad candidate
+`data/benchmark/candidates/synthetic_challenge_v0_1.jsonl` is a deliberately broad
+candidate
 set for product mention extraction and entity linking. It contains 100 Russian or
 Russian/English mixed queries in the requested distribution:
 
@@ -15,10 +16,10 @@ Russian/English mixed queries in the requested distribution:
 
 ## Status and allowed use
 
-The queries were authored by an AI assistant and have `provenance=synthetic`. They
-are appropriate for challenge-driven development, annotation review, and error
-analysis. They are **not** a human-authored independent holdout and must not be used
-to claim human-distribution generalization.
+The queries are synthetic and have `provenance=synthetic`. They are appropriate for
+challenge-driven development, annotation review, and error analysis. They are
+**not** a human-authored independent holdout and must not be used to claim
+human-distribution generalization.
 
 Do not add the challenge strings to normalization rules or catalog aliases before
 the first baseline evaluation. Doing so would leak expected inputs into the system.
@@ -26,11 +27,11 @@ the first baseline evaluation. Doing so would leak expected inputs into the syst
 ## Reproduce and validate
 
 The source specification and deterministic offset generation live in
-`scripts/create_ai_challenge_set.py`:
+`scripts/create_synthetic_challenge_set.py`:
 
 ```bash
-PYTHONPATH=src .venv/bin/python scripts/create_ai_challenge_set.py
-.venv/bin/pytest -q tests/test_ai_challenge_data.py
+PYTHONPATH=src .venv/bin/python scripts/create_synthetic_challenge_set.py
+.venv/bin/pytest -q tests/test_synthetic_challenge_data.py
 ```
 
 The test validates the slice counts, unique query IDs, exact half-open character
@@ -43,4 +44,3 @@ offsets, synthetic provenance, and every `product_id` against demo catalog v0.2.
 3. Inspect errors by slice, especially abstention and unseen abbreviations.
 4. Keep the dataset separate from training and alias expansion.
 5. Independently collect new human-authored queries for the final portfolio metric.
-

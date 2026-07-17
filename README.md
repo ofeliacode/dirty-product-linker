@@ -72,7 +72,7 @@ Version v0.1 has now been reviewed and frozen with provenance
 but the final generalization claim still requires a new human-authored holdout that
 was not inspected during development.
 
-An additional [AI-authored 100-query challenge set](docs/ai-challenge-set.md) covers
+An additional [synthetic 100-query challenge set](docs/synthetic-challenge-set.md) covers
 ordinary single-product requests, slang and typos, multiple products, ambiguous
 requests, negatives, and unseen abbreviations in a fixed `20/20/20/15/15/10`
 distribution. It remains a synthetic candidate set for blind baseline evaluation and
@@ -240,7 +240,7 @@ the five-category catalog.
 ## Build the Russian dirty-query benchmark
 
 The repository includes the reviewed and frozen `ru-dirty-v0.1` seed benchmark:
-20 examples covering dirty, ambiguous, and negative queries. The original AI-authored
+20 examples covering dirty, ambiguous, and negative queries. The original synthetic
 candidates remain separately marked `synthetic`; the review attestation records their
 promotion to human-reviewed data. The freeze command enforces human provenance,
 catalog references, unique IDs, deterministic ordering, and checksums. See

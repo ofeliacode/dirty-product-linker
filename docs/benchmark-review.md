@@ -9,7 +9,7 @@ it is never training data.
 ## Data states
 
 ```text
-data/benchmark/candidates/  AI-authored proposals; provenance=synthetic
+data/benchmark/candidates/  Synthetic proposals; provenance=synthetic
 data/benchmark/reviewed/    Human-accepted or human-edited rows; provenance=human
 data/benchmark/frozen/      Deterministic JSONL plus checksum manifest
 ```
@@ -74,6 +74,6 @@ PYTHONPATH=src .venv/bin/mypy src
 ```
 
 - Never train on files under `data/benchmark/frozen/`.
-- Never label AI-authored, unreviewed text as human provenance.
+- Never label synthetic, unreviewed text as human provenance.
 - Never edit a frozen release in place; create a new benchmark version.
 - Do not claim quality from the 20-row candidate pool.

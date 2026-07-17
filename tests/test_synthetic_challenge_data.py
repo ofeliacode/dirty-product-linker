@@ -7,7 +7,7 @@ from pathlib import Path
 from dirty_product_linker.schemas import MultiProductQuery, Product
 
 PROJECT_ROOT = Path(__file__).parents[1]
-DATASET_PATH = PROJECT_ROOT / "data/benchmark/candidates/ai_challenge_v0_1.jsonl"
+DATASET_PATH = PROJECT_ROOT / "data/benchmark/candidates/synthetic_challenge_v0_1.jsonl"
 CATALOG_PATH = PROJECT_ROOT / "data/catalog/demo_catalog_v0_2.jsonl"
 
 
@@ -15,7 +15,7 @@ def load_jsonl(path: Path) -> list[dict[str, object]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
 
 
-def test_ai_challenge_has_requested_slice_distribution_and_valid_labels() -> None:
+def test_synthetic_challenge_has_requested_slice_distribution_and_valid_labels() -> None:
     rows = [MultiProductQuery.model_validate(row) for row in load_jsonl(DATASET_PATH)]
     products = [Product.model_validate(row) for row in load_jsonl(CATALOG_PATH)]
     catalog_ids = {product.product_id for product in products}
@@ -38,7 +38,7 @@ def test_ai_challenge_has_requested_slice_distribution_and_valid_labels() -> Non
             assert mention.product_id in catalog_ids
 
 
-def test_ai_challenge_special_slices_have_expected_behavior() -> None:
+def test_synthetic_challenge_special_slices_have_expected_behavior() -> None:
     rows = [MultiProductQuery.model_validate(row) for row in load_jsonl(DATASET_PATH)]
     by_slice: dict[str, list[MultiProductQuery]] = {}
     for row in rows:
