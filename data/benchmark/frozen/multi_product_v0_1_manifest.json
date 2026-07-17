@@ -1,0 +1,16 @@
+{
+  "attestation": "reviewer approved every query, product link, and character span",
+  "benchmark_type": "multi_product_extraction",
+  "candidate_sha256": "1b9b59fcd6cf442e7c91f1355b9f0bb6613ab9a7e296870fd0dda63c4b1b9e80",
+  "example_count": 25,
+  "reviewed_at": "2026-07-16",
+  "reviewed_sha256": "9f8add6cb98028ac1449d278ed9f3bc2c6f9bfc4fc037ccaca5c703b154b2443",
+  "reviewer": "ofeliacode",
+  "schema_version": "1.0",
+  "slice_counts": {
+    "context": 5,
+    "explicit_alias": 10,
+    "negative": 5,
+    "unseen_surface": 5
+  }
+}
