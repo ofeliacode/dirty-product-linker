@@ -72,6 +72,12 @@ Version v0.1 has now been reviewed and frozen with provenance
 but the final generalization claim still requires a new human-authored holdout that
 was not inspected during development.
 
+An additional [AI-authored 100-query challenge set](docs/ai-challenge-set.md) covers
+ordinary single-product requests, slang and typos, multiple products, ambiguous
+requests, negatives, and unseen abbreviations in a fixed `20/20/20/15/15/10`
+distribution. It remains a synthetic candidate set for blind baseline evaluation and
+error analysis—not a replacement for the future human-authored holdout.
+
 ## API example
 
 ```bash
