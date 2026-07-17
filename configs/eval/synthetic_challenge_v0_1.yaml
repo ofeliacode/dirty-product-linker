@@ -1,0 +1,9 @@
+schema_version: "1.0"
+evaluation_id: synthetic-challenge-v0.1-baseline
+dataset_role: synthetic_blind_challenge
+expected_provenance: synthetic
+dataset_path: data/benchmark/candidates/synthetic_challenge_v0_1.jsonl
+expected_dataset_sha256: 29a3bcd45142a15a6bba2cf1698afcf8c04ff3dcdb28ff7a0323095dee60c99f
+catalog_path: data/catalog/demo_catalog_v0_2.jsonl
+expected_catalog_sha256: 9ba193ce8098b411febd3ff9d55a2c30210580aa8adf8e7d92b6ae0e345c6526
+output_path: reports/development/synthetic_challenge_v0_1_baseline.json

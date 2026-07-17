@@ -77,6 +77,10 @@ ordinary single-product requests, slang and typos, multiple products, ambiguous
 requests, negatives, and unseen abbreviations in a fixed `20/20/20/15/15/10`
 distribution. It remains a synthetic candidate set for blind baseline evaluation and
 error analysis—not a replacement for the future human-authored holdout.
+The pinned rule baseline reaches exact-span F1 `0.609`, end-to-end mention accuracy
+`0.447`, and negative accuracy `1.000` on this set. It finds none of the deliberately
+unseen abbreviations or typo/slang surfaces, isolating learned mention extraction as
+the next model-development target.
 
 ## API example
 
