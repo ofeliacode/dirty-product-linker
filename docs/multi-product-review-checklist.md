@@ -1,6 +1,7 @@
 # Human review checklist: multi-product v0.1
 
-Do not run the promotion command until every box below has been checked by a person.
+Review completed by `ofeliacode` on `2026-07-16`. Frozen dataset SHA-256:
+`9f8add6cb98028ac1449d278ed9f3bc2c6f9bfc4fc037ccaca5c703b154b2443`.
 The source file is
 `data/benchmark/candidates/multi_product_v0_1.jsonl`.
 
@@ -17,40 +18,40 @@ The source file is
 
 ### Explicit aliases
 
-- [ ] `multi-0001` — iPhone 15 Pro Max + Sony WH-1000XM5
-- [ ] `multi-0002` — Samsung Galaxy S24 Ultra + Google Pixel 8 Pro
-- [ ] `multi-0003` — MacBook Pro 14 M3 + AirPods Pro 2
-- [ ] `multi-0004` — Dell XPS 13 + Lenovo ThinkPad X1 Carbon
-- [ ] `multi-0005` — LG OLED C3 + Sony BRAVIA 8 OLED
-- [ ] `multi-0006` — Samsung WW90 + Bosch KGN39
-- [ ] `multi-0007` — Dyson V15 + Roborock S8 MaxV Ultra
-- [ ] `multi-0008` — Bose QuietComfort Ultra + Sennheiser Momentum 4
-- [ ] `multi-0009` — TCL C855 + Samsung QN90D
-- [ ] `multi-0010` — OnePlus 12 + ASUS ROG Zephyrus G14
+- [x] `multi-0001` — iPhone 15 Pro Max + Sony WH-1000XM5
+- [x] `multi-0002` — Samsung Galaxy S24 Ultra + Google Pixel 8 Pro
+- [x] `multi-0003` — MacBook Pro 14 M3 + AirPods Pro 2
+- [x] `multi-0004` — Dell XPS 13 + Lenovo ThinkPad X1 Carbon
+- [x] `multi-0005` — LG OLED C3 + Sony BRAVIA 8 OLED
+- [x] `multi-0006` — Samsung WW90 + Bosch KGN39
+- [x] `multi-0007` — Dyson V15 + Roborock S8 MaxV Ultra
+- [x] `multi-0008` — Bose QuietComfort Ultra + Sennheiser Momentum 4
+- [x] `multi-0009` — TCL C855 + Samsung QN90D
+- [x] `multi-0010` — OnePlus 12 + ASUS ROG Zephyrus G14
 
 ### Long context
 
-- [ ] `context-0001` — `15pm`
-- [ ] `context-0002` — `наушники xm5`
-- [ ] `context-0003` — `зефирка g14`
-- [ ] `context-0004` — `бравия олед`
-- [ ] `context-0005` — `беспроводной дайсон`
+- [x] `context-0001` — `15pm`
+- [x] `context-0002` — `наушники xm5`
+- [x] `context-0003` — `зефирка g14`
+- [x] `context-0004` — `бравия олед`
+- [x] `context-0005` — `беспроводной дайсон`
 
 ### Unseen surfaces
 
-- [ ] `unseen-0001` — unseen iPhone wording
-- [ ] `unseen-0002` — unseen Samsung wording
-- [ ] `unseen-0003` — unseen Sony wording
-- [ ] `unseen-0004` — unseen MacBook wording
-- [ ] `unseen-0005` — unseen Roborock wording
+- [x] `unseen-0001` — unseen iPhone wording
+- [x] `unseen-0002` — unseen Samsung wording
+- [x] `unseen-0003` — unseen Sony wording
+- [x] `unseen-0004` — unseen MacBook wording
+- [x] `unseen-0005` — unseen Roborock wording
 
 ### Negatives
 
-- [ ] `negative-0001` — generic phone and headphones request
-- [ ] `negative-0002` — generic cleaning request
-- [ ] `negative-0003` — generic laptop request
-- [ ] `negative-0004` — generic television request
-- [ ] `negative-0005` — no purchase intent
+- [x] `negative-0001` — generic phone and headphones request
+- [x] `negative-0002` — generic cleaning request
+- [x] `negative-0003` — generic laptop request
+- [x] `negative-0004` — generic television request
+- [x] `negative-0005` — no purchase intent
 
 ## Freeze after review
 

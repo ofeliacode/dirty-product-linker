@@ -7,6 +7,12 @@ The role is stored as `synthetic_candidate` in both the pinned configuration and
 generated report. These results may be used to diagnose the rule baseline, but not
 as a claim of generalization.
 
+The candidate set was subsequently reviewed and frozen by `ofeliacode`. The reviewed
+artifact retains synthetic origin and is therefore described as
+`human_reviewed_synthetic_origin`, not as a human-authored independent holdout. Its
+manifest records the reviewer attestation and dataset SHA-256. Because review did not
+change the rows, the frozen metrics are identical to the candidate diagnostics.
+
 ## Fixed inputs
 
 - 25 candidate queries and 30 linked product mentions;
@@ -50,6 +56,13 @@ abstention policy.
 The command writes
 `reports/development/multi_product_candidates_v0_1.json`, including every gold and
 predicted span for error analysis.
+
+Reproduce the reviewed frozen report with:
+
+```bash
+.venv/bin/python scripts/evaluate_multi_product_candidates.py \
+  --config configs/eval/multi_product_reviewed_v0_1.yaml
+```
 
 ## Promotion requirement
 

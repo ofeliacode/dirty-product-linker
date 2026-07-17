@@ -67,6 +67,10 @@ development diagnostics, not final holdout claims. See the
 The candidate set can only be promoted after completing the
 [human review checklist](docs/multi-product-review-checklist.md); the guarded command
 records reviewer attestation and refuses to overwrite frozen data.
+Version v0.1 has now been reviewed and frozen with provenance
+`human_reviewed_synthetic_origin`. It is suitable for audited baseline comparison,
+but the final generalization claim still requires a new human-authored holdout that
+was not inspected during development.
 
 ## API example
 
